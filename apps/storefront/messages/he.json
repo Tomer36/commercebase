@@ -1,0 +1,143 @@
+{
+  "Common": {
+    "storeName": "חנות קוסמטיקה",
+    "account": "חשבון",
+    "cart": "עגלה",
+    "home": "בית",
+    "store": "חנות",
+    "menu": "תפריט",
+    "language": "שפה:",
+    "copyright": "© {year} {storeName}. כל הזכויות שמורות."
+  },
+  "Footer": {
+    "categories": "קטגוריות",
+    "collections": "קולקציות",
+    "links": "קישורים"
+  },
+  "NotFound": {
+    "title": "הדף לא נמצא",
+    "body": "הדף שניסית לגשת אליו אינו קיים.",
+    "goToFrontpage": "חזרה לדף הבית"
+  },
+  "ProductActions": {
+    "selectVariant": "בחר גרסה",
+    "outOfStock": "אזל מהמלאי",
+    "addToCart": "הוסף לעגלה",
+    "selectOptions": "בחר אפשרויות",
+    "selectPrefix": "בחר {title}"
+  },
+  "Cart": {
+    "cart": "עגלה",
+    "item": "פריט",
+    "quantity": "כמות",
+    "price": "מחיר",
+    "total": "סה״כ",
+    "remove": "הסר",
+    "quantityValue": "כמות: {count}",
+    "subtotal": "סכום ביניים",
+    "exclTaxes": "(לפני מס)",
+    "goToCart": "מעבר לעגלה",
+    "emptyCart": "עגלת הקניות שלך ריקה.",
+    "emptyCartBody": "אין לך עדיין פריטים בעגלה. השתמש בקישור למטה כדי להתחיל לגלוש במוצרים שלנו.",
+    "goToAllProducts": "מעבר לכל המוצרים",
+    "exploreProducts": "גלה מוצרים"
+  },
+  "CartTotals": {
+    "subtotalExclShipping": "סכום ביניים (לפני משלוח ומס)",
+    "shipping": "משלוח",
+    "discount": "הנחה",
+    "taxes": "מס",
+    "total": "סה״כ"
+  },
+  "Auth": {
+    "welcomeBack": "ברוכים השבים",
+    "signInPrompt": "התחבר כדי ליהנות מחוויית קנייה משופרת.",
+    "verificationSentLogin": "שלחנו קישור אימות אל {email}. אמת את כתובת האימייל שלך, ולאחר מכן התחבר.",
+    "email": "אימייל",
+    "emailValidation": "הזן כתובת אימייל תקינה.",
+    "password": "סיסמה",
+    "signIn": "התחבר",
+    "notAMember": "עדיין לא חבר?",
+    "joinUs": "הצטרף אלינו",
+    "becomeMember": "הפוך לחבר ב-{storeName}",
+    "createProfilePrompt": "צור פרופיל חבר ב-{storeName} וקבל גישה לחוויית קנייה משופרת.",
+    "verificationSentRegister": "שלחנו קישור אימות אל {email}. בדוק את תיבת הדואר שלך כדי לאמת את כתובת האימייל, ולאחר מכן התחבר.",
+    "firstName": "שם פרטי",
+    "lastName": "שם משפחה",
+    "phone": "טלפון",
+    "agreeToTerms": "ביצירת חשבון, אתה מסכים ל<privacyLink>מדיניות הפרטיות</privacyLink> ול<termsLink>תנאי השימוש</termsLink> של {storeName}.",
+    "join": "הצטרף",
+    "alreadyMember": "כבר חבר?"
+  },
+  "AccountNav": {
+    "hello": "שלום {firstName}",
+    "overview": "סקירה כללית",
+    "profile": "פרופיל",
+    "addresses": "כתובות",
+    "orders": "הזמנות",
+    "logOut": "התנתק"
+  },
+  "AccountLayout": {
+    "gotQuestions": "יש לך שאלות?",
+    "faqBody": "תוכל למצוא שאלות ותשובות נפוצות בעמוד שירות הלקוחות שלנו.",
+    "customerService": "שירות לקוחות"
+  },
+  "Address": {
+    "firstName": "שם פרטי",
+    "lastName": "שם משפחה",
+    "address": "כתובת",
+    "company": "חברה",
+    "postalCode": "מיקוד",
+    "city": "עיר",
+    "stateProvince": "מחוז / מדינה",
+    "phone": "טלפון",
+    "email": "אימייל",
+    "emailValidation": "הזן כתובת אימייל תקינה.",
+    "shippingAddress": "כתובת למשלוח",
+    "billingAddress": "כתובת לחיוב",
+    "billingAddressLabel": "כתובת לחיוב",
+    "savedAddressPrompt": "היי {firstName}, תרצה להשתמש באחת מהכתובות השמורות שלך?",
+    "sameAsBilling": "כתובת החיוב זהה לכתובת המשלוח",
+    "sameAsBillingSummary": "כתובת החיוב וכתובת המשלוח זהות.",
+    "contact": "פרטי קשר",
+    "edit": "ערוך",
+    "continueToDelivery": "המשך למשלוח",
+    "chooseAddress": "בחר כתובת"
+  },
+  "Delivery": {
+    "delivery": "משלוח",
+    "shippingMethod": "שיטת משלוח",
+    "shippingMethodPrompt": "כיצד תרצה שההזמנה תימסר",
+    "pickUpOrder": "איסוף ההזמנה שלך",
+    "store": "חנות",
+    "chooseStoreNearYou": "בחר חנות קרובה אליך",
+    "method": "שיטה",
+    "continueToPayment": "המשך לתשלום",
+    "edit": "ערוך"
+  },
+  "Payment": {
+    "payment": "תשלום",
+    "paymentMethod": "אמצעי תשלום",
+    "paymentDetails": "פרטי תשלום",
+    "giftCard": "כרטיס מתנה",
+    "anotherStepWillAppear": "שלב נוסף יופיע",
+    "enterCardDetails": "הזן פרטי כרטיס",
+    "continueToReview": "המשך לסקירה",
+    "selectPaymentMethod": "בחר אמצעי תשלום",
+    "placeOrder": "בצע הזמנה",
+    "edit": "ערוך"
+  },
+  "Review": {
+    "review": "סקירה",
+    "disclaimer": "בלחיצה על כפתור ביצוע ההזמנה, אתה מאשר שקראת, הבנת ומקבל את תנאי השימוש, תנאי המכירה ומדיניות ההחזרות שלנו, ומאשר שקראת את מדיניות הפרטיות של {storeName}."
+  },
+  "DiscountCode": {
+    "addPromotionCode": "הוסף קוד קידום מכירות",
+    "apply": "החל",
+    "promotionsApplied": "קודי קידום מכירות שהוחלו:",
+    "removeDiscount": "הסר קוד הנחה מההזמנה"
+  },
+  "CheckoutSummary": {
+    "inYourCart": "בעגלה שלך"
+  }
+}

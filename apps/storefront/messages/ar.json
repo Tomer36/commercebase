@@ -1,0 +1,143 @@
+{
+  "Common": {
+    "storeName": "متجر مستحضرات التجميل",
+    "account": "الحساب",
+    "cart": "عربة التسوق",
+    "home": "الرئيسية",
+    "store": "المتجر",
+    "menu": "القائمة",
+    "language": "اللغة:",
+    "copyright": "© {year} {storeName}. جميع الحقوق محفوظة."
+  },
+  "Footer": {
+    "categories": "الفئات",
+    "collections": "المجموعات",
+    "links": "روابط"
+  },
+  "NotFound": {
+    "title": "الصفحة غير موجودة",
+    "body": "الصفحة التي حاولت الوصول إليها غير موجودة.",
+    "goToFrontpage": "العودة إلى الصفحة الرئيسية"
+  },
+  "ProductActions": {
+    "selectVariant": "اختر النوع",
+    "outOfStock": "غير متوفر",
+    "addToCart": "أضف إلى السلة",
+    "selectOptions": "اختر الخيارات",
+    "selectPrefix": "اختر {title}"
+  },
+  "Cart": {
+    "cart": "عربة التسوق",
+    "item": "المنتج",
+    "quantity": "الكمية",
+    "price": "السعر",
+    "total": "الإجمالي",
+    "remove": "إزالة",
+    "quantityValue": "الكمية: {count}",
+    "subtotal": "المجموع الفرعي",
+    "exclTaxes": "(بدون الضريبة)",
+    "goToCart": "الذهاب إلى السلة",
+    "emptyCart": "عربة التسوق فارغة.",
+    "emptyCartBody": "لا يوجد لديك أي عناصر في السلة بعد. استخدم الرابط أدناه لبدء تصفح منتجاتنا.",
+    "goToAllProducts": "الذهاب إلى جميع المنتجات",
+    "exploreProducts": "استكشف المنتجات"
+  },
+  "CartTotals": {
+    "subtotalExclShipping": "المجموع الفرعي (بدون الشحن والضريبة)",
+    "shipping": "الشحن",
+    "discount": "الخصم",
+    "taxes": "الضريبة",
+    "total": "الإجمالي"
+  },
+  "Auth": {
+    "welcomeBack": "مرحبًا بعودتك",
+    "signInPrompt": "سجّل الدخول للاستمتاع بتجربة تسوق محسّنة.",
+    "verificationSentLogin": "أرسلنا رابط تحقق إلى {email}. يرجى تأكيد بريدك الإلكتروني، ثم تسجيل الدخول.",
+    "email": "البريد الإلكتروني",
+    "emailValidation": "أدخل عنوان بريد إلكتروني صحيح.",
+    "password": "كلمة المرور",
+    "signIn": "تسجيل الدخول",
+    "notAMember": "لست عضوًا؟",
+    "joinUs": "انضم إلينا",
+    "becomeMember": "كن عضوًا في {storeName}",
+    "createProfilePrompt": "أنشئ ملف العضوية الخاص بك في {storeName}، واحصل على تجربة تسوق محسّنة.",
+    "verificationSentRegister": "أرسلنا رابط تحقق إلى {email}. يرجى التحقق من بريدك الوارد لتأكيد بريدك الإلكتروني، ثم تسجيل الدخول.",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "phone": "الهاتف",
+    "agreeToTerms": "بإنشائك حسابًا، فإنك توافق على <privacyLink>سياسة الخصوصية</privacyLink> و<termsLink>شروط الاستخدام</termsLink> الخاصة بـ {storeName}.",
+    "join": "انضمام",
+    "alreadyMember": "عضو بالفعل؟"
+  },
+  "AccountNav": {
+    "hello": "مرحبًا {firstName}",
+    "overview": "نظرة عامة",
+    "profile": "الملف الشخصي",
+    "addresses": "العناوين",
+    "orders": "الطلبات",
+    "logOut": "تسجيل الخروج"
+  },
+  "AccountLayout": {
+    "gotQuestions": "لديك أسئلة؟",
+    "faqBody": "يمكنك العثور على الأسئلة الشائعة وإجاباتها في صفحة خدمة العملاء لدينا.",
+    "customerService": "خدمة العملاء"
+  },
+  "Address": {
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "address": "العنوان",
+    "company": "الشركة",
+    "postalCode": "الرمز البريدي",
+    "city": "المدينة",
+    "stateProvince": "المحافظة / الولاية",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "emailValidation": "أدخل عنوان بريد إلكتروني صحيح.",
+    "shippingAddress": "عنوان الشحن",
+    "billingAddress": "عنوان الفوترة",
+    "billingAddressLabel": "عنوان الفوترة",
+    "savedAddressPrompt": "مرحبًا {firstName}، هل تريد استخدام أحد عناوينك المحفوظة؟",
+    "sameAsBilling": "عنوان الفوترة مطابق لعنوان الشحن",
+    "sameAsBillingSummary": "عنوان الفوترة والتسليم متطابقان.",
+    "contact": "التواصل",
+    "edit": "تعديل",
+    "continueToDelivery": "المتابعة إلى التوصيل",
+    "chooseAddress": "اختر عنوانًا"
+  },
+  "Delivery": {
+    "delivery": "التوصيل",
+    "shippingMethod": "طريقة الشحن",
+    "shippingMethodPrompt": "كيف تود أن يتم توصيل طلبك",
+    "pickUpOrder": "استلام طلبك",
+    "store": "المتجر",
+    "chooseStoreNearYou": "اختر متجرًا قريبًا منك",
+    "method": "الطريقة",
+    "continueToPayment": "المتابعة إلى الدفع",
+    "edit": "تعديل"
+  },
+  "Payment": {
+    "payment": "الدفع",
+    "paymentMethod": "طريقة الدفع",
+    "paymentDetails": "تفاصيل الدفع",
+    "giftCard": "بطاقة هدايا",
+    "anotherStepWillAppear": "ستظهر خطوة أخرى",
+    "enterCardDetails": "أدخل تفاصيل البطاقة",
+    "continueToReview": "المتابعة إلى المراجعة",
+    "selectPaymentMethod": "اختر طريقة الدفع",
+    "placeOrder": "إتمام الطلب",
+    "edit": "تعديل"
+  },
+  "Review": {
+    "review": "مراجعة",
+    "disclaimer": "بالنقر على زر إتمام الطلب، فإنك تؤكد أنك قرأت وفهمت ووافقت على شروط الاستخدام وشروط البيع وسياسة الإرجاع الخاصة بنا، وتقر بأنك قرأت سياسة الخصوصية الخاصة بـ {storeName}."
+  },
+  "DiscountCode": {
+    "addPromotionCode": "أضف كود خصم",
+    "apply": "تطبيق",
+    "promotionsApplied": "أكواد الخصم المطبقة:",
+    "removeDiscount": "إزالة كود الخصم من الطلب"
+  },
+  "CheckoutSummary": {
+    "inYourCart": "في سلتك"
+  }
+}

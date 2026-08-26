@@ -1,0 +1,143 @@
+{
+  "Common": {
+    "storeName": "Cosmetics Store",
+    "account": "Account",
+    "cart": "Cart",
+    "home": "Home",
+    "store": "Store",
+    "menu": "Menu",
+    "language": "Language:",
+    "copyright": "© {year} {storeName}. All rights reserved."
+  },
+  "Footer": {
+    "categories": "Categories",
+    "collections": "Collections",
+    "links": "Links"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you tried to access does not exist.",
+    "goToFrontpage": "Go to frontpage"
+  },
+  "ProductActions": {
+    "selectVariant": "Select variant",
+    "outOfStock": "Out of stock",
+    "addToCart": "Add to cart",
+    "selectOptions": "Select Options",
+    "selectPrefix": "Select {title}"
+  },
+  "Cart": {
+    "cart": "Cart",
+    "item": "Item",
+    "quantity": "Quantity",
+    "price": "Price",
+    "total": "Total",
+    "remove": "Remove",
+    "quantityValue": "Quantity: {count}",
+    "subtotal": "Subtotal",
+    "exclTaxes": "(excl. taxes)",
+    "goToCart": "Go to cart",
+    "emptyCart": "Your shopping bag is empty.",
+    "emptyCartBody": "You have nothing in your cart yet. Use the link below to start browsing our products.",
+    "goToAllProducts": "Go to all products page",
+    "exploreProducts": "Explore products"
+  },
+  "CartTotals": {
+    "subtotalExclShipping": "Subtotal (excl. shipping and taxes)",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "taxes": "Taxes",
+    "total": "Total"
+  },
+  "Auth": {
+    "welcomeBack": "Welcome back",
+    "signInPrompt": "Sign in to access an enhanced shopping experience.",
+    "verificationSentLogin": "We sent a verification link to {email}. Please verify your email, then sign in.",
+    "email": "Email",
+    "emailValidation": "Enter a valid email address.",
+    "password": "Password",
+    "signIn": "Sign in",
+    "notAMember": "Not a member?",
+    "joinUs": "Join us",
+    "becomeMember": "Become a {storeName} Member",
+    "createProfilePrompt": "Create your {storeName} Member profile, and get access to an enhanced shopping experience.",
+    "verificationSentRegister": "We sent a verification link to {email}. Please check your inbox to verify your email, then sign in.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "agreeToTerms": "By creating an account, you agree to the <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Use</termsLink> of {storeName}.",
+    "join": "Join",
+    "alreadyMember": "Already a member?"
+  },
+  "AccountNav": {
+    "hello": "Hello {firstName}",
+    "overview": "Overview",
+    "profile": "Profile",
+    "addresses": "Addresses",
+    "orders": "Orders",
+    "logOut": "Log out"
+  },
+  "AccountLayout": {
+    "gotQuestions": "Got questions?",
+    "faqBody": "You can find frequently asked questions and answers on our customer service page.",
+    "customerService": "Customer Service"
+  },
+  "Address": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "address": "Address",
+    "company": "Company",
+    "postalCode": "Postal code",
+    "city": "City",
+    "stateProvince": "State / Province",
+    "phone": "Phone",
+    "email": "Email",
+    "emailValidation": "Enter a valid email address.",
+    "shippingAddress": "Shipping Address",
+    "billingAddress": "Billing address",
+    "billingAddressLabel": "Billing Address",
+    "savedAddressPrompt": "Hi {firstName}, do you want to use one of your saved addresses?",
+    "sameAsBilling": "Billing address same as shipping address",
+    "sameAsBillingSummary": "Billing and delivery address are the same.",
+    "contact": "Contact",
+    "edit": "Edit",
+    "continueToDelivery": "Continue to delivery",
+    "chooseAddress": "Choose an address"
+  },
+  "Delivery": {
+    "delivery": "Delivery",
+    "shippingMethod": "Shipping method",
+    "shippingMethodPrompt": "How would you like you order delivered",
+    "pickUpOrder": "Pick up your order",
+    "store": "Store",
+    "chooseStoreNearYou": "Choose a store near you",
+    "method": "Method",
+    "continueToPayment": "Continue to payment",
+    "edit": "Edit"
+  },
+  "Payment": {
+    "payment": "Payment",
+    "paymentMethod": "Payment method",
+    "paymentDetails": "Payment details",
+    "giftCard": "Gift card",
+    "anotherStepWillAppear": "Another step will appear",
+    "enterCardDetails": "Enter card details",
+    "continueToReview": "Continue to review",
+    "selectPaymentMethod": "Select a payment method",
+    "placeOrder": "Place order",
+    "edit": "Edit"
+  },
+  "Review": {
+    "review": "Review",
+    "disclaimer": "By clicking the Place Order button, you confirm that you have read, understand and accept our Terms of Use, Terms of Sale and Returns Policy and acknowledge that you have read the Privacy Policy of {storeName}."
+  },
+  "DiscountCode": {
+    "addPromotionCode": "Add Promotion Code(s)",
+    "apply": "Apply",
+    "promotionsApplied": "Promotion(s) applied:",
+    "removeDiscount": "Remove discount code from order"
+  },
+  "CheckoutSummary": {
+    "inYourCart": "In your Cart"
+  }
+}

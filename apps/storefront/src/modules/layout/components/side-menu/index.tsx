@@ -10,14 +10,7 @@ import { Fragment } from "react"
 import CountrySelect from "../country-select"
 import LanguageSelect from "../language-select"
 import { Locale } from "@lib/data/locales"
-
-
-const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Account: "/account",
-  Cart: "/cart",
-}
+import { useTranslations } from "next-intl"
 
 type SideMenuProps = {
   regions: HttpTypes.StoreRegion[] | null
@@ -28,6 +21,14 @@ type SideMenuProps = {
 const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
   const countryToggleState = useToggleState()
   const languageToggleState = useToggleState()
+  const t = useTranslations("Common")
+
+  const SideMenuItems = {
+    [t("home")]: "/",
+    [t("store")]: "/store",
+    [t("account")]: "/account",
+    [t("cart")]: "/cart",
+  }
 
   return (
     <div className="h-full">
@@ -40,7 +41,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                   data-testid="nav-menu-button"
                   className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
                 >
-                  Menu
+                  {t("menu")}
                 </Popover.Button>
               </div>
 
@@ -62,7 +63,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                 leaveFrom="opacity-100 backdrop-blur-2xl"
                 leaveTo="opacity-0"
               >
-                <PopoverPanel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
+                <PopoverPanel className="flex flex-col absolute w-full pe-4 sm:pe-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
                   <div
                     data-testid="nav-menu-popup"
                     className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
@@ -102,7 +103,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           />
                           <ArrowRightMini
                             className={clx(
-                              "transition-transform duration-150",
+                              "transition-transform duration-150 rtl:-scale-x-100",
                               languageToggleState.state ? "-rotate-90" : ""
                             )}
                           />
@@ -121,14 +122,16 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                         )}
                         <ArrowRightMini
                           className={clx(
-                            "transition-transform duration-150",
+                            "transition-transform duration-150 rtl:-scale-x-100",
                             countryToggleState.state ? "-rotate-90" : ""
                           )}
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
-                        reserved.
+                        {t("copyright", {
+                          year: new Date().getFullYear(),
+                          storeName: t("storeName"),
+                        })}
                       </Text>
                     </div>
                   </div>
