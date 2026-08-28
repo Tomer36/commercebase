@@ -36,6 +36,16 @@ const AccountNav = ({
     await signout(countryCode)
   }
 
+  const fullName = [customer?.first_name, customer?.last_name]
+    .filter(Boolean)
+    .join(" ")
+
+  const initials =
+    [customer?.first_name?.[0], customer?.last_name?.[0]]
+      .filter(Boolean)
+      .join("")
+      .toUpperCase() || customer?.email?.[0]?.toUpperCase()
+
   return (
     <div>
       <div className="small:hidden" data-testid="mobile-account-nav">
@@ -52,8 +62,22 @@ const AccountNav = ({
           </LocalizedClientLink>
         ) : (
           <>
-            <div className="text-xl-semi mb-4 px-8">
-              {t("hello", { firstName: customer?.first_name ?? "" })}
+            <div className="flex items-center gap-x-4 mb-6 px-8">
+              {initials && (
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-accent-soft text-xl-semi text-accent">
+                  {initials}
+                </div>
+              )}
+              <div className="flex min-w-0 flex-col">
+                <span className="text-xl-semi truncate">
+                  {fullName || t("hello", { firstName: customer?.first_name ?? "" })}
+                </span>
+                {!!fullName && customer?.email && (
+                  <span className="truncate text-small-regular text-gray-500">
+                    {customer.email}
+                  </span>
+                )}
+              </div>
             </div>
             <div className="text-base-regular">
               <ul>
@@ -119,21 +143,18 @@ const AccountNav = ({
                     />
                   </li>
                 )}
-                <li>
-                  <button
-                    type="button"
-                    className="flex items-center justify-between py-4 border-b border-gray-200 px-8 w-full"
-                    onClick={handleLogout}
-                    data-testid="logout-button"
-                  >
-                    <div className="flex items-center gap-x-2">
-                      <ArrowRightOnRectangle />
-                      <span>{t("logOut")}</span>
-                    </div>
-                    <ChevronDown className="transform -rotate-90 rtl:rotate-90" />
-                  </button>
-                </li>
               </ul>
+            </div>
+            <div className="px-8 pt-6">
+              <button
+                type="button"
+                className="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-gray-50 font-medium text-gray-900 transition-colors duration-150 hover:bg-gray-100 active:scale-[0.98]"
+                onClick={handleLogout}
+                data-testid="logout-button"
+              >
+                <ArrowRightOnRectangle width={20} height={20} />
+                <span>{t("logOut")}</span>
+              </button>
             </div>
           </>
         )}

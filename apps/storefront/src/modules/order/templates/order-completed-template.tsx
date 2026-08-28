@@ -1,3 +1,4 @@
+import { CheckCircleSolid } from "@medusajs/icons"
 import { Heading } from "@modules/common/components/ui"
 import { cookies as nextCookies } from "next/headers"
 
@@ -31,13 +32,18 @@ export default async function OrderCompletedTemplate({
           className="flex flex-col gap-4 max-w-4xl h-full bg-white w-full py-10"
           data-testid="order-complete-container"
         >
-          <Heading
-            level="h1"
-            className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
-          >
-            <span>{t("thankYou")}</span>
-            <span>{t("placedSuccessfully")}</span>
-          </Heading>
+          <div className="flex flex-col items-center gap-y-3 text-center">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-accent-soft text-accent">
+              <CheckCircleSolid width={40} height={40} />
+            </div>
+            <Heading
+              level="h1"
+              className="flex flex-col gap-y-1 text-ui-fg-base text-3xl mb-4"
+            >
+              <span>{t("thankYou")}</span>
+              <span>{t("placedSuccessfully")}</span>
+            </Heading>
+          </div>
           <OrderDetails order={order} />
           <Heading level="h2" className="flex flex-row text-3xl-regular">
             {t("summary")}

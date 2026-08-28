@@ -99,6 +99,7 @@
     "lastName": "שם משפחה",
     "address": "כתובת",
     "company": "חברה",
+    "addCompany": "+ הוסף שם חברה",
     "postalCode": "מיקוד",
     "city": "עיר",
     "stateProvince": "מחוז / מדינה",
@@ -169,7 +170,8 @@
     "heroTagline": "קנו את מוצרי הטיפוח שלנו",
     "shopNow": "לחנות",
     "welcomeBack": "ברוך שובך, {firstName}",
-    "metaDescription": "קנו מוצרי טיפוח וקוסמטיקה איכותיים, מותאמים לשגרת הטיפוח שלכם."
+    "metaDescription": "קנו מוצרי טיפוח וקוסמטיקה איכותיים, מותאמים לשגרת הטיפוח שלכם.",
+    "seeAll": "לכל המוצרים"
   },
   "RelatedProducts": {
     "heading": "מוצרים קשורים",

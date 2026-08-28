@@ -33,6 +33,10 @@ const ShippingAddress = ({
     email: cart?.email || "",
   })
 
+  const [showCompany, setShowCompany] = useState(
+    !!cart?.shipping_address?.company
+  )
+
   const countriesInRegion = useMemo(
     () => cart?.region?.countries?.map((c) => c.iso_2),
     [cart?.region]
@@ -114,25 +118,27 @@ const ShippingAddress = ({
           />
         </Container>
       )}
-      <div className="grid grid-cols-2 gap-4">
-        <Input
-          label={t("firstName")}
-          name="shipping_address.first_name"
-          autoComplete="given-name"
-          value={formData["shipping_address.first_name"]}
-          onChange={handleChange}
-          required
-          data-testid="shipping-first-name-input"
-        />
-        <Input
-          label={t("lastName")}
-          name="shipping_address.last_name"
-          autoComplete="family-name"
-          value={formData["shipping_address.last_name"]}
-          onChange={handleChange}
-          required
-          data-testid="shipping-last-name-input"
-        />
+      <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-2 gap-4">
+          <Input
+            label={t("firstName")}
+            name="shipping_address.first_name"
+            autoComplete="given-name"
+            value={formData["shipping_address.first_name"]}
+            onChange={handleChange}
+            required
+            data-testid="shipping-first-name-input"
+          />
+          <Input
+            label={t("lastName")}
+            name="shipping_address.last_name"
+            autoComplete="family-name"
+            value={formData["shipping_address.last_name"]}
+            onChange={handleChange}
+            required
+            data-testid="shipping-last-name-input"
+          />
+        </div>
         <Input
           label={t("address")}
           name="shipping_address.address_1"
@@ -142,32 +148,26 @@ const ShippingAddress = ({
           required
           data-testid="shipping-address-input"
         />
-        <Input
-          label={t("company")}
-          name="shipping_address.company"
-          value={formData["shipping_address.company"]}
-          onChange={handleChange}
-          autoComplete="organization"
-          data-testid="shipping-company-input"
-        />
-        <Input
-          label={t("postalCode")}
-          name="shipping_address.postal_code"
-          autoComplete="postal-code"
-          value={formData["shipping_address.postal_code"]}
-          onChange={handleChange}
-          required
-          data-testid="shipping-postal-code-input"
-        />
-        <Input
-          label={t("city")}
-          name="shipping_address.city"
-          autoComplete="address-level2"
-          value={formData["shipping_address.city"]}
-          onChange={handleChange}
-          required
-          data-testid="shipping-city-input"
-        />
+        <div className="grid grid-cols-2 gap-4">
+          <Input
+            label={t("postalCode")}
+            name="shipping_address.postal_code"
+            autoComplete="postal-code"
+            value={formData["shipping_address.postal_code"]}
+            onChange={handleChange}
+            required
+            data-testid="shipping-postal-code-input"
+          />
+          <Input
+            label={t("city")}
+            name="shipping_address.city"
+            autoComplete="address-level2"
+            value={formData["shipping_address.city"]}
+            onChange={handleChange}
+            required
+            data-testid="shipping-city-input"
+          />
+        </div>
         <CountrySelect
           name="shipping_address.country_code"
           autoComplete="country"
@@ -185,6 +185,25 @@ const ShippingAddress = ({
           onChange={handleChange}
           data-testid="shipping-province-input"
         />
+        {showCompany ? (
+          <Input
+            label={t("company")}
+            name="shipping_address.company"
+            value={formData["shipping_address.company"]}
+            onChange={handleChange}
+            autoComplete="organization"
+            data-testid="shipping-company-input"
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setShowCompany(true)}
+            className="self-start text-small-regular text-accent transition-opacity hover:opacity-70"
+            data-testid="shipping-add-company-button"
+          >
+            {t("addCompany")}
+          </button>
+        )}
       </div>
       <div className="my-8">
         <Checkbox

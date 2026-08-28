@@ -38,10 +38,13 @@ export default async function ProductPreview({
     : false
 
   return (
-    <div data-testid="product-wrapper">
+    <div
+      data-testid="product-wrapper"
+      className="group overflow-hidden rounded-large border border-gray-200 bg-white transition-colors duration-150 hover:border-accent"
+    >
       <LocalizedClientLink
         href={`/products/${product.handle}`}
-        className="group block active:scale-[0.98] transition-transform duration-150"
+        className="block active:scale-[0.98] transition-transform duration-150"
       >
         <Thumbnail
           thumbnail={product.thumbnail}
@@ -49,9 +52,10 @@ export default async function ProductPreview({
           size="full"
           isFeatured={isFeatured}
           alt={product.title}
+          className="rounded-none border-0"
         />
       </LocalizedClientLink>
-      <div className="mt-3 flex items-start justify-between gap-2">
+      <div className="flex items-end justify-between gap-2 p-3">
         <LocalizedClientLink
           href={`/products/${product.handle}`}
           className="flex flex-col gap-y-1 min-w-0"

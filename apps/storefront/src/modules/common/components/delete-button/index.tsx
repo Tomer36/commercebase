@@ -29,11 +29,18 @@ const DeleteButton = ({
       )}
     >
       <button
-        className="flex gap-x-1 text-gray-500 hover:text-black cursor-pointer"
+        type="button"
+        aria-label="Remove item"
+        className="flex h-9 w-9 items-center justify-center gap-x-1 rounded-rounded text-gray-500 transition-all duration-150 ease-out hover:bg-gray-50 hover:text-black active:scale-90 disabled:opacity-50"
         onClick={() => handleDelete(id)}
+        disabled={isDeleting}
       >
-        {isDeleting ? <Spinner className="animate-spin" /> : <Trash />}
-        <span>{children}</span>
+        {isDeleting ? (
+          <Spinner className="animate-spin" width={18} height={18} />
+        ) : (
+          <Trash width={18} height={18} />
+        )}
+        {children && <span>{children}</span>}
       </button>
     </div>
   )

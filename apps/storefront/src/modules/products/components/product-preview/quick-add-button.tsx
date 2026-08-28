@@ -8,7 +8,7 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 
 const buttonClassName =
-  "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground transition-all duration-150 ease-out hover:opacity-90 active:scale-90 disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+  "flex h-9 w-9 shrink-0 items-center justify-center rounded-rounded bg-accent text-accent-foreground transition-all duration-150 ease-out hover:opacity-90 active:scale-90 disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 
 type QuickAddButtonProps =
   | { variantId: string; inStock: boolean; href?: undefined }

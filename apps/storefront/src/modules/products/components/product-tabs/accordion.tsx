@@ -47,7 +47,7 @@ const Item: React.FC<AccordionItemProps> = ({
     <AccordionPrimitive.Item
       {...props}
       className={clx(
-        "border-grey-20 group border-t last:mb-0 last:border-b",
+        "border-gray-200 group border-t last:mb-0 last:border-b",
         "py-3",
         className
       )}
@@ -88,10 +88,10 @@ Accordion.Item = Item
 
 const MorphingTrigger = () => {
   return (
-    <div className="text-grey-90 hover:bg-grey-5 active:bg-grey-5 active:text-violet-60 focus:border-violet-60 disabled:text-grey-30 bg-transparent disabled:bg-transparent rounded-rounded group relative p-[6px]">
+    <div className="text-gray-700 hover:bg-gray-50 active:bg-gray-50 active:text-accent focus:border-accent disabled:text-gray-300 bg-transparent disabled:bg-transparent rounded-rounded group relative p-[6px] transition-colors duration-150">
       <div className="h-5 w-5">
-        <span className="bg-grey-50 rounded-circle group-radix-state-open:rotate-90 absolute inset-y-[31.75%] start-[48%] end-1/2 w-[1.5px] duration-300" />
-        <span className="bg-grey-50 rounded-circle group-radix-state-open:rotate-90 group-radix-state-open:start-1/2 group-radix-state-open:end-1/2 absolute inset-x-[31.75%] top-[48%] bottom-1/2 h-[1.5px] duration-300" />
+        <span className="bg-gray-700 rounded-circle group-radix-state-open:rotate-90 absolute inset-y-[31.75%] start-[48%] end-1/2 w-[1.5px] duration-300" />
+        <span className="bg-gray-700 rounded-circle group-radix-state-open:rotate-90 group-radix-state-open:start-1/2 group-radix-state-open:end-1/2 absolute inset-x-[31.75%] top-[48%] bottom-1/2 h-[1.5px] duration-300" />
       </div>
     </div>
   )

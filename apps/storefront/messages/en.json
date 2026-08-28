@@ -99,6 +99,7 @@
     "lastName": "Last name",
     "address": "Address",
     "company": "Company",
+    "addCompany": "+ Add company name",
     "postalCode": "Postal code",
     "city": "City",
     "stateProvince": "State / Province",
@@ -169,7 +170,8 @@
     "heroTagline": "Shop our skincare essentials",
     "shopNow": "Shop Now",
     "welcomeBack": "Welcome back, {firstName}",
-    "metaDescription": "Shop skincare and cosmetics essentials, curated for your routine."
+    "metaDescription": "Shop skincare and cosmetics essentials, curated for your routine.",
+    "seeAll": "See all"
   },
   "RelatedProducts": {
     "heading": "Related products",

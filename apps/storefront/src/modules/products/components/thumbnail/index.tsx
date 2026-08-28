@@ -30,11 +30,11 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <Container
       className={twMerge(clsx(
-        "relative w-full overflow-hidden p-0 bg-ui-bg-subtle shadow-sm rounded-large transition-shadow ease-in-out duration-150 group-hover:shadow-md",
+        "relative w-full overflow-hidden p-0 bg-ui-bg-subtle border border-gray-200 rounded-large transition-colors duration-150 group-hover:border-accent",
         className,
         {
           "aspect-[11/14]": isFeatured,
-          "aspect-[4/3]": !isFeatured && size !== "square",
+          "aspect-[4/5]": !isFeatured && size !== "square",
           "aspect-[1/1]": size === "square",
           "w-[180px]": size === "small",
           "w-[290px]": size === "medium",
