@@ -5,18 +5,26 @@
     "cart": "Cart",
     "home": "Home",
     "store": "Store",
+    "orders": "Orders",
     "menu": "Menu",
+    "contactUs": "Contact us",
     "language": "Language:",
-    "copyright": "© {year} {storeName}. All rights reserved."
+    "copyright": "© {year} {storeName}. All rights reserved.",
+    "backToShoppingCart": "Back to shopping cart",
+    "back": "Back"
   },
   "Footer": {
     "categories": "Categories",
     "collections": "Collections",
-    "links": "Links"
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "accessibilityStatement": "Accessibility Statement"
   },
   "NotFound": {
     "title": "Page not found",
     "body": "The page you tried to access does not exist.",
+    "cartBody": "The cart you tried to access does not exist. Clear your cookies and try again.",
     "goToFrontpage": "Go to frontpage"
   },
   "ProductActions": {
@@ -24,7 +32,9 @@
     "outOfStock": "Out of stock",
     "addToCart": "Add to cart",
     "selectOptions": "Select Options",
-    "selectPrefix": "Select {title}"
+    "selectPrefix": "Select {title}",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity"
   },
   "Cart": {
     "cart": "Cart",
@@ -40,7 +50,9 @@
     "emptyCart": "Your shopping bag is empty.",
     "emptyCartBody": "You have nothing in your cart yet. Use the link below to start browsing our products.",
     "goToAllProducts": "Go to all products page",
-    "exploreProducts": "Explore products"
+    "exploreProducts": "Explore products",
+    "summary": "Summary",
+    "goToCheckout": "Go to checkout"
   },
   "CartTotals": {
     "subtotalExclShipping": "Subtotal (excl. shipping and taxes)",
@@ -125,7 +137,8 @@
     "continueToReview": "Continue to review",
     "selectPaymentMethod": "Select a payment method",
     "placeOrder": "Place order",
-    "edit": "Edit"
+    "edit": "Edit",
+    "paidAt": "{amount} paid at {date}"
   },
   "Review": {
     "review": "Review",
@@ -139,5 +152,256 @@
   },
   "CheckoutSummary": {
     "inYourCart": "In your Cart"
+  },
+  "Store": {
+    "searchPlaceholder": "Search products...",
+    "allCategories": "All",
+    "options": "Options",
+    "optionFallback": "Option",
+    "metaTitle": "Shop All Products",
+    "metaDescription": "Browse our full range of skincare and cosmetics products.",
+    "noResultsTitle": "No products found",
+    "noResultsBody": "Try adjusting your search or filters.",
+    "clearSearch": "Clear search"
+  },
+  "Home": {
+    "newArrivals": "New Arrivals",
+    "heroTagline": "Shop our skincare essentials",
+    "shopNow": "Shop Now",
+    "welcomeBack": "Welcome back, {firstName}",
+    "metaDescription": "Shop skincare and cosmetics essentials, curated for your routine."
+  },
+  "RelatedProducts": {
+    "heading": "Related products",
+    "body": "You might also want to check out these products."
+  },
+  "ProductTabs": {
+    "productInformation": "Product Information",
+    "shippingReturns": "Shipping & Returns",
+    "material": "Material",
+    "countryOfOrigin": "Country of origin",
+    "type": "Type",
+    "weight": "Weight",
+    "dimensions": "Dimensions",
+    "fastDelivery": "Fast delivery",
+    "fastDeliveryBody": "Your package will arrive in 3-5 business days at your pick up location or in the comfort of your home.",
+    "simpleExchanges": "Simple exchanges",
+    "simpleExchangesBody": "Is the fit not quite right? No worries, we will exchange your product for a new one.",
+    "easyReturns": "Easy returns",
+    "easyReturnsBody": "Just return your product and we will refund your money. No questions asked, we will do our best to make sure your return is hassle-free."
+  },
+  "CartMismatchBanner": {
+    "transferFailed": "Something went wrong when we tried to transfer your cart",
+    "runTransferAgain": "Run transfer again",
+    "transferring": "Transferring.."
+  },
+  "SignInPrompt": {
+    "alreadyHaveAccount": "Already have an account?",
+    "betterExperience": "Sign in for a better experience."
+  },
+  "Price": {
+    "from": "From ",
+    "original": "Original: "
+  },
+  "SortProducts": {
+    "sortBy": "Sort by",
+    "latestArrivals": "Latest Arrivals",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low"
+  },
+  "FreeShipping": {
+    "unlocked": "Free Shipping unlocked!",
+    "unlock": "Unlock Free Shipping",
+    "remaining": "Only {amount} away",
+    "viewCart": "View cart",
+    "viewProducts": "View products"
+  },
+  "AddressForm": {
+    "newAddress": "New address",
+    "addAddress": "Add address",
+    "editAddress": "Edit address",
+    "cancel": "Cancel",
+    "save": "Save",
+    "remove": "Remove",
+    "apartmentSuite": "Apartment, suite, etc."
+  },
+  "AccountInfo": {
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "errorOccurred": "An error occurred, please try again",
+    "updatedSuccessfully": "{label} updated successfully",
+    "saveChanges": "Save changes"
+  },
+  "Profile": {
+    "name": "Name",
+    "password": "Password",
+    "passwordNotShown": "The password is not shown for security reasons",
+    "oldPassword": "Old password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "noBillingAddress": "No billing address"
+  },
+  "Overview": {
+    "hello": "Hello {firstName}",
+    "signedInAs": "Signed in as:",
+    "profile": "Profile",
+    "completed": "Completed",
+    "addresses": "Addresses",
+    "saved": "Saved",
+    "recentOrders": "Recent orders",
+    "datePlaced": "Date placed",
+    "orderNumber": "Order number",
+    "totalAmount": "Total amount",
+    "goToOrder": "Go to order #{id}",
+    "noRecentOrders": "No recent orders"
+  },
+  "AccountPages": {
+    "addressesTitle": "Shipping Addresses",
+    "addressesBody": "View and update your shipping addresses, you can add as many as you like. Saving your addresses will make them available during checkout.",
+    "ordersTitle": "Orders",
+    "ordersBody": "View your previous orders and their status. You can also create returns or exchanges for your orders if needed.",
+    "profileTitle": "Profile",
+    "profileBody": "View and update your profile information, including your name, email, and phone number. You can also update your billing address, or change your password."
+  },
+  "OrderCard": {
+    "items": "items",
+    "item": "item",
+    "more": "more",
+    "seeDetails": "See details"
+  },
+  "OrderOverview": {
+    "nothingToSeeHere": "Nothing to see here",
+    "noOrdersBody": "You do not have any orders yet, let us change that :)",
+    "continueShopping": "Continue shopping"
+  },
+  "OrderConfirmation": {
+    "thankYou": "Thank you!",
+    "placedSuccessfully": "Your order was placed successfully.",
+    "summary": "Summary"
+  },
+  "OrderDetailsTemplate": {
+    "title": "Order details",
+    "backToOverview": "Back to overview"
+  },
+  "OrderDetails": {
+    "confirmationSentTo": "We have sent the order confirmation details to",
+    "orderDate": "Order date:",
+    "orderNumber": "Order number:",
+    "orderStatus": "Order status:",
+    "paymentStatus": "Payment status:"
+  },
+  "OrderSummary": {
+    "title": "Order Summary",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "shipping": "Shipping",
+    "taxes": "Taxes",
+    "total": "Total"
+  },
+  "ShippingDetails": {
+    "delivery": "Delivery",
+    "shippingAddress": "Shipping Address",
+    "contact": "Contact",
+    "method": "Method"
+  },
+  "Help": {
+    "needHelp": "Need help?",
+    "contact": "Contact",
+    "returnsExchanges": "Returns & Exchanges"
+  },
+  "VerifyAccount": {
+    "title": "Email verification",
+    "verifying": "Verifying your email...",
+    "verified": "Your email is verified. You can now sign in to your account.",
+    "invalidOrExpired": "This verification link is invalid or has expired. Sign in to receive a new verification email.",
+    "goToSignIn": "Go to sign in"
+  },
+  "TransferRequestForm": {
+    "orderTransfers": "Order transfers",
+    "cantFindOrder": "Can't find the order you are looking for?",
+    "connectOrder": "Connect an order to your account.",
+    "orderId": "Order ID",
+    "requestTransfer": "Request transfer",
+    "transferRequested": "Transfer for order {id} requested",
+    "transferEmailSent": "Transfer request email sent to {email}"
+  },
+  "TransferActions": {
+    "acceptedSuccess": "Order transferred successfully!",
+    "declinedSuccess": "Order transfer declined successfully!",
+    "acceptTransfer": "Accept transfer",
+    "declineTransfer": "Decline transfer"
+  },
+  "TransferPage": {
+    "acceptedTitle": "Order transferred!",
+    "acceptedBody": "Order {id} has been successfully transferred to the new owner.",
+    "acceptError": "There was an error accepting the transfer. Please try again.",
+    "declinedTitle": "Order transfer declined!",
+    "declinedBody": "Transfer of order {id} has been successfully declined.",
+    "declineError": "There was an error declining the transfer. Please try again.",
+    "errorMessage": "Error message: {error}",
+    "requestTitle": "Transfer request for order {id}",
+    "requestBody1": "You have received a request to transfer ownership of your order ({id}). If you agree to this request, you can approve the transfer by clicking the button below.",
+    "requestBody2": "If you accept, the new owner will take over all responsibilities and permissions associated with this order.",
+    "requestBody3": "If you do not recognize this request or wish to retain ownership, no further action is required."
+  },
+  "CompanyOverview": {
+    "title": "Company Overview",
+    "openingHours": "Opening Hours",
+    "currentlyOpen": "Currently open",
+    "currentlyClosed": "Currently closed",
+    "closed": "Closed",
+    "hoursRange": "from {from} to {to}",
+    "onlineOrdersHours": "Online Orders Hours",
+    "open24Hours": "Open 24 Hours",
+    "contactDetails": "Contact Details",
+    "address": "Address"
+  },
+  "Days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "Checkout": {
+    "metaTitle": "Checkout",
+    "metaDescription": "Complete your order securely."
+  },
+  "LegalPages": {
+    "privacyPolicyTitle": "Privacy Policy",
+    "termsOfUseTitle": "Terms of Use",
+    "comingSoon": "This page will contain our full policy. Content is coming soon — please contact us if you have questions in the meantime."
+  },
+  "Contact": {
+    "metaTitle": "Contact Us",
+    "title": "Contact Us",
+    "intro": "We'd love to hear from you. Reach out using any of the details below."
+  },
+  "CustomerService": {
+    "metaTitle": "Customer Service",
+    "title": "Customer Service",
+    "intro": "Answers to common questions are coming soon.",
+    "contactPrompt": "Need help sooner? Reach out on our",
+    "contactLink": "Contact page"
+  },
+  "Accessibility": {
+    "openWidget": "Accessibility options",
+    "panelTitle": "Accessibility",
+    "textSize": "Text size",
+    "decreaseText": "Decrease text size",
+    "reset": "Reset",
+    "increaseText": "Increase text size",
+    "highContrast": "High contrast",
+    "underlineLinks": "Underline links",
+    "statementMetaTitle": "Accessibility Statement",
+    "statementTitle": "Accessibility Statement",
+    "statementIntro": "We're working to make this site usable for as many people as possible. Here's what's currently in place:",
+    "statementItemWidget": "An accessibility toolbar (bottom corner of every page) for adjusting text size, enabling high contrast, and underlining links.",
+    "statementItemSemantic": "Semantic HTML structure with labeled form fields and images.",
+    "statementItemRtl": "Full right-to-left layout support for Hebrew and Arabic.",
+    "statementItemKeyboard": "Keyboard-navigable menus, forms, and buttons.",
+    "statementDisclaimer": "This statement describes the measures currently implemented and is not a certified accessibility compliance audit."
   }
 }

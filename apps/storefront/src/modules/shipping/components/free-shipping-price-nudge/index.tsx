@@ -10,6 +10,7 @@ import {
 } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Button, clx } from "@modules/common/components/ui"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { StoreFreeShippingPrice } from "types/global"
 
@@ -141,19 +142,21 @@ function FreeShippingInline({
     remaining_percentage: number
   }
 }) {
+  const t = useTranslations("FreeShipping")
+
   return (
-    <div className="bg-neutral-100 p-2 rounded-lg border">
+    <div className="bg-accent-soft p-2 rounded-large border border-gray-200">
       <div className="space-y-1.5">
-        <div className="flex justify-between text-xs text-neutral-600">
+        <div className="flex justify-between text-xsmall-regular text-gray-600">
           <div>
             {price.target_reached ? (
               <div className="flex items-center gap-1.5">
                 {" "}
                 <CheckCircleSolid className="text-green-500 inline-block" />{" "}
-                Free Shipping unlocked!
+                {t("unlocked")}
               </div>
             ) : (
-              `Unlock Free Shipping`
+              t("unlock")
             )}
           </div>
 
@@ -162,27 +165,25 @@ function FreeShippingInline({
               "opacity-0 invisible": price.target_reached,
             })}
           >
-            Only{" "}
-            <span className="text-neutral-950">
-              {convertToLocale({
+            {t("remaining", {
+              amount: convertToLocale({
                 amount: price.target_remaining,
                 currency_code: cart.currency_code,
-              })}
-            </span>{" "}
-            away
+              }),
+            })}
           </div>
         </div>
         <div className="flex justify-between gap-1">
           <div
             className={clx(
-              "bg-gradient-to-r from-zinc-400 to-zinc-500 h-1 rounded-full max-w-full duration-500 ease-in-out",
+              "bg-accent h-1 rounded-full max-w-full duration-500 ease-in-out",
               {
-                "from-green-400 to-green-500": price.target_reached,
+                "bg-green-500": price.target_reached,
               }
             )}
             style={{ width: `${price.remaining_percentage}%` }}
           ></div>
-          <div className="bg-neutral-300 h-1 rounded-full w-fit flex-grow"></div>
+          <div className="bg-gray-200 h-1 rounded-full w-fit flex-grow"></div>
         </div>
       </div>
     </div>
@@ -196,6 +197,7 @@ function FreeShippingPopup({
   cart: StoreCart
   price: StoreFreeShippingPrice
 }) {
+  const t = useTranslations("FreeShipping")
   const [isClosed, setIsClosed] = useState(false)
 
   return (
@@ -211,25 +213,25 @@ function FreeShippingPopup({
     >
       <div>
         <Button
-          className="rounded-full bg-neutral-900 shadow-none outline-none border-none text-[15px] p-2"
+          className="rounded-full bg-black shadow-none outline-none border-none p-2"
           onClick={() => setIsClosed(true)}
         >
           <XMark />
         </Button>
       </div>
 
-      <div className="w-[400px] bg-black text-white p-6 rounded-lg ">
+      <div className="w-[400px] bg-black text-white p-6 rounded-large">
         <div className="pb-4">
           <div className="space-y-3">
-            <div className="flex justify-between text-[15px] text-neutral-400">
+            <div className="flex justify-between text-base-regular text-gray-400">
               <div>
                 {price.target_reached ? (
                   <div className="flex items-center gap-1.5">
                     <CheckCircleSolid className="text-green-500 inline-block" />{" "}
-                    Free Shipping unlocked!
+                    {t("unlocked")}
                   </div>
                 ) : (
-                  `Unlock Free Shipping`
+                  t("unlock")
                 )}
               </div>
 
@@ -238,44 +240,42 @@ function FreeShippingPopup({
                   "opacity-0 invisible": price.target_reached,
                 })}
               >
-                Only{" "}
-                <span className="text-white">
-                  {convertToLocale({
+                {t("remaining", {
+                  amount: convertToLocale({
                     amount: price.target_remaining,
                     currency_code: cart.currency_code,
-                  })}
-                </span>{" "}
-                away
+                  }),
+                })}
               </div>
             </div>
             <div className="flex justify-between gap-1">
               <div
                 className={clx(
-                  "bg-gradient-to-r from-zinc-400 to-zinc-500 h-1.5 rounded-full max-w-full duration-500 ease-in-out",
+                  "bg-accent h-1.5 rounded-full max-w-full duration-500 ease-in-out",
                   {
-                    "from-green-400 to-green-500": price.target_reached,
+                    "bg-green-500": price.target_reached,
                   }
                 )}
                 style={{ width: `${price.remaining_percentage}%` }}
               ></div>
-              <div className="bg-zinc-600 h-1.5 rounded-full w-fit flex-grow"></div>
+              <div className="bg-gray-600 h-1.5 rounded-full w-fit flex-grow"></div>
             </div>
           </div>
         </div>
 
         <div className="flex gap-3">
           <LocalizedClientLink
-            className="rounded-2xl bg-transparent shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4"
+            className="rounded-full bg-transparent shadow-none outline-none border border-white text-base-regular py-2.5 px-4"
             href="/cart"
           >
-            View cart
+            {t("viewCart")}
           </LocalizedClientLink>
 
           <LocalizedClientLink
-            className="flex-grow rounded-2xl bg-white text-neutral-950 shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4 text-center"
+            className="flex-grow rounded-full bg-white text-black shadow-none outline-none border border-white text-base-regular py-2.5 px-4 text-center"
             href="/store"
           >
-            View products
+            {t("viewProducts")}
           </LocalizedClientLink>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import { EllipseMiniSolid } from "@medusajs/icons"
-import { Label, RadioGroup, Text, clx } from "@modules/common/components/ui"
+import { RadioGroup } from "@modules/common/components/ui"
+import clsx from "clsx"
+
 type FilterRadioGroupProps = {
   title: string
   items: {
@@ -19,39 +20,47 @@ const FilterRadioGroup = ({
   "data-testid": dataTestId,
 }: FilterRadioGroupProps) => {
   return (
-    <div className="flex gap-x-3 flex-col gap-y-3">
-      <Text className="txt-compact-small-plus text-ui-fg-muted">{title}</Text>
-      <RadioGroup data-testid={dataTestId}>
-        {items?.map((i) => (
-          <div
-            key={i.value}
-            className={clx("flex gap-x-2 items-center", {
-              "ml-[-23px]": i.value === value,
-            })}
-          >
-            {i.value === value && <EllipseMiniSolid />}
-            <RadioGroup.Item
-              checked={i.value === value}
-              onChange={() => handleChange(i.value)}
-              className="hidden peer"
-              id={i.value}
-              value={i.value}
-            />
-            <Label
+    <div className="flex flex-col gap-y-3">
+      <span className="text-sm font-medium text-black">{title}</span>
+      <RadioGroup data-testid={dataTestId} className="gap-y-2">
+        {items?.map((i) => {
+          const active = i.value === value
+          return (
+            <label
+              key={i.value}
               htmlFor={i.value}
-              className={clx(
-                "!txt-compact-small !transform-none text-ui-fg-subtle hover:cursor-pointer",
-                {
-                  "text-ui-fg-base": i.value === value,
-                }
-              )}
-              data-testid="radio-label"
-              data-active={i.value === value}
+              className="flex cursor-pointer items-center gap-x-2"
             >
-              {i.label}
-            </Label>
-          </div>
-        ))}
+              <span
+                className={clsx(
+                  "flex h-4 w-4 shrink-0 items-center justify-center rounded-full border",
+                  active ? "border-accent" : "border-gray-300"
+                )}
+              >
+                {active && (
+                  <span className="h-2 w-2 rounded-full bg-accent" />
+                )}
+              </span>
+              <RadioGroup.Item
+                checked={active}
+                onChange={() => handleChange(i.value)}
+                className="sr-only"
+                id={i.value}
+                value={i.value}
+              />
+              <span
+                className={clsx(
+                  "text-sm",
+                  active ? "text-black" : "text-gray-500"
+                )}
+                data-testid="radio-label"
+                data-active={active}
+              >
+                {i.label}
+              </span>
+            </label>
+          )
+        })}
       </RadioGroup>
     </div>
   )

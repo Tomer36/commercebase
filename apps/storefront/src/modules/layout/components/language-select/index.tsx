@@ -41,6 +41,13 @@ type LanguageSelectProps = {
   toggleState: StateType
   locales: Locale[]
   currentLocale: string | null
+  /** "pill" = compact code-only trigger (opt-in, for tight header contexts). Default unchanged. */
+  variant?: "row" | "pill"
+  /** Unique per call site so headlessui's generated ids never collide when
+   * this component is mounted more than once on the same page (e.g. the
+   * desktop SideMenu and the mobile AccountNav are both in the DOM at
+   * once on /account). */
+  buttonId: string
 }
 
 /**
@@ -73,27 +80,35 @@ const LanguageSelect = ({
   toggleState,
   locales,
   currentLocale,
+  variant = "row",
+  buttonId,
 }: LanguageSelectProps) => {
-  const [current, setCurrent] = useState<LanguageOption | undefined>(undefined)
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
 
-  const { state, close } = toggleState
+  const { state, close, toggle } = toggleState
   const t = useTranslations("Common")
 
   const options = useMemo(() => {
-    const localeOptions = locales.map((locale) => ({
-      code: locale.code,
-      name: locale.name,
-      localizedName: getLocalizedLanguageName(
-        locale.code,
-        locale.name,
-        currentLocale ?? "en-US"
-      ),
-      countryCode: getCountryCodeFromLocale(locale.code),
-    }))
-    return [DEFAULT_OPTION, ...localeOptions]
-  }, [locales, currentLocale])
+    return locales.map((locale) => {
+      const baseLanguage = locale.code.split(/[-_]/)[0]
+
+      return {
+        code: locale.code,
+        name: locale.name,
+        // Each language shown in its own script (native name), not
+        // translated into whatever language is currently active.
+        localizedName: getLocalizedLanguageName(
+          baseLanguage,
+          locale.name,
+          baseLanguage
+        ),
+        countryCode: getCountryCodeFromLocale(locale.code),
+      }
+    })
+  }, [locales])
+
+  const [current, setCurrent] = useState<LanguageOption | undefined>(undefined)
 
   useEffect(() => {
     if (currentLocale) {
@@ -128,7 +143,21 @@ const LanguageSelect = ({
         }
         disabled={isPending}
       >
-        <ListboxButton className="py-1 w-full">
+        {variant === "pill" ? (
+          <ListboxButton
+            id={buttonId}
+            className="flex h-9 items-center justify-center rounded-full bg-white/20 px-3 text-sm font-medium text-accent-foreground"
+            aria-label={t("language")}
+            onClick={toggle}
+          >
+            {current?.code ? current.code.slice(0, 2).toUpperCase() : "--"}
+          </ListboxButton>
+        ) : (
+        <ListboxButton
+          id={buttonId}
+          className="py-1 w-full"
+          onClick={toggle}
+        >
           <div className="txt-compact-small flex items-start gap-x-2">
             <span>{t("language")}</span>
             {current && (
@@ -149,7 +178,14 @@ const LanguageSelect = ({
             )}
           </div>
         </ListboxButton>
-        <div className="flex relative w-full min-w-[320px]">
+        )}
+        <div
+          className={
+            variant === "pill"
+              ? "relative"
+              : "flex relative w-full min-w-[320px]"
+          }
+        >
           <Transition
             show={state}
             as={Fragment}
@@ -158,7 +194,11 @@ const LanguageSelect = ({
             leaveTo="opacity-0"
           >
             <ListboxOptions
-              className="absolute -bottom-[calc(100%-36px)] start-0 xsmall:start-auto xsmall:end-0 max-h-[442px] overflow-y-scroll z-[900] bg-white drop-shadow-md text-small-regular uppercase text-black no-scrollbar rounded-rounded w-full"
+              className={
+                variant === "pill"
+                  ? "absolute top-full start-0 mt-2 w-56 max-h-[320px] overflow-y-scroll z-[900] bg-white shadow-xl text-small-regular text-black no-scrollbar rounded-rounded"
+                  : "absolute -bottom-[calc(100%-36px)] start-0 xsmall:start-auto xsmall:end-0 max-h-[442px] overflow-y-scroll z-[900] bg-white shadow-xl text-small-regular text-black no-scrollbar rounded-rounded w-full"
+              }
               static
             >
               {options.map((o) => (

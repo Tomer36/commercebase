@@ -7,6 +7,7 @@ import { ChevronDownMini } from "@medusajs/icons"
 import { sdk } from "@lib/config"
 import { HttpTypes } from "@medusajs/types"
 import clsx from "clsx"
+import { useTranslations } from "next-intl"
 
 type OptionsPickerProps = {
   selectedValueIds: string[]
@@ -17,6 +18,7 @@ const OptionsPicker = ({
   selectedValueIds,
   setOptionValueIds,
 }: OptionsPickerProps) => {
+  const t = useTranslations("Store")
   const [options, setOptions] = useState<HttpTypes.StoreProductOption[]>([])
   const [openItems, setOpenItems] = useState<string[]>([])
 
@@ -44,12 +46,6 @@ const OptionsPicker = ({
     fetchOptions()
   }, [])
 
-  useEffect(() => {
-    if (options.length) {
-      setOpenItems(options.map((option) => option.id))
-    }
-  }, [options])
-
   if (!options.length) {
     return null
   }
@@ -57,9 +53,7 @@ const OptionsPicker = ({
   return (
     <div className="flex flex-col gap-y-4">
       <div className="flex items-center justify-between px-1">
-        <span className="txt-compact-small-plus text-ui-fg-subtle">
-          Options
-        </span>
+        <span className="text-sm font-medium text-black">{t("options")}</span>
       </div>
       <Accordion.Root
         type="multiple"
@@ -106,16 +100,16 @@ const OptionsPicker = ({
               <Accordion.Header>
                 <Accordion.Trigger className="flex w-full items-center justify-between py-3 text-start">
                   <div className="flex items-center gap-2">
-                    <span className="txt-compact-small-plus text-ui-fg-base">
-                      {option.title || "Option"}
+                    <span className="text-sm font-medium text-black">
+                      {option.title || t("optionFallback")}
                     </span>
-                    <span className="txt-compact-small-plus text-ui-fg-muted">
+                    <span className="text-sm text-gray-400">
                       ({selectedCount})
                     </span>
                   </div>
                   <span
                     className={clsx(
-                      "flex h-7 w-7 items-center justify-center text-ui-fg-muted transition-transform duration-150",
+                      "flex h-7 w-7 items-center justify-center text-gray-400 transition-transform duration-150",
                       {
                         "rotate-180": isOpen,
                       }
@@ -133,15 +127,13 @@ const OptionsPicker = ({
                     return (
                       <button
                         key={value.id}
+                        type="button"
                         onClick={() => toggleValue(value.id)}
                         className={clsx(
-                          "border-ui-border-base border text-small-regular h-10 rounded-rounded px-3 flex items-center transition-colors duration-150",
-                          {
-                            "border-ui-border-interactive text-ui-fg-base":
-                              isSelected,
-                            "text-ui-fg-muted hover:text-ui-fg-base":
-                              !isSelected,
-                          }
+                          "h-10 rounded-full border px-4 flex items-center text-sm transition-colors duration-150",
+                          isSelected
+                            ? "border-accent bg-accent text-accent-foreground"
+                            : "border-gray-200 bg-white text-black hover:border-gray-400"
                         )}
                         aria-pressed={isSelected}
                       >

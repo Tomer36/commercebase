@@ -1,28 +1,27 @@
-import { Github } from "@medusajs/icons";
+import { retrieveCustomer } from "@lib/data/customer";
 import { Button, Heading } from "@modules/common/components/ui";
-const Hero = () => {
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import { getTranslations } from "next-intl/server";
+
+const Hero = async () => {
+  const t = await getTranslations("Home");
+  const tCommon = await getTranslations("Common");
+  const customer = await retrieveCustomer().catch(() => null);
+
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Ecommerce Starter Template
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Powered by Medusa and Next.js
-          </Heading>
-        </span>
-        <a href="https://github.com/medusajs/dtc-starter" target="_blank">
-          <Button variant="secondary">
-            View on GitHub <Github />
-          </Button>
-        </a>
+    <div className="w-full border-b border-gray-200 bg-white py-8">
+      <div className="content-container flex flex-col items-center gap-3 text-center">
+        <Heading level="h1" className="text-3xl-semi text-black">
+          {customer?.first_name
+            ? t("welcomeBack", { firstName: customer.first_name })
+            : tCommon("storeName")}
+        </Heading>
+        <Heading level="h2" className="text-large-regular text-gray-500">
+          {t("heroTagline")}
+        </Heading>
+        <LocalizedClientLink href="/store">
+          <Button variant="primary">{t("shopNow")}</Button>
+        </LocalizedClientLink>
       </div>
     </div>
   );

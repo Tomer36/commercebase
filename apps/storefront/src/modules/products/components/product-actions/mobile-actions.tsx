@@ -3,12 +3,12 @@ import { Button, clx } from "@modules/common/components/ui"
 import React, { Fragment, useMemo } from "react"
 
 import useToggleState from "@lib/hooks/use-toggle-state"
-import ChevronDown from "@modules/common/icons/chevron-down"
-import X from "@modules/common/icons/x"
+import { ChevronDown, XMark } from "@medusajs/icons"
 
 import { getProductPrice } from "@lib/util/get-product-price"
 import { useTranslations } from "next-intl"
 import OptionSelect from "./option-select"
+import QuantitySelector from "@modules/products/components/quantity-selector"
 import { HttpTypes } from "@medusajs/types"
 import { isSimpleProduct } from "@lib/util/product"
 
@@ -22,6 +22,9 @@ type MobileActionsProps = {
   isAdding?: boolean
   show: boolean
   optionsDisabled: boolean
+  quantity: number
+  setQuantity: (value: number) => void
+  maxQuantity?: number
 }
 
 const MobileActions: React.FC<MobileActionsProps> = ({
@@ -34,6 +37,9 @@ const MobileActions: React.FC<MobileActionsProps> = ({
   isAdding,
   show,
   optionsDisabled,
+  quantity,
+  setQuantity,
+  maxQuantity,
 }) => {
   const { state, open, close } = useToggleState()
   const t = useTranslations("ProductActions")
@@ -57,7 +63,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
   return (
     <>
       <div
-        className={clx("lg:hidden inset-x-0 bottom-0 fixed z-50", {
+        className={clx("small:hidden inset-x-0 bottom-16 fixed z-50", {
           "pointer-events-none": !show,
         })}
       >
@@ -170,7 +176,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                       className="bg-white w-12 h-12 rounded-full text-ui-fg-base flex justify-center items-center"
                       data-testid="close-modal-button"
                     >
-                      <X />
+                      <XMark />
                     </button>
                   </div>
                   <div className="bg-white px-6 py-12">
@@ -189,6 +195,15 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                             </div>
                           )
                         })}
+                      </div>
+                    )}
+                    {variant && (
+                      <div className="mt-6">
+                        <QuantitySelector
+                          value={quantity}
+                          onChange={setQuantity}
+                          max={maxQuantity}
+                        />
                       </div>
                     )}
                   </div>

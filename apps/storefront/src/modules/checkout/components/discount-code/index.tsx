@@ -6,7 +6,7 @@ import React from "react"
 import { applyPromotions } from "@lib/data/cart"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
-import Trash from "@modules/common/icons/trash"
+import { Trash } from "@medusajs/icons"
 import { useTranslations } from "next-intl"
 import ErrorMessage from "../error-message"
 import { SubmitButton } from "../submit-button"
@@ -118,7 +118,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                     <Text className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pe-1">
                       <span className="truncate" data-testid="discount-code">
                         <Badge
-                          color={promotion.is_automatic ? "green" : "grey"}
+                          color={promotion.is_automatic ? "success" : "neutral"}
                         >
                           {promotion.code}
                         </Badge>{" "}
@@ -158,7 +158,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                         }}
                         data-testid="remove-discount-button"
                       >
-                        <Trash size={14} />
+                        <Trash width={14} height={14} />
                         <span className="sr-only">
                           {t("removeDiscount")}
                         </span>

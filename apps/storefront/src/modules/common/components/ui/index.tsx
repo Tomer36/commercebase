@@ -5,15 +5,23 @@ import {
   HTMLAttributes,
   InputHTMLAttributes,
   LabelHTMLAttributes,
+  ReactNode,
   TableHTMLAttributes,
   TdHTMLAttributes,
   ThHTMLAttributes,
 } from "react"
+import { twMerge } from "tailwind-merge"
 
 // TODO: Add Toaster component back when needed for notifications
 
 // Re-export clsx as clx for compatibility
 export { clsx as clx }
+
+// Single storefront design language: flat black/white/gray with the --accent
+// brand color, no shadows, one generous radius scale (rounded-full for pills
+// and circular controls, rounded-large for cards/panels, rounded-rounded for
+// small form controls/chips) applied everywhere, not just Home/Store/PDP.
+const cx = (...args: Parameters<typeof clsx>) => twMerge(clsx(...args))
 
 // Text Component
 type TextProps = HTMLAttributes<HTMLParagraphElement> & {
@@ -81,9 +89,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled || isLoading}
-        className={clsx(
-          "inline-flex gap-2 items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-          variant === "primary" && "bg-black text-white hover:bg-gray-800",
+        className={cx(
+          "inline-flex gap-2 items-center justify-center rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          variant === "primary" &&
+            "bg-accent text-accent-foreground hover:opacity-90",
           variant === "secondary" &&
             "bg-white text-black border border-gray-200 hover:bg-gray-50",
           variant === "transparent" && "bg-transparent hover:bg-gray-100",
@@ -109,7 +118,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
     return (
       <div
         ref={ref}
-        className={clsx("bg-white rounded-lg p-4", className)}
+        className={cx("bg-white rounded-large p-4", className)}
         {...props}
       >
         {children}
@@ -121,22 +130,20 @@ Container.displayName = "Container"
 
 // Badge Component
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
-  color?: "green" | "red" | "blue" | "orange" | "grey" | "purple"
+  color?: "success" | "error" | "warning" | "neutral"
 }
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ className, color = "grey", children, ...props }, ref) => {
+  ({ className, color = "neutral", children, ...props }, ref) => {
     return (
       <span
         ref={ref}
         className={clsx(
           "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium",
-          color === "green" && "bg-green-100 text-green-700",
-          color === "red" && "bg-red-100 text-red-700",
-          color === "blue" && "bg-blue-100 text-blue-700",
-          color === "orange" && "bg-orange-100 text-orange-700",
-          color === "grey" && "bg-gray-100 text-gray-700",
-          color === "purple" && "bg-purple-100 text-purple-700",
+          color === "success" && "bg-green-100 text-green-700",
+          color === "error" && "bg-red-100 text-red-700",
+          color === "warning" && "bg-amber-100 text-amber-700",
+          color === "neutral" && "bg-gray-100 text-gray-700",
           className
         )}
         {...props}
@@ -178,7 +185,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       <button
         ref={ref}
         className={clsx(
-          "inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2",
+          "inline-flex items-center justify-center rounded-full p-2 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2",
           className
         )}
         {...props}
@@ -211,21 +218,55 @@ Label.displayName = "Label"
 // Input Component
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string
+  startIcon?: ReactNode
+  endIcon?: ReactNode
+  onEndIconClick?: () => void
+  endIconLabel?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, label, ...props }, ref) => {
+  (
+    {
+      className,
+      label,
+      startIcon,
+      endIcon,
+      onEndIconClick,
+      endIconLabel,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div className="flex flex-col gap-1">
         {label && <Label>{label}</Label>}
-        <input
-          ref={ref}
-          className={clsx(
-            "flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-            className
+        <div className="relative flex w-full items-center">
+          {startIcon && (
+            <span className="absolute start-4 flex items-center text-gray-400">
+              {startIcon}
+            </span>
           )}
-          {...props}
-        />
+          <input
+            ref={ref}
+            className={cx(
+              "h-12 w-full rounded-full border border-gray-200 bg-white text-sm text-black placeholder:text-gray-400 transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50",
+              startIcon ? "ps-11" : "ps-4",
+              endIcon ? "pe-11" : "pe-4",
+              className
+            )}
+            {...props}
+          />
+          {endIcon && (
+            <button
+              type="button"
+              onClick={onEndIconClick}
+              aria-label={endIconLabel}
+              className="absolute end-3 flex h-6 w-6 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+            >
+              {endIcon}
+            </button>
+          )}
+        </div>
       </div>
     )
   }

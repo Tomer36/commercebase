@@ -5,23 +5,32 @@ import { clx } from "@modules/common/components/ui"
 import { useParams, usePathname } from "next/navigation"
 
 import { signout } from "@lib/data/customer"
+import { Locale } from "@lib/data/locales"
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import ChevronDown from "@modules/common/icons/chevron-down"
-import MapPin from "@modules/common/icons/map-pin"
-import Package from "@modules/common/icons/package"
-import User from "@modules/common/icons/user"
+import CountrySelect from "@modules/layout/components/country-select"
+import LanguageSelect from "@modules/layout/components/language-select"
+import { ChevronDown, MapPin, Receipt, User } from "@medusajs/icons"
+import useToggleState from "@lib/hooks/use-toggle-state"
 import { useTranslations } from "next-intl"
 
 const AccountNav = ({
   customer,
+  regions,
+  locales,
+  currentLocale,
 }: {
   customer: HttpTypes.StoreCustomer | null
+  regions?: HttpTypes.StoreRegion[] | null
+  locales?: Locale[] | null
+  currentLocale?: string | null
 }) => {
   const route = usePathname()
   const { countryCode } = useParams() as { countryCode: string }
   const t = useTranslations("AccountNav")
   const tCommon = useTranslations("Common")
+  const languageToggleState = useToggleState()
+  const countryToggleState = useToggleState()
 
   const handleLogout = async () => {
     await signout(countryCode)
@@ -37,7 +46,7 @@ const AccountNav = ({
             data-testid="account-main-link"
           >
             <>
-              <ChevronDown className="transform rotate-90" />
+              <ChevronDown className="transform rotate-90 rtl:-rotate-90" />
               <span>{tCommon("account")}</span>
             </>
           </LocalizedClientLink>
@@ -56,10 +65,10 @@ const AccountNav = ({
                   >
                     <>
                       <div className="flex items-center gap-x-2">
-                        <User size={20} />
+                        <User width={20} height={20} />
                         <span>{t("profile")}</span>
                       </div>
-                      <ChevronDown className="transform -rotate-90" />
+                      <ChevronDown className="transform -rotate-90 rtl:rotate-90" />
                     </>
                   </LocalizedClientLink>
                 </li>
@@ -71,10 +80,10 @@ const AccountNav = ({
                   >
                     <>
                       <div className="flex items-center gap-x-2">
-                        <MapPin size={20} />
+                        <MapPin width={20} height={20} />
                         <span>{t("addresses")}</span>
                       </div>
-                      <ChevronDown className="transform -rotate-90" />
+                      <ChevronDown className="transform -rotate-90 rtl:rotate-90" />
                     </>
                   </LocalizedClientLink>
                 </li>
@@ -85,12 +94,31 @@ const AccountNav = ({
                     data-testid="orders-link"
                   >
                     <div className="flex items-center gap-x-2">
-                      <Package size={20} />
+                      <Receipt width={20} height={20} />
                       <span>{t("orders")}</span>
                     </div>
-                    <ChevronDown className="transform -rotate-90" />
+                    <ChevronDown className="transform -rotate-90 rtl:rotate-90" />
                   </LocalizedClientLink>
                 </li>
+                {!!locales?.length && (
+                  <li className="flex items-center justify-between py-4 border-b border-gray-200 px-8">
+                    <LanguageSelect
+                      toggleState={languageToggleState}
+                      locales={locales}
+                      currentLocale={currentLocale ?? null}
+                      buttonId="account-nav-language-select-button"
+                    />
+                  </li>
+                )}
+                {!!regions?.length && (
+                  <li className="flex items-center justify-between py-4 border-b border-gray-200 px-8">
+                    <CountrySelect
+                      toggleState={countryToggleState}
+                      regions={regions}
+                      buttonId="account-nav-country-select-button"
+                    />
+                  </li>
+                )}
                 <li>
                   <button
                     type="button"
@@ -102,7 +130,7 @@ const AccountNav = ({
                       <ArrowRightOnRectangle />
                       <span>{t("logOut")}</span>
                     </div>
-                    <ChevronDown className="transform -rotate-90" />
+                    <ChevronDown className="transform -rotate-90 rtl:rotate-90" />
                   </button>
                 </li>
               </ul>
@@ -153,7 +181,7 @@ const AccountNav = ({
                   {t("orders")}
                 </AccountNavLink>
               </li>
-              <li className="text-grey-700">
+              <li className="text-gray-500">
                 <button
                   type="button"
                   onClick={handleLogout}

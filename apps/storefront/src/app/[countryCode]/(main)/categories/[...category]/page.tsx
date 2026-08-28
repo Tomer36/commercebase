@@ -15,6 +15,7 @@ type Props = {
       sortBy?: SortOptions
       page?: string
       optionValueIds?: string | string[]
+      q?: string
     }
   >
 }
@@ -51,12 +52,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   try {
     const productCategory = await getCategoryByHandle(params.category)
 
-    const title = productCategory.name + " | Medusa Store"
+    const title = `${productCategory.name} | Cosmetics Store`
 
-    const description = productCategory.description ?? `${title} category.`
+    const description =
+      productCategory.description ?? `${productCategory.name} category.`
 
     return {
-      title: `${title} | Medusa Store`,
+      title,
       description,
       alternates: {
         canonical: `${params.category.join("/")}`,
@@ -70,7 +72,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 export default async function CategoryPage(props: Props) {
   const searchParams = await props.searchParams
   const params = await props.params
-  const { sortBy, page } = searchParams
+  const { sortBy, page, q } = searchParams
   const optionValueIds = parseOptionValueIds(searchParams)
 
   const productCategory = await getCategoryByHandle(params.category)
@@ -86,6 +88,7 @@ export default async function CategoryPage(props: Props) {
       page={page}
       countryCode={params.countryCode}
       optionValueIds={optionValueIds}
+      q={q}
     />
   )
 }

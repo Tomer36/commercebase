@@ -6,6 +6,7 @@ import { HttpTypes } from "@medusajs/types"
 import { Button } from "@modules/common/components/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
+import QuantitySelector from "@modules/products/components/quantity-selector"
 import { isEqual } from "lodash"
 import { useTranslations } from "next-intl"
 import { useParams, usePathname, useSearchParams } from "next/navigation"
@@ -40,6 +41,7 @@ export default function ProductActions({
 
   const [options, setOptions] = useState<Record<string, string | undefined>>({})
   const [isAdding, setIsAdding] = useState(false)
+  const [quantity, setQuantity] = useState(1)
   const countryCode = useParams().countryCode as string
 
   // If there is only 1 variant, preselect the options
@@ -118,6 +120,16 @@ export default function ProductActions({
     return false
   }, [selectedVariant])
 
+  // reset quantity when the selected variant changes so a stale quantity
+  // from a previous, higher-stock variant can't be carried over
+  useEffect(() => {
+    setQuantity(1)
+  }, [selectedVariant?.id])
+
+  const maxQuantity = selectedVariant?.manage_inventory
+    ? selectedVariant.inventory_quantity ?? undefined
+    : undefined
+
   const actionsRef = useRef<HTMLDivElement>(null)
 
   const inView = useIntersection(actionsRef, "0px")
@@ -130,7 +142,7 @@ export default function ProductActions({
 
     await addToCart({
       variantId: selectedVariant.id,
-      quantity: 1,
+      quantity,
       countryCode,
     })
 
@@ -164,26 +176,36 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
 
-        <Button
-          onClick={handleAddToCart}
-          disabled={
-            !inStock ||
-            !selectedVariant ||
-            !!disabled ||
-            isAdding ||
-            !isValidVariant
-          }
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
-          data-testid="add-product-button"
-        >
-          {!selectedVariant
-            ? t("selectVariant")
-            : !inStock || !isValidVariant
-            ? t("outOfStock")
-            : t("addToCart")}
-        </Button>
+        <div className="flex items-center gap-x-3">
+          {selectedVariant && (
+            <QuantitySelector
+              value={quantity}
+              onChange={setQuantity}
+              max={maxQuantity}
+              disabled={!!disabled || isAdding}
+            />
+          )}
+          <Button
+            onClick={handleAddToCart}
+            disabled={
+              !inStock ||
+              !selectedVariant ||
+              !!disabled ||
+              isAdding ||
+              !isValidVariant
+            }
+            variant="primary"
+            className="h-12 flex-1"
+            isLoading={isAdding}
+            data-testid="add-product-button"
+          >
+            {!selectedVariant
+              ? t("selectVariant")
+              : !inStock || !isValidVariant
+              ? t("outOfStock")
+              : t("addToCart")}
+          </Button>
+        </div>
         <MobileActions
           product={product}
           variant={selectedVariant}
@@ -194,6 +216,9 @@ export default function ProductActions({
           isAdding={isAdding}
           show={!inView}
           optionsDisabled={!!disabled || isAdding}
+          quantity={quantity}
+          setQuantity={setQuantity}
+          maxQuantity={maxQuantity}
         />
       </div>
     </>

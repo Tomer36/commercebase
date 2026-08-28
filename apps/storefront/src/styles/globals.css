@@ -2,6 +2,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/*
+ * Brand accent tokens — the single place to re-theme this storefront for a
+ * different client store. HSL triplets (no hsl() wrapper) so Tailwind's
+ * "hsl(var(--x) / <alpha-value>)" pattern in tailwind.config.js can still
+ * apply opacity utilities (e.g. bg-accent/10).
+ */
+:root {
+  --accent: 350 45% 70%;
+  --accent-foreground: 0 0% 100%;
+  --accent-soft: 350 60% 96%;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -109,4 +121,36 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+}
+
+/*
+ * Accessibility widget — classes toggled on <html> by
+ * modules/layout/components/accessibility-widget, persisted per-visitor via
+ * localStorage. Kept simple and honest: real, working adjustments, not a
+ * compliance certificate (see the accessibility-statement page).
+ */
+html.a11y-text-scale-1 {
+  font-size: 112.5%;
+}
+
+html.a11y-text-scale-2 {
+  font-size: 125%;
+}
+
+html.a11y-underline-links a {
+  text-decoration: underline !important;
+}
+
+html.a11y-high-contrast body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+html.a11y-high-contrast a,
+html.a11y-high-contrast button {
+  color: #000 !important;
+}
+
+html.a11y-high-contrast * {
+  border-color: #000 !important;
 }

@@ -1,6 +1,7 @@
 import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { HttpTypes } from "@medusajs/types"
+import { getTranslations } from "next-intl/server"
 import Product from "../product-preview"
 
 type RelatedProductsProps = {
@@ -46,14 +47,16 @@ export default async function RelatedProducts({
     return null
   }
 
+  const t = await getTranslations("RelatedProducts")
+
   return (
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
         <span className="text-base-regular text-gray-600 mb-6">
-          Related products
+          {t("heading")}
         </span>
         <p className="text-2xl-regular text-ui-fg-base max-w-lg">
-          You might also want to check out these products.
+          {t("body")}
         </p>
       </div>
 

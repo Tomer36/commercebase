@@ -3,7 +3,7 @@ import { clx } from "@modules/common/components/ui"
 import React, { Fragment } from "react"
 
 import { ModalProvider, useModal } from "@lib/context/modal-context"
-import X from "@modules/common/icons/x"
+import { XMark } from "@medusajs/icons"
 
 type ModalProps = {
   isOpen: boolean
@@ -59,13 +59,13 @@ const Modal = ({
               <Dialog.Panel
                 data-testid={dataTestId}
                 className={clx(
-                  "flex flex-col justify-start w-full transform p-5 text-start align-middle transition-all max-h-[75vh] h-fit",
+                  "flex flex-col justify-start w-full transform p-5 text-start align-middle transition-all max-h-[75vh] h-fit overflow-y-auto",
                   {
                     "max-w-md": size === "small",
                     "max-w-xl": size === "medium",
                     "max-w-3xl": size === "large",
                     "bg-transparent shadow-none": search,
-                    "bg-white shadow-xl border rounded-rounded": !search,
+                    "bg-white shadow-xl border rounded-large": !search,
                   }
                 )}
               >
@@ -87,7 +87,7 @@ const Title: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="text-large-semi">{children}</div>
       <div>
         <button onClick={close} data-testid="close-modal-button">
-          <X size={20} />
+          <XMark width={20} height={20} />
         </button>
       </div>
     </Dialog.Title>

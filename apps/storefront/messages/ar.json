@@ -5,18 +5,26 @@
     "cart": "عربة التسوق",
     "home": "الرئيسية",
     "store": "المتجر",
+    "orders": "الطلبات",
     "menu": "القائمة",
+    "contactUs": "تواصل معنا",
     "language": "اللغة:",
-    "copyright": "© {year} {storeName}. جميع الحقوق محفوظة."
+    "copyright": "© {year} {storeName}. جميع الحقوق محفوظة.",
+    "backToShoppingCart": "العودة إلى عربة التسوق",
+    "back": "رجوع"
   },
   "Footer": {
     "categories": "الفئات",
     "collections": "المجموعات",
-    "links": "روابط"
+    "contact": "تواصل معنا",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfUse": "شروط الاستخدام",
+    "accessibilityStatement": "بيان إمكانية الوصول"
   },
   "NotFound": {
     "title": "الصفحة غير موجودة",
     "body": "الصفحة التي حاولت الوصول إليها غير موجودة.",
+    "cartBody": "عربة التسوق التي حاولت الوصول إليها غير موجودة. امسح ملفات تعريف الارتباط وحاول مرة أخرى.",
     "goToFrontpage": "العودة إلى الصفحة الرئيسية"
   },
   "ProductActions": {
@@ -24,7 +32,9 @@
     "outOfStock": "غير متوفر",
     "addToCart": "أضف إلى السلة",
     "selectOptions": "اختر الخيارات",
-    "selectPrefix": "اختر {title}"
+    "selectPrefix": "اختر {title}",
+    "decreaseQuantity": "إنقاص الكمية",
+    "increaseQuantity": "زيادة الكمية"
   },
   "Cart": {
     "cart": "عربة التسوق",
@@ -40,7 +50,9 @@
     "emptyCart": "عربة التسوق فارغة.",
     "emptyCartBody": "لا يوجد لديك أي عناصر في السلة بعد. استخدم الرابط أدناه لبدء تصفح منتجاتنا.",
     "goToAllProducts": "الذهاب إلى جميع المنتجات",
-    "exploreProducts": "استكشف المنتجات"
+    "exploreProducts": "استكشف المنتجات",
+    "summary": "الملخص",
+    "goToCheckout": "المتابعة إلى الدفع"
   },
   "CartTotals": {
     "subtotalExclShipping": "المجموع الفرعي (بدون الشحن والضريبة)",
@@ -125,7 +137,8 @@
     "continueToReview": "المتابعة إلى المراجعة",
     "selectPaymentMethod": "اختر طريقة الدفع",
     "placeOrder": "إتمام الطلب",
-    "edit": "تعديل"
+    "edit": "تعديل",
+    "paidAt": "تم دفع {amount} في {date}"
   },
   "Review": {
     "review": "مراجعة",
@@ -139,5 +152,256 @@
   },
   "CheckoutSummary": {
     "inYourCart": "في سلتك"
+  },
+  "Store": {
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "allCategories": "الكل",
+    "options": "الخيارات",
+    "optionFallback": "خيار",
+    "metaTitle": "جميع المنتجات",
+    "metaDescription": "تصفحوا مجموعتنا الكاملة من منتجات العناية بالبشرة والتجميل.",
+    "noResultsTitle": "لم يتم العثور على منتجات",
+    "noResultsBody": "حاولوا تعديل البحث أو الفلاتر.",
+    "clearSearch": "مسح البحث"
+  },
+  "Home": {
+    "newArrivals": "وصل حديثًا",
+    "heroTagline": "تسوقي منتجات العناية ببشرتك",
+    "shopNow": "تسوق الآن",
+    "welcomeBack": "مرحبًا بعودتك، {firstName}",
+    "metaDescription": "تسوقوا منتجات العناية بالبشرة والتجميل، المختارة لروتينكم."
+  },
+  "RelatedProducts": {
+    "heading": "منتجات ذات صلة",
+    "body": "قد ترغب أيضًا في تصفح هذه المنتجات."
+  },
+  "ProductTabs": {
+    "productInformation": "معلومات المنتج",
+    "shippingReturns": "الشحن والإرجاع",
+    "material": "الخامة",
+    "countryOfOrigin": "بلد المنشأ",
+    "type": "النوع",
+    "weight": "الوزن",
+    "dimensions": "الأبعاد",
+    "fastDelivery": "توصيل سريع",
+    "fastDeliveryBody": "ستصل شحنتك خلال 3-5 أيام عمل إلى نقطة الاستلام أو إلى راحة منزلك.",
+    "simpleExchanges": "استبدال بسيط",
+    "simpleExchangesBody": "المقاس غير مناسب؟ لا مشكلة، سنستبدل منتجك بآخر جديد.",
+    "easyReturns": "إرجاع سهل",
+    "easyReturnsBody": "فقط أعد منتجك وسنقوم برد أموالك. بدون أي أسئلة - سنبذل قصارى جهدنا لجعل عملية الإرجاع سهلة."
+  },
+  "CartMismatchBanner": {
+    "transferFailed": "حدث خطأ ما أثناء محاولة نقل عربتك",
+    "runTransferAgain": "إعادة محاولة النقل",
+    "transferring": "جارٍ النقل.."
+  },
+  "SignInPrompt": {
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "betterExperience": "سجّل الدخول للحصول على تجربة أفضل."
+  },
+  "Price": {
+    "from": "يبدأ من ",
+    "original": "السعر الأصلي: "
+  },
+  "SortProducts": {
+    "sortBy": "الترتيب حسب",
+    "latestArrivals": "وصل حديثًا",
+    "priceLowToHigh": "السعر: من الأقل إلى الأعلى",
+    "priceHighToLow": "السعر: من الأعلى إلى الأقل"
+  },
+  "FreeShipping": {
+    "unlocked": "تم تفعيل الشحن المجاني!",
+    "unlock": "فعّل الشحن المجاني",
+    "remaining": "باقٍ {amount} فقط",
+    "viewCart": "عرض العربة",
+    "viewProducts": "عرض المنتجات"
+  },
+  "AddressForm": {
+    "newAddress": "عنوان جديد",
+    "addAddress": "إضافة عنوان",
+    "editAddress": "تعديل العنوان",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "remove": "إزالة",
+    "apartmentSuite": "شقة، جناح، إلخ."
+  },
+  "AccountInfo": {
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "errorOccurred": "حدث خطأ، يرجى المحاولة مرة أخرى",
+    "updatedSuccessfully": "تم تحديث {label} بنجاح",
+    "saveChanges": "حفظ التغييرات"
+  },
+  "Profile": {
+    "name": "الاسم",
+    "password": "كلمة المرور",
+    "passwordNotShown": "لا يتم عرض كلمة المرور لأسباب أمنية",
+    "oldPassword": "كلمة المرور الحالية",
+    "newPassword": "كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "noBillingAddress": "لا يوجد عنوان فوترة"
+  },
+  "Overview": {
+    "hello": "مرحبًا {firstName}",
+    "signedInAs": "تم تسجيل الدخول باسم:",
+    "profile": "الملف الشخصي",
+    "completed": "مكتمل",
+    "addresses": "العناوين",
+    "saved": "محفوظة",
+    "recentOrders": "الطلبات الأخيرة",
+    "datePlaced": "تاريخ الطلب",
+    "orderNumber": "رقم الطلب",
+    "totalAmount": "المبلغ الإجمالي",
+    "goToOrder": "الذهاب إلى الطلب #{id}",
+    "noRecentOrders": "لا توجد طلبات حديثة"
+  },
+  "AccountPages": {
+    "addressesTitle": "عناوين الشحن",
+    "addressesBody": "اعرض وحدّث عناوين الشحن الخاصة بك، يمكنك إضافة أي عدد تريده. حفظ عناوينك سيجعلها متاحة أثناء الدفع.",
+    "ordersTitle": "الطلبات",
+    "ordersBody": "اعرض طلباتك السابقة وحالتها. يمكنك أيضًا إنشاء عمليات إرجاع أو استبدال لطلباتك عند الحاجة.",
+    "profileTitle": "الملف الشخصي",
+    "profileBody": "اعرض وحدّث معلومات ملفك الشخصي، بما في ذلك اسمك وبريدك الإلكتروني ورقم هاتفك. يمكنك أيضًا تحديث عنوان الفوترة الخاص بك، أو تغيير كلمة المرور."
+  },
+  "OrderCard": {
+    "items": "عناصر",
+    "item": "عنصر",
+    "more": "المزيد",
+    "seeDetails": "عرض التفاصيل"
+  },
+  "OrderOverview": {
+    "nothingToSeeHere": "لا يوجد شيء هنا",
+    "noOrdersBody": "ليس لديك أي طلبات بعد، دعنا نغيّر ذلك :)",
+    "continueShopping": "متابعة التسوق"
+  },
+  "OrderConfirmation": {
+    "thankYou": "شكرًا لك!",
+    "placedSuccessfully": "تم تقديم طلبك بنجاح.",
+    "summary": "الملخص"
+  },
+  "OrderDetailsTemplate": {
+    "title": "تفاصيل الطلب",
+    "backToOverview": "العودة إلى النظرة العامة"
+  },
+  "OrderDetails": {
+    "confirmationSentTo": "لقد أرسلنا تفاصيل تأكيد الطلب إلى",
+    "orderDate": "تاريخ الطلب:",
+    "orderNumber": "رقم الطلب:",
+    "orderStatus": "حالة الطلب:",
+    "paymentStatus": "حالة الدفع:"
+  },
+  "OrderSummary": {
+    "title": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "discount": "الخصم",
+    "shipping": "الشحن",
+    "taxes": "الضريبة",
+    "total": "الإجمالي"
+  },
+  "ShippingDetails": {
+    "delivery": "التوصيل",
+    "shippingAddress": "عنوان الشحن",
+    "contact": "التواصل",
+    "method": "الطريقة"
+  },
+  "Help": {
+    "needHelp": "هل تحتاج إلى مساعدة؟",
+    "contact": "تواصل معنا",
+    "returnsExchanges": "الإرجاع والاستبدال"
+  },
+  "VerifyAccount": {
+    "title": "التحقق من البريد الإلكتروني",
+    "verifying": "جارٍ التحقق من بريدك الإلكتروني...",
+    "verified": "تم التحقق من بريدك الإلكتروني. يمكنك الآن تسجيل الدخول إلى حسابك.",
+    "invalidOrExpired": "رابط التحقق غير صالح أو منتهي الصلاحية. سجّل الدخول لتلقي رابط تحقق جديد.",
+    "goToSignIn": "الذهاب لتسجيل الدخول"
+  },
+  "TransferRequestForm": {
+    "orderTransfers": "عمليات نقل الطلبات",
+    "cantFindOrder": "لا تجد الطلب الذي تبحث عنه؟",
+    "connectOrder": "اربط طلبًا بحسابك.",
+    "orderId": "رقم الطلب",
+    "requestTransfer": "طلب نقل",
+    "transferRequested": "تم طلب نقل الطلب {id}",
+    "transferEmailSent": "تم إرسال بريد إلكتروني لطلب النقل إلى {email}"
+  },
+  "TransferActions": {
+    "acceptedSuccess": "تم نقل الطلب بنجاح!",
+    "declinedSuccess": "تم رفض نقل الطلب بنجاح!",
+    "acceptTransfer": "قبول النقل",
+    "declineTransfer": "رفض النقل"
+  },
+  "TransferPage": {
+    "acceptedTitle": "تم نقل الطلب!",
+    "acceptedBody": "تم نقل الطلب {id} بنجاح إلى المالك الجديد.",
+    "acceptError": "حدث خطأ أثناء قبول النقل. يرجى المحاولة مرة أخرى.",
+    "declinedTitle": "تم رفض نقل الطلب!",
+    "declinedBody": "تم رفض نقل الطلب {id} بنجاح.",
+    "declineError": "حدث خطأ أثناء رفض النقل. يرجى المحاولة مرة أخرى.",
+    "errorMessage": "رسالة الخطأ: {error}",
+    "requestTitle": "طلب نقل للطلب {id}",
+    "requestBody1": "لقد تلقيت طلبًا لنقل ملكية طلبك ({id}). إذا كنت توافق على هذا الطلب، يمكنك الموافقة على النقل بالنقر على الزر أدناه.",
+    "requestBody2": "إذا وافقت، سيتولى المالك الجديد جميع المسؤوليات والصلاحيات المرتبطة بهذا الطلب.",
+    "requestBody3": "إذا كنت لا تتعرف على هذا الطلب أو ترغب في الاحتفاظ بالملكية، فلا حاجة لأي إجراء إضافي."
+  },
+  "CompanyOverview": {
+    "title": "نظرة عامة على الشركة",
+    "openingHours": "ساعات العمل",
+    "currentlyOpen": "مفتوح الآن",
+    "currentlyClosed": "مغلق الآن",
+    "closed": "مغلق",
+    "hoursRange": "من {from} إلى {to}",
+    "onlineOrdersHours": "ساعات الطلبات عبر الإنترنت",
+    "open24Hours": "مفتوح 24 ساعة",
+    "contactDetails": "بيانات التواصل",
+    "address": "العنوان"
+  },
+  "Days": {
+    "monday": "الإثنين",
+    "tuesday": "الثلاثاء",
+    "wednesday": "الأربعاء",
+    "thursday": "الخميس",
+    "friday": "الجمعة",
+    "saturday": "السبت",
+    "sunday": "الأحد"
+  },
+  "Checkout": {
+    "metaTitle": "الدفع",
+    "metaDescription": "أكملوا طلبكم بأمان."
+  },
+  "LegalPages": {
+    "privacyPolicyTitle": "سياسة الخصوصية",
+    "termsOfUseTitle": "شروط الاستخدام",
+    "comingSoon": "ستحتوي هذه الصفحة على سياستنا الكاملة. المحتوى قادم قريبًا — لا تترددوا بالتواصل معنا إذا كانت لديكم أي أسئلة في هذه الأثناء."
+  },
+  "Contact": {
+    "metaTitle": "اتصل بنا",
+    "title": "اتصل بنا",
+    "intro": "يسعدنا التواصل معكم. يمكنكم التواصل معنا عبر أي من الطرق التالية."
+  },
+  "CustomerService": {
+    "metaTitle": "خدمة العملاء",
+    "title": "خدمة العملاء",
+    "intro": "إجابات على الأسئلة الشائعة ستتوفر قريبًا.",
+    "contactPrompt": "تحتاجون مساعدة أسرع؟ تواصلوا معنا عبر",
+    "contactLink": "صفحة التواصل"
+  },
+  "Accessibility": {
+    "openWidget": "خيارات إمكانية الوصول",
+    "panelTitle": "إمكانية الوصول",
+    "textSize": "حجم النص",
+    "decreaseText": "تصغير النص",
+    "reset": "إعادة تعيين",
+    "increaseText": "تكبير النص",
+    "highContrast": "تباين عالٍ",
+    "underlineLinks": "تسطير الروابط",
+    "statementMetaTitle": "بيان إمكانية الوصول",
+    "statementTitle": "بيان إمكانية الوصول",
+    "statementIntro": "نعمل على جعل هذا الموقع قابلاً للاستخدام لأكبر عدد ممكن من الأشخاص. إليكم ما هو متوفر حاليًا:",
+    "statementItemWidget": "شريط أدوات لإمكانية الوصول (في زاوية كل صفحة) لتعديل حجم النص، وتفعيل التباين العالي، وتسطير الروابط.",
+    "statementItemSemantic": "بنية HTML دلالية مع حقول نماذج وصور موسومة بوضوح.",
+    "statementItemRtl": "دعم كامل للتخطيط من اليمين إلى اليسار للعبرية والعربية.",
+    "statementItemKeyboard": "قوائم ونماذج وأزرار يمكن التنقل بينها باستخدام لوحة المفاتيح.",
+    "statementDisclaimer": "يصف هذا البيان الإجراءات المطبقة حاليًا وليس تدقيقًا معتمدًا للامتثال لإمكانية الوصول."
   }
 }

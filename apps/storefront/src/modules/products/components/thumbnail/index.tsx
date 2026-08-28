@@ -1,6 +1,8 @@
-import { Container, clx } from "@modules/common/components/ui"
+import { Container } from "@modules/common/components/ui"
+import clsx from "clsx"
 import Image from "next/image"
 import React from "react"
+import { twMerge } from "tailwind-merge"
 
 import PlaceholderImage from "@modules/common/icons/placeholder-image"
 
@@ -10,6 +12,7 @@ type ThumbnailProps = {
   size?: "small" | "medium" | "large" | "full" | "square"
   isFeatured?: boolean
   className?: string
+  alt?: string | null
   "data-testid"?: string
 }
 
@@ -19,28 +22,29 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   size = "small",
   isFeatured,
   className,
+  alt,
   "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
 
   return (
     <Container
-      className={clx(
-        "relative w-full overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
+      className={twMerge(clsx(
+        "relative w-full overflow-hidden p-0 bg-ui-bg-subtle shadow-sm rounded-large transition-shadow ease-in-out duration-150 group-hover:shadow-md",
         className,
         {
           "aspect-[11/14]": isFeatured,
-          "aspect-[9/16]": !isFeatured && size !== "square",
+          "aspect-[4/3]": !isFeatured && size !== "square",
           "aspect-[1/1]": size === "square",
           "w-[180px]": size === "small",
           "w-[290px]": size === "medium",
           "w-[440px]": size === "large",
           "w-full": size === "full",
         }
-      )}
+      ))}
       data-testid={dataTestid}
     >
-      <ImageOrPlaceholder image={initialImage} size={size} />
+      <ImageOrPlaceholder image={initialImage} size={size} alt={alt} />
     </Container>
   )
 }
@@ -48,11 +52,12 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
 const ImageOrPlaceholder = ({
   image,
   size,
-}: Pick<ThumbnailProps, "size"> & { image?: string }) => {
+  alt,
+}: Pick<ThumbnailProps, "size" | "alt"> & { image?: string }) => {
   return image ? (
     <Image
       src={image}
-      alt="Thumbnail"
+      alt={alt || "Product image"}
       className="absolute inset-0 object-cover object-center"
       draggable={false}
       quality={50}

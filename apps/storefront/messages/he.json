@@ -5,18 +5,26 @@
     "cart": "עגלה",
     "home": "בית",
     "store": "חנות",
+    "orders": "הזמנות",
     "menu": "תפריט",
+    "contactUs": "צור קשר",
     "language": "שפה:",
-    "copyright": "© {year} {storeName}. כל הזכויות שמורות."
+    "copyright": "© {year} {storeName}. כל הזכויות שמורות.",
+    "backToShoppingCart": "חזרה לעגלת הקניות",
+    "back": "חזרה"
   },
   "Footer": {
     "categories": "קטגוריות",
     "collections": "קולקציות",
-    "links": "קישורים"
+    "contact": "יצירת קשר",
+    "privacyPolicy": "מדיניות פרטיות",
+    "termsOfUse": "תנאי שימוש",
+    "accessibilityStatement": "הצהרת נגישות"
   },
   "NotFound": {
     "title": "הדף לא נמצא",
     "body": "הדף שניסית לגשת אליו אינו קיים.",
+    "cartBody": "העגלה שניסית לגשת אליה אינה קיימת. נקה את העוגיות ונסה שוב.",
     "goToFrontpage": "חזרה לדף הבית"
   },
   "ProductActions": {
@@ -24,7 +32,9 @@
     "outOfStock": "אזל מהמלאי",
     "addToCart": "הוסף לעגלה",
     "selectOptions": "בחר אפשרויות",
-    "selectPrefix": "בחר {title}"
+    "selectPrefix": "בחר {title}",
+    "decreaseQuantity": "הפחת כמות",
+    "increaseQuantity": "הוסף כמות"
   },
   "Cart": {
     "cart": "עגלה",
@@ -40,7 +50,9 @@
     "emptyCart": "עגלת הקניות שלך ריקה.",
     "emptyCartBody": "אין לך עדיין פריטים בעגלה. השתמש בקישור למטה כדי להתחיל לגלוש במוצרים שלנו.",
     "goToAllProducts": "מעבר לכל המוצרים",
-    "exploreProducts": "גלה מוצרים"
+    "exploreProducts": "גלה מוצרים",
+    "summary": "סיכום",
+    "goToCheckout": "מעבר לתשלום"
   },
   "CartTotals": {
     "subtotalExclShipping": "סכום ביניים (לפני משלוח ומס)",
@@ -125,7 +137,8 @@
     "continueToReview": "המשך לסקירה",
     "selectPaymentMethod": "בחר אמצעי תשלום",
     "placeOrder": "בצע הזמנה",
-    "edit": "ערוך"
+    "edit": "ערוך",
+    "paidAt": "{amount} שולם ב-{date}"
   },
   "Review": {
     "review": "סקירה",
@@ -139,5 +152,256 @@
   },
   "CheckoutSummary": {
     "inYourCart": "בעגלה שלך"
+  },
+  "Store": {
+    "searchPlaceholder": "חיפוש מוצרים...",
+    "allCategories": "הכול",
+    "options": "אפשרויות",
+    "optionFallback": "אפשרות",
+    "metaTitle": "כל המוצרים",
+    "metaDescription": "עיינו במגוון המוצרים המלא שלנו לטיפוח ולקוסמטיקה.",
+    "noResultsTitle": "לא נמצאו מוצרים",
+    "noResultsBody": "נסו לשנות את החיפוש או המסננים.",
+    "clearSearch": "נקה חיפוש"
+  },
+  "Home": {
+    "newArrivals": "חדש במלאי",
+    "heroTagline": "קנו את מוצרי הטיפוח שלנו",
+    "shopNow": "לחנות",
+    "welcomeBack": "ברוך שובך, {firstName}",
+    "metaDescription": "קנו מוצרי טיפוח וקוסמטיקה איכותיים, מותאמים לשגרת הטיפוח שלכם."
+  },
+  "RelatedProducts": {
+    "heading": "מוצרים קשורים",
+    "body": "יתכן שתרצו לבדוק גם את המוצרים הבאים."
+  },
+  "ProductTabs": {
+    "productInformation": "מידע על המוצר",
+    "shippingReturns": "משלוח והחזרות",
+    "material": "חומר",
+    "countryOfOrigin": "ארץ ייצור",
+    "type": "סוג",
+    "weight": "משקל",
+    "dimensions": "מידות",
+    "fastDelivery": "משלוח מהיר",
+    "fastDeliveryBody": "החבילה שלך תגיע תוך 3-5 ימי עסקים לנקודת האיסוף או לנוחיותך בבית.",
+    "simpleExchanges": "החלפות פשוטות",
+    "simpleExchangesBody": "המידה לא מתאימה? אין בעיה, נחליף את המוצר שלך בחדש.",
+    "easyReturns": "החזרות קלות",
+    "easyReturnsBody": "פשוט החזר את המוצר שלך ואנחנו נחזיר לך את הכסף. ללא שאלות מיותרות - נעשה כמיטב יכולתנו כדי שההחזרה תהיה קלה."
+  },
+  "CartMismatchBanner": {
+    "transferFailed": "משהו השתבש כשניסינו להעביר את העגלה שלך",
+    "runTransferAgain": "נסה להעביר שוב",
+    "transferring": "מעביר.."
+  },
+  "SignInPrompt": {
+    "alreadyHaveAccount": "כבר יש לך חשבון?",
+    "betterExperience": "התחבר לחוויית קנייה טובה יותר."
+  },
+  "Price": {
+    "from": "החל מ-",
+    "original": "מחיר מקורי: "
+  },
+  "SortProducts": {
+    "sortBy": "מיין לפי",
+    "latestArrivals": "הגעות אחרונות",
+    "priceLowToHigh": "מחיר: מהנמוך לגבוה",
+    "priceHighToLow": "מחיר: מהגבוה לנמוך"
+  },
+  "FreeShipping": {
+    "unlocked": "משלוח חינם נפתח!",
+    "unlock": "פתח משלוח חינם",
+    "remaining": "רק {amount} נותרו",
+    "viewCart": "צפה בעגלה",
+    "viewProducts": "צפה במוצרים"
+  },
+  "AddressForm": {
+    "newAddress": "כתובת חדשה",
+    "addAddress": "הוסף כתובת",
+    "editAddress": "ערוך כתובת",
+    "cancel": "ביטול",
+    "save": "שמור",
+    "remove": "הסר",
+    "apartmentSuite": "דירה, יחידה וכו׳"
+  },
+  "AccountInfo": {
+    "cancel": "ביטול",
+    "edit": "ערוך",
+    "errorOccurred": "אירעה שגיאה, אנא נסה שוב",
+    "updatedSuccessfully": "{label} עודכן בהצלחה",
+    "saveChanges": "שמור שינויים"
+  },
+  "Profile": {
+    "name": "שם",
+    "password": "סיסמה",
+    "passwordNotShown": "הסיסמה אינה מוצגת מטעמי אבטחה",
+    "oldPassword": "סיסמה נוכחית",
+    "newPassword": "סיסמה חדשה",
+    "confirmPassword": "אימות סיסמה",
+    "noBillingAddress": "אין כתובת לחיוב"
+  },
+  "Overview": {
+    "hello": "שלום {firstName}",
+    "signedInAs": "מחובר כ:",
+    "profile": "פרופיל",
+    "completed": "הושלם",
+    "addresses": "כתובות",
+    "saved": "נשמרו",
+    "recentOrders": "הזמנות אחרונות",
+    "datePlaced": "תאריך ביצוע",
+    "orderNumber": "מספר הזמנה",
+    "totalAmount": "סכום כולל",
+    "goToOrder": "מעבר להזמנה #{id}",
+    "noRecentOrders": "אין הזמנות אחרונות"
+  },
+  "AccountPages": {
+    "addressesTitle": "כתובות למשלוח",
+    "addressesBody": "צפה ועדכן את כתובות המשלוח שלך, תוכל להוסיף כמה שתרצה. שמירת הכתובות תאפשר להשתמש בהן בקופה.",
+    "ordersTitle": "הזמנות",
+    "ordersBody": "צפה בהזמנות הקודמות שלך ובסטטוס שלהן. תוכל גם ליצור החזרות או החלפות עבור ההזמנות שלך במידת הצורך.",
+    "profileTitle": "פרופיל",
+    "profileBody": "צפה ועדכן את פרטי הפרופיל שלך, כולל שם, אימייל ומספר טלפון. תוכל גם לעדכן את כתובת החיוב שלך, או לשנות את הסיסמה שלך."
+  },
+  "OrderCard": {
+    "items": "פריטים",
+    "item": "פריט",
+    "more": "עוד",
+    "seeDetails": "צפה בפרטים"
+  },
+  "OrderOverview": {
+    "nothingToSeeHere": "אין כאן כלום",
+    "noOrdersBody": "עדיין אין לך הזמנות, בוא נשנה את זה :)",
+    "continueShopping": "המשך בקנייה"
+  },
+  "OrderConfirmation": {
+    "thankYou": "תודה!",
+    "placedSuccessfully": "ההזמנה שלך בוצעה בהצלחה.",
+    "summary": "סיכום"
+  },
+  "OrderDetailsTemplate": {
+    "title": "פרטי הזמנה",
+    "backToOverview": "חזרה לסקירה כללית"
+  },
+  "OrderDetails": {
+    "confirmationSentTo": "שלחנו את פרטי אישור ההזמנה אל",
+    "orderDate": "תאריך הזמנה:",
+    "orderNumber": "מספר הזמנה:",
+    "orderStatus": "סטטוס הזמנה:",
+    "paymentStatus": "סטטוס תשלום:"
+  },
+  "OrderSummary": {
+    "title": "סיכום הזמנה",
+    "subtotal": "סכום ביניים",
+    "discount": "הנחה",
+    "shipping": "משלוח",
+    "taxes": "מס",
+    "total": "סה״כ"
+  },
+  "ShippingDetails": {
+    "delivery": "משלוח",
+    "shippingAddress": "כתובת למשלוח",
+    "contact": "פרטי קשר",
+    "method": "שיטה"
+  },
+  "Help": {
+    "needHelp": "צריך עזרה?",
+    "contact": "צור קשר",
+    "returnsExchanges": "החזרות והחלפות"
+  },
+  "VerifyAccount": {
+    "title": "אימות אימייל",
+    "verifying": "מאמת את האימייל שלך...",
+    "verified": "האימייל שלך אומת. כעת תוכל להתחבר לחשבונך.",
+    "invalidOrExpired": "קישור האימות אינו תקין או שפג תוקפו. התחבר כדי לקבל קישור אימות חדש.",
+    "goToSignIn": "לחיבור לחשבון"
+  },
+  "TransferRequestForm": {
+    "orderTransfers": "העברות הזמנות",
+    "cantFindOrder": "לא מוצא את ההזמנה שאתה מחפש?",
+    "connectOrder": "חבר הזמנה לחשבונך.",
+    "orderId": "מספר הזמנה",
+    "requestTransfer": "בקש העברה",
+    "transferRequested": "בקשת העברה עבור הזמנה {id} נשלחה",
+    "transferEmailSent": "אימייל בקשת העברה נשלח אל {email}"
+  },
+  "TransferActions": {
+    "acceptedSuccess": "ההזמנה הועברה בהצלחה!",
+    "declinedSuccess": "העברת ההזמנה נדחתה בהצלחה!",
+    "acceptTransfer": "אשר העברה",
+    "declineTransfer": "דחה העברה"
+  },
+  "TransferPage": {
+    "acceptedTitle": "ההזמנה הועברה!",
+    "acceptedBody": "הזמנה {id} הועברה בהצלחה לבעלים החדש.",
+    "acceptError": "אירעה שגיאה באישור ההעברה. אנא נסה שוב.",
+    "declinedTitle": "העברת ההזמנה נדחתה!",
+    "declinedBody": "העברת הזמנה {id} נדחתה בהצלחה.",
+    "declineError": "אירעה שגיאה בדחיית ההעברה. אנא נסה שוב.",
+    "errorMessage": "הודעת שגיאה: {error}",
+    "requestTitle": "בקשת העברה עבור הזמנה {id}",
+    "requestBody1": "קיבלת בקשה להעברת בעלות על ההזמנה שלך ({id}). אם אתה מסכים לבקשה זו, תוכל לאשר את ההעברה בלחיצה על הכפתור למטה.",
+    "requestBody2": "אם תאשר, הבעלים החדש יקבל את כל האחריות וההרשאות הקשורות להזמנה זו.",
+    "requestBody3": "אם אינך מזהה את הבקשה הזו או ברצונך לשמור על הבעלות, אין צורך בפעולה נוספת."
+  },
+  "CompanyOverview": {
+    "title": "אודות החברה",
+    "openingHours": "שעות פתיחה",
+    "currentlyOpen": "פתוח כעת",
+    "currentlyClosed": "סגור כעת",
+    "closed": "סגור",
+    "hoursRange": "מ-{from} עד {to}",
+    "onlineOrdersHours": "שעות הזמנות אונליין",
+    "open24Hours": "פתוח 24 שעות",
+    "contactDetails": "פרטי קשר",
+    "address": "כתובת"
+  },
+  "Days": {
+    "monday": "יום שני",
+    "tuesday": "יום שלישי",
+    "wednesday": "יום רביעי",
+    "thursday": "יום חמישי",
+    "friday": "יום שישי",
+    "saturday": "שבת",
+    "sunday": "יום ראשון"
+  },
+  "Checkout": {
+    "metaTitle": "תשלום",
+    "metaDescription": "השלימו את ההזמנה שלכם בבטחה."
+  },
+  "LegalPages": {
+    "privacyPolicyTitle": "מדיניות פרטיות",
+    "termsOfUseTitle": "תנאי שימוש",
+    "comingSoon": "עמוד זה יכלול את המדיניות המלאה שלנו. התוכן יתעדכן בקרוב — אתם מוזמנים ליצור קשר בינתיים אם יש לכם שאלות."
+  },
+  "Contact": {
+    "metaTitle": "צור קשר",
+    "title": "צור קשר",
+    "intro": "נשמח לשמוע מכם. ניתן לפנות אלינו בכל אחת מהדרכים הבאות."
+  },
+  "CustomerService": {
+    "metaTitle": "שירות לקוחות",
+    "title": "שירות לקוחות",
+    "intro": "תשובות לשאלות נפוצות יעלו בקרוב.",
+    "contactPrompt": "צריכים עזרה מיידית? פנו אלינו דרך",
+    "contactLink": "עמוד יצירת הקשר"
+  },
+  "Accessibility": {
+    "openWidget": "אפשרויות נגישות",
+    "panelTitle": "נגישות",
+    "textSize": "גודל טקסט",
+    "decreaseText": "הקטן טקסט",
+    "reset": "איפוס",
+    "increaseText": "הגדל טקסט",
+    "highContrast": "ניגודיות גבוהה",
+    "underlineLinks": "קו תחתון לקישורים",
+    "statementMetaTitle": "הצהרת נגישות",
+    "statementTitle": "הצהרת נגישות",
+    "statementIntro": "אנו פועלים להנגיש את האתר לכמה שיותר אנשים. כך זה בא לידי ביטוי כרגע:",
+    "statementItemWidget": "סרגל נגישות (בפינת המסך בכל עמוד) לשינוי גודל טקסט, הפעלת ניגודיות גבוהה והוספת קו תחתון לקישורים.",
+    "statementItemSemantic": "מבנה HTML סמנטי עם שדות טופס ותמונות מתויגים.",
+    "statementItemRtl": "תמיכה מלאה בפריסת ימין-לשמאל בעברית ובערבית.",
+    "statementItemKeyboard": "תפריטים, טפסים וכפתורים הניתנים לניווט באמצעות מקלדת.",
+    "statementDisclaimer": "הצהרה זו מתארת את האמצעים המיושמים כיום ואינה מהווה ביקורת נגישות מוסמכת."
   }
 }
