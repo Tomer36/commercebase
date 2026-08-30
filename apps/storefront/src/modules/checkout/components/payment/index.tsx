@@ -119,7 +119,7 @@ const Payment = ({
         <Heading
           level="h2"
           className={clx(
-            "flex flex-row items-center text-2xl font-bold text-black gap-x-2",
+            "flex flex-row items-center text-xl-semi text-black gap-x-2",
             {
               "opacity-50 pointer-events-none select-none":
                 !isOpen && !paymentReady,
@@ -177,7 +177,7 @@ const Payment = ({
 
           {paidByGiftcard && (
             <div className="flex flex-col w-full small:w-1/3">
-              <Text className="text-small-regular font-semibold text-black mb-1">
+              <Text className="text-small-semi text-black mb-1">
                 {t("paymentMethod")}
               </Text>
               <Text
@@ -215,7 +215,7 @@ const Payment = ({
           {cart && paymentReady && activeSession ? (
             <div className="flex flex-col gap-y-4 small:flex-row small:gap-x-8 small:gap-y-0 w-full">
               <div className="flex flex-col w-full small:w-1/3">
-                <Text className="text-small-regular font-semibold text-black mb-1">
+                <Text className="text-small-semi text-black mb-1">
                   {t("paymentMethod")}
                 </Text>
                 <Text
@@ -227,7 +227,7 @@ const Payment = ({
                 </Text>
               </div>
               <div className="flex flex-col w-full small:w-1/3">
-                <Text className="text-small-regular font-semibold text-black mb-1">
+                <Text className="text-small-semi text-black mb-1">
                   {t("paymentDetails")}
                 </Text>
                 <div
@@ -249,7 +249,7 @@ const Payment = ({
             </div>
           ) : paidByGiftcard ? (
             <div className="flex flex-col w-full small:w-1/3">
-              <Text className="text-small-regular font-semibold text-black mb-1">
+              <Text className="text-small-semi text-black mb-1">
                 {t("paymentMethod")}
               </Text>
               <Text

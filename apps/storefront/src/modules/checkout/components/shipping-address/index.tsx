@@ -216,14 +216,13 @@ const ShippingAddress = ({
       </div>
       <div className="grid grid-cols-2 gap-4 mb-4">
         <Input
-          label={t("email")}
+          label={t("emailOptional")}
           name="email"
           type="email"
           title={t("emailValidation")}
           autoComplete="email"
           value={formData.email}
           onChange={handleChange}
-          required
           data-testid="shipping-email-input"
         />
         <Input

@@ -10,12 +10,41 @@ import {
   TdHTMLAttributes,
   ThHTMLAttributes,
 } from "react"
-import { twMerge } from "tailwind-merge"
+import { extendTailwindMerge } from "tailwind-merge"
 
 // TODO: Add Toaster component back when needed for notifications
 
 // Re-export clsx as clx for compatibility
 export { clsx as clx }
+
+// Teach twMerge that this project's own typography scale (globals.css
+// @layer components) are font-size utilities too — otherwise e.g.
+// `cx("text-3xl-semi", "text-xl-semi")` keeps BOTH classes (twMerge doesn't
+// recognize them as conflicting), and which one actually renders ends up
+// decided by declaration order in globals.css rather than by override
+// intent, which silently breaks any component trying to shrink/grow a
+// shared primitive's default text size via className.
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      "font-size": [
+        "text-xsmall-regular",
+        "text-small-regular",
+        "text-small-semi",
+        "text-base-regular",
+        "text-base-semi",
+        "text-large-regular",
+        "text-large-semi",
+        "text-xl-regular",
+        "text-xl-semi",
+        "text-2xl-regular",
+        "text-2xl-semi",
+        "text-3xl-regular",
+        "text-3xl-semi",
+      ],
+    },
+  },
+})
 
 // Single storefront design language: flat black/white/gray with the --accent
 // brand color, no shadows, one generous radius scale (rounded-full for pills
@@ -31,7 +60,7 @@ type TextProps = HTMLAttributes<HTMLParagraphElement> & {
 export const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ className, as: Component = "p", children, ...props }, ref) => {
     return (
-      <Component ref={ref} className={clsx("txt-medium", className)} {...props}>
+      <Component ref={ref} className={cx("text-base-regular", className)} {...props}>
         {children}
       </Component>
     )
@@ -49,11 +78,10 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     return (
       <Component
         ref={ref}
-        className={clsx(
-          "font-semibold",
-          Component === "h1" && "text-3xl",
-          Component === "h2" && "text-2xl",
-          Component === "h3" && "text-xl",
+        className={cx(
+          Component === "h1" && "text-3xl-semi",
+          Component === "h2" && "text-xl-semi",
+          Component === "h3" && "text-large-semi",
           className
         )}
         {...props}
@@ -90,15 +118,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={cx(
-          "inline-flex gap-2 items-center justify-center rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex gap-2 items-center justify-center rounded-full font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variant === "primary" &&
             "bg-accent text-accent-foreground hover:opacity-90",
           variant === "secondary" &&
             "bg-white text-black border border-gray-200 hover:bg-gray-50",
           variant === "transparent" && "bg-transparent hover:bg-gray-100",
-          size === "small" && "h-8 px-3 text-sm",
-          size === "medium" && "h-10 px-4",
-          size === "large" && "h-12 px-6 text-lg",
+          size === "small" && "h-8 px-3 text-base-regular",
+          size === "medium" && "h-10 px-4 text-large-regular",
+          size === "large" && "h-12 px-6 text-large-regular",
           className
         )}
         {...props}
@@ -139,7 +167,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
       <span
         ref={ref}
         className={clsx(
-          "inline-flex items-center rounded-full px-2 py-1 text-xs font-medium",
+          "inline-flex items-center rounded-full px-2 py-1 text-small-semi",
           color === "success" && "bg-green-100 text-green-700",
           color === "error" && "bg-red-100 text-red-700",
           color === "warning" && "bg-amber-100 text-amber-700",
@@ -205,7 +233,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(
     return (
       <label
         ref={ref}
-        className={clsx("text-sm font-medium", className)}
+        className={clsx("text-base-semi", className)}
         {...props}
       >
         {children}
@@ -249,7 +277,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             className={cx(
-              "h-12 w-full rounded-full border border-gray-200 bg-white text-sm text-black placeholder:text-gray-400 transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50",
+              "h-12 w-full rounded-full border border-gray-200 bg-white text-base-regular text-black placeholder:text-gray-400 transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50",
               startIcon ? "ps-11" : "ps-4",
               endIcon ? "pe-11" : "pe-4",
               className
@@ -281,7 +309,7 @@ const TableRoot = forwardRef<HTMLTableElement, TableProps>(
     return (
       <table
         ref={ref}
-        className={clsx("w-full caption-bottom text-sm", className)}
+        className={clsx("w-full caption-bottom text-base-regular", className)}
         {...props}
       >
         {children}
@@ -353,7 +381,7 @@ const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
       <th
         ref={ref}
         className={clsx(
-          "h-12 px-4 text-start align-middle font-medium text-gray-500 [&:has([role=checkbox])]:pe-0",
+          "h-12 px-4 text-start align-middle text-small-semi text-gray-500 [&:has([role=checkbox])]:pe-0",
           className
         )}
         {...props}

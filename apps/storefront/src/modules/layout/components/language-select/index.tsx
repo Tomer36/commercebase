@@ -146,7 +146,7 @@ const LanguageSelect = ({
         {variant === "pill" ? (
           <ListboxButton
             id={buttonId}
-            className="flex h-9 items-center justify-center rounded-full bg-white/20 px-3 text-sm font-medium text-accent-foreground"
+            className="flex h-8 items-center justify-center rounded-full bg-white/20 px-2.5 text-xsmall-regular font-semibold text-accent-foreground"
             aria-label={t("language")}
             onClick={toggle}
           >
@@ -158,10 +158,10 @@ const LanguageSelect = ({
           className="py-1 w-full"
           onClick={toggle}
         >
-          <div className="txt-compact-small flex items-start gap-x-2">
+          <div className="text-small-regular flex items-start gap-x-2">
             <span>{t("language")}</span>
             {current && (
-              <span className="txt-compact-small flex items-center gap-x-2">
+              <span className="text-small-regular flex items-center gap-x-2">
                 {current.countryCode && (
                   /* @ts-ignore */
                   <ReactCountryFlag
@@ -183,7 +183,7 @@ const LanguageSelect = ({
           className={
             variant === "pill"
               ? "relative"
-              : "flex relative w-full min-w-[320px]"
+              : "flex relative w-full min-w-80"
           }
         >
           <Transition
@@ -196,7 +196,7 @@ const LanguageSelect = ({
             <ListboxOptions
               className={
                 variant === "pill"
-                  ? "absolute top-full start-0 mt-2 w-56 max-h-[320px] overflow-y-scroll z-[900] bg-white shadow-xl text-small-regular text-black no-scrollbar rounded-rounded"
+                  ? "absolute top-full start-0 mt-2 w-56 max-h-80 overflow-y-scroll z-[900] bg-white shadow-xl text-small-regular text-black no-scrollbar rounded-rounded"
                   : "absolute -bottom-[calc(100%-36px)] start-0 xsmall:start-auto xsmall:end-0 max-h-[442px] overflow-y-scroll z-[900] bg-white shadow-xl text-small-regular text-black no-scrollbar rounded-rounded w-full"
               }
               static

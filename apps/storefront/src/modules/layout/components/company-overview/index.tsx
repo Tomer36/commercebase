@@ -48,7 +48,7 @@ const CompanyOverview = ({ isOpen, close, storeName }: CompanyOverviewProps) => 
       <Modal.Title>{t("title")}</Modal.Title>
       <Modal.Body>
         <div className="flex w-full flex-col gap-6 text-start">
-          <h3 className="text-lg font-bold text-black">{storeName}</h3>
+          <h3 className="text-large-semi text-black">{storeName}</h3>
 
           <div className="border-t border-gray-200 pt-4">
             <div className="mb-3 flex items-center gap-2 font-semibold text-black">
@@ -77,8 +77,8 @@ const CompanyOverview = ({ isOpen, close, storeName }: CompanyOverviewProps) => 
                 return (
                   <div
                     key={day}
-                    className={clx("flex items-center justify-between text-sm", {
-                      "font-bold text-black": isToday,
+                    className={clx("flex items-center justify-between text-base-regular", {
+                      "font-semibold text-black": isToday,
                       "text-gray-600": !isToday,
                     })}
                   >
@@ -115,14 +115,14 @@ const CompanyOverview = ({ isOpen, close, storeName }: CompanyOverviewProps) => 
             <div className="flex flex-col gap-2">
               <a
                 href={`mailto:${BUSINESS_CONTACT.email}`}
-                className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-sm text-black"
+                className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-base-regular text-black"
               >
                 <Envelope />
                 {BUSINESS_CONTACT.email}
               </a>
               <a
                 href={`tel:${BUSINESS_CONTACT.phone}`}
-                className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-sm text-black"
+                className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-base-regular text-black"
               >
                 <Phone />
                 {BUSINESS_CONTACT.phone}
@@ -135,10 +135,10 @@ const CompanyOverview = ({ isOpen, close, storeName }: CompanyOverviewProps) => 
               <MapPin />
               {t("address")}
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-base-regular text-gray-600">
               {BUSINESS_CONTACT.addressLine1}
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-base-regular text-gray-600">
               {BUSINESS_CONTACT.addressLine2}
             </p>
           </div>

@@ -14,14 +14,14 @@ const ProductInfo = ({ product, hideDescription }: ProductInfoProps) => {
         {product.collection && (
           <LocalizedClientLink
             href={`/collections/${product.collection.handle}`}
-            className="text-medium text-ui-fg-muted hover:text-ui-fg-subtle"
+            className="text-small-regular text-ui-fg-muted hover:text-ui-fg-subtle"
           >
             {product.collection.title}
           </LocalizedClientLink>
         )}
         <Heading
           level="h2"
-          className="text-3xl leading-10 text-ui-fg-base"
+          className="text-3xl-semi text-black"
           data-testid="product-title"
         >
           {product.title}
@@ -29,7 +29,7 @@ const ProductInfo = ({ product, hideDescription }: ProductInfoProps) => {
 
         {!hideDescription && (
           <Text
-            className="text-medium text-ui-fg-subtle whitespace-pre-line"
+            className="text-base-regular text-ui-fg-subtle whitespace-pre-line"
             data-testid="product-description"
           >
             {product.description}

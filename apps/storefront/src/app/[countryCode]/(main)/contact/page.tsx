@@ -22,19 +22,19 @@ export default async function ContactPage() {
       <div className="flex flex-col gap-3">
         <a
           href={`mailto:${BUSINESS_CONTACT.email}`}
-          className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-sm text-black w-fit"
+          className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-base-regular text-black w-fit"
         >
           <Envelope />
           {BUSINESS_CONTACT.email}
         </a>
         <a
           href={`tel:${BUSINESS_CONTACT.phone}`}
-          className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-sm text-black w-fit"
+          className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-base-regular text-black w-fit"
         >
           <Phone />
           {BUSINESS_CONTACT.phone}
         </a>
-        <div className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-sm text-black w-fit">
+        <div className="flex items-center gap-2 rounded-full bg-accent-soft px-4 py-2 text-base-regular text-black w-fit">
           <MapPin />
           {BUSINESS_CONTACT.addressLine1}, {BUSINESS_CONTACT.addressLine2}
         </div>

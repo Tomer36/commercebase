@@ -16,7 +16,7 @@ const CheckoutSummary = async ({ cart }: { cart: HttpTypes.StoreCart }) => {
         <Divider className="my-6 small:hidden" />
         <Heading
           level="h2"
-          className="flex flex-row text-2xl font-bold text-black items-baseline"
+          className="flex flex-row text-xl-semi text-black items-baseline"
         >
           {t("inYourCart")}
         </Heading>

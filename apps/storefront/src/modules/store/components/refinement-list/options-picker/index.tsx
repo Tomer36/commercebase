@@ -53,7 +53,7 @@ const OptionsPicker = ({
   return (
     <div className="flex flex-col gap-y-4">
       <div className="flex items-center justify-between px-1">
-        <span className="text-sm font-medium text-black">{t("options")}</span>
+        <span className="text-base-semi text-black">{t("options")}</span>
       </div>
       <Accordion.Root
         type="multiple"
@@ -100,10 +100,10 @@ const OptionsPicker = ({
               <Accordion.Header>
                 <Accordion.Trigger className="flex w-full items-center justify-between py-3 text-start">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-black">
+                    <span className="text-base-semi text-black">
                       {option.title || t("optionFallback")}
                     </span>
-                    <span className="text-sm text-gray-400">
+                    <span className="text-base-regular text-gray-400">
                       ({selectedCount})
                     </span>
                   </div>
@@ -130,7 +130,7 @@ const OptionsPicker = ({
                         type="button"
                         onClick={() => toggleValue(value.id)}
                         className={clsx(
-                          "h-10 rounded-full border px-4 flex items-center text-sm transition-colors duration-150",
+                          "h-10 rounded-full border px-4 flex items-center text-base-regular transition-colors duration-150",
                           isSelected
                             ? "border-accent bg-accent text-accent-foreground"
                             : "border-gray-200 bg-white text-black hover:border-gray-400"

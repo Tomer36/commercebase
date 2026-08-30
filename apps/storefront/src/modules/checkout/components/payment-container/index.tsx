@@ -109,7 +109,7 @@ export const StripeCardContainer = ({
       {selectedPaymentOptionId === paymentProviderId &&
         (stripeReady ? (
           <div className="my-4 transition-all duration-150 ease-in-out">
-            <Text className="text-small-regular font-semibold text-black mb-1">
+            <Text className="text-small-semi text-black mb-1">
               {t("enterCardDetails")}
             </Text>
             <CardElement

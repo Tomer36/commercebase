@@ -39,7 +39,8 @@ const ProductSearch = () => {
 
   return (
     <Input
-      startIcon={<MagnifyingGlass />}
+      className="h-10 border-transparent bg-gray-50 focus:bg-white"
+      startIcon={<MagnifyingGlass width={18} height={18} />}
       endIcon={value ? <XMark width={14} height={14} /> : undefined}
       onEndIconClick={() => setValue("")}
       endIconLabel={t("clearSearch")}

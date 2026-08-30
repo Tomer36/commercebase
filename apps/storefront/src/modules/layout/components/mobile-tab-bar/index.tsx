@@ -57,32 +57,38 @@ const MobileTabBar = ({ cartBadge }: { cartBadge?: ReactNode }) => {
   ]
 
   return (
+    // The safe-area padding lives on this outer element, separate from the
+    // fixed-height row below — putting both on the same box would eat into
+    // the h-12 content height (border-box sizing) and squeeze the tabs
+    // upward instead of leaving them centered with extra room underneath.
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 flex h-16 items-stretch border-t border-gray-200 bg-white small:hidden pb-[env(safe-area-inset-bottom)]"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white small:hidden pb-[env(safe-area-inset-bottom)]"
       data-testid="mobile-tab-bar"
     >
-      {tabs.map(({ key, href, label, Icon, active }) => (
-        <LocalizedClientLink
-          key={key}
-          href={href}
-          className={clx(
-            "flex flex-1 flex-col items-center justify-center gap-1 text-xsmall-regular transition-colors duration-200",
-            active ? "font-semibold text-accent" : "text-gray-400"
-          )}
-          data-testid={`mobile-tab-${key}`}
-        >
-          <span
+      <div className="flex h-12 items-stretch">
+        {tabs.map(({ key, href, label, Icon, active }) => (
+          <LocalizedClientLink
+            key={key}
+            href={href}
             className={clx(
-              "relative inline-flex transition-transform duration-200",
-              active && "scale-105"
+              "flex flex-1 flex-col items-center justify-center gap-1 pt-1.5 text-xsmall-regular transition-colors duration-200",
+              active ? "font-semibold text-accent" : "text-gray-400"
             )}
+            data-testid={`mobile-tab-${key}`}
           >
-            <Icon width={20} height={20} />
-            {key === "cart" && cartBadge}
-          </span>
-          {label}
-        </LocalizedClientLink>
-      ))}
+            <span
+              className={clx(
+                "relative inline-flex transition-transform duration-200",
+                active && "scale-105"
+              )}
+            >
+              <Icon width={20} height={20} />
+              {key === "cart" && cartBadge}
+            </span>
+            {label}
+          </LocalizedClientLink>
+        ))}
+      </div>
     </nav>
   )
 }

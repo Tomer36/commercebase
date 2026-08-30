@@ -56,14 +56,14 @@ const Item: React.FC<AccordionItemProps> = ({
         <div className="flex flex-col">
           <div className="flex w-full items-center justify-between">
             <div className="flex items-center gap-4">
-              <Text className="text-ui-fg-subtle text-sm">{title}</Text>
+              <Text className="text-base-regular text-ui-fg-subtle">{title}</Text>
             </div>
             <AccordionPrimitive.Trigger>
               {customTrigger || <MorphingTrigger />}
             </AccordionPrimitive.Trigger>
           </div>
           {subtitle && (
-            <Text as="span" className="mt-1 text-sm">
+            <Text as="span" className="mt-1 text-base-regular">
               {subtitle}
             </Text>
           )}
@@ -75,7 +75,7 @@ const Item: React.FC<AccordionItemProps> = ({
           "radix-state-closed:animate-accordion-close radix-state-open:animate-accordion-open radix-state-closed:pointer-events-none px-1"
         )}
       >
-        <div className="inter-base-regular group-radix-state-closed:animate-accordion-close">
+        <div className="text-base-regular group-radix-state-closed:animate-accordion-close">
           {description && <Text>{description}</Text>}
           <div className="w-full">{children}</div>
         </div>
@@ -88,7 +88,7 @@ Accordion.Item = Item
 
 const MorphingTrigger = () => {
   return (
-    <div className="text-gray-700 hover:bg-gray-50 active:bg-gray-50 active:text-accent focus:border-accent disabled:text-gray-300 bg-transparent disabled:bg-transparent rounded-rounded group relative p-[6px] transition-colors duration-150">
+    <div className="text-gray-700 hover:bg-gray-50 active:bg-gray-50 active:text-accent focus:border-accent disabled:text-gray-300 bg-transparent disabled:bg-transparent rounded-rounded group relative p-1.5 transition-colors duration-150">
       <div className="h-5 w-5">
         <span className="bg-gray-700 rounded-circle group-radix-state-open:rotate-90 absolute inset-y-[31.75%] start-[48%] end-1/2 w-[1.5px] duration-300" />
         <span className="bg-gray-700 rounded-circle group-radix-state-open:rotate-90 group-radix-state-open:start-1/2 group-radix-state-open:end-1/2 absolute inset-x-[31.75%] top-[48%] bottom-1/2 h-[1.5px] duration-300" />

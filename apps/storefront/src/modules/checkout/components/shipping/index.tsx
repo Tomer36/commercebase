@@ -159,7 +159,7 @@ const Shipping: React.FC<ShippingProps> = ({
         <Heading
           level="h2"
           className={clx(
-            "flex flex-row items-center text-2xl font-bold text-black gap-x-2",
+            "flex flex-row items-center text-xl-semi text-black gap-x-2",
             {
               "opacity-50 pointer-events-none select-none":
                 !isOpen && cart.shipping_methods?.length === 0,
@@ -190,7 +190,7 @@ const Shipping: React.FC<ShippingProps> = ({
         <>
           <div className="grid">
             <div className="flex flex-col">
-              <span className="font-medium text-base-regular text-black">
+              <span className="text-base-semi text-black">
                 {t("shippingMethod")}
               </span>
               <span className="mb-4 text-gray-500 text-small-regular">
@@ -303,7 +303,7 @@ const Shipping: React.FC<ShippingProps> = ({
           {showPickupOptions === PICKUP_OPTION_ON && (
             <div className="grid">
               <div className="flex flex-col">
-                <span className="font-medium text-base-regular text-black">
+                <span className="text-base-semi text-black">
                   {t("store")}
                 </span>
                 <span className="mb-4 text-gray-500 text-small-regular">
@@ -390,7 +390,7 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="text-small-regular">
             {cart && (cart.shipping_methods?.length ?? 0) > 0 && (
               <div className="flex flex-col w-full small:w-1/3">
-                <Text className="text-small-regular font-semibold text-black mb-1">
+                <Text className="text-small-semi text-black mb-1">
                   {t("method")}
                 </Text>
                 <Text className="text-small-regular text-gray-500">

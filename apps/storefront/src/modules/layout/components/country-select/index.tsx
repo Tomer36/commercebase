@@ -85,10 +85,10 @@ const CountrySelect = ({
           className="py-1 w-full"
           onClick={toggle}
         >
-          <div className="txt-compact-small flex items-start gap-x-2">
+          <div className="text-small-regular flex items-start gap-x-2">
             <span>Shipping to:</span>
             {current && (
-              <span className="txt-compact-small flex items-center gap-x-2">
+              <span className="text-small-regular flex items-center gap-x-2">
                 <ReactCountryFlag
                   svg
                   style={{
@@ -102,7 +102,7 @@ const CountrySelect = ({
             )}
           </div>
         </ListboxButton>
-        <div className="flex relative w-full min-w-[320px]">
+        <div className="flex relative w-full min-w-80">
           <Transition
             show={state}
             as={Fragment}

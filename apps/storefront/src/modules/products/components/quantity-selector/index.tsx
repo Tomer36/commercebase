@@ -27,11 +27,11 @@ const QuantitySelector = ({
         onClick={decrement}
         disabled={disabled || value <= min}
         aria-label={t("decreaseQuantity")}
-        className="flex w-10 items-center justify-center text-lg text-black disabled:opacity-30"
+        className="flex w-10 items-center justify-center text-large-regular text-black disabled:opacity-30"
       >
         −
       </button>
-      <span className="flex w-10 items-center justify-center text-base text-black">
+      <span className="flex w-10 items-center justify-center text-large-regular text-black">
         {value}
       </span>
       <button
@@ -39,7 +39,7 @@ const QuantitySelector = ({
         onClick={increment}
         disabled={disabled || (max !== undefined && value >= max)}
         aria-label={t("increaseQuantity")}
-        className="flex w-10 items-center justify-center text-lg text-black disabled:opacity-30"
+        className="flex w-10 items-center justify-center text-large-regular text-black disabled:opacity-30"
       >
         +
       </button>

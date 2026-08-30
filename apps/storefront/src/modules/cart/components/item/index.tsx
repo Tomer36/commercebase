@@ -66,7 +66,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           <div className="flex items-start justify-between gap-4">
             <div>
               <Text
-                className="text-black font-medium"
+                className="text-base-semi text-black"
                 data-testid="product-title"
               >
                 {item.product_title}
@@ -118,7 +118,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
 
       <Table.Cell className="text-start">
         <Text
-          className="txt-medium-plus text-ui-fg-base"
+          className="text-base-semi text-black"
           data-testid="product-title"
         >
           {item.product_title}

@@ -37,7 +37,7 @@ const CategoryScroller = async () => {
                 <PlaceholderImage size={24} />
               )}
             </span>
-            <span className="w-full truncate text-center text-xs text-black">
+            <span className="w-full truncate text-center text-small-regular text-black">
               {category.name}
             </span>
           </LocalizedClientLink>

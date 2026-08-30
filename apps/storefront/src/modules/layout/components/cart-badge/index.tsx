@@ -29,7 +29,7 @@ const CartBadge = ({ count }: { count: number }) => {
   return (
     <span
       className={clx(
-        "absolute -top-1.5 -end-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 text-[10px] leading-none text-accent-foreground",
+        "absolute -top-1.5 -end-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 text-xsmall-regular leading-none text-accent-foreground",
         pulse && "animate-enter"
       )}
     >

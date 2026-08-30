@@ -62,24 +62,17 @@
     "total": "الإجمالي"
   },
   "Auth": {
-    "welcomeBack": "مرحبًا بعودتك",
-    "signInPrompt": "سجّل الدخول للاستمتاع بتجربة تسوق محسّنة.",
-    "verificationSentLogin": "أرسلنا رابط تحقق إلى {email}. يرجى تأكيد بريدك الإلكتروني، ثم تسجيل الدخول.",
-    "email": "البريد الإلكتروني",
-    "emailValidation": "أدخل عنوان بريد إلكتروني صحيح.",
-    "password": "كلمة المرور",
-    "signIn": "تسجيل الدخول",
-    "notAMember": "لست عضوًا؟",
-    "joinUs": "انضم إلينا",
-    "becomeMember": "كن عضوًا في {storeName}",
-    "createProfilePrompt": "أنشئ ملف العضوية الخاص بك في {storeName}، واحصل على تجربة تسوق محسّنة.",
-    "verificationSentRegister": "أرسلنا رابط تحقق إلى {email}. يرجى التحقق من بريدك الوارد لتأكيد بريدك الإلكتروني، ثم تسجيل الدخول.",
-    "firstName": "الاسم الأول",
-    "lastName": "اسم العائلة",
-    "phone": "الهاتف",
-    "agreeToTerms": "بإنشائك حسابًا، فإنك توافق على <privacyLink>سياسة الخصوصية</privacyLink> و<termsLink>شروط الاستخدام</termsLink> الخاصة بـ {storeName}.",
-    "join": "انضمام",
-    "alreadyMember": "عضو بالفعل؟"
+    "welcomeBack": "مرحبًا",
+    "signInPrompt": "سجّل الدخول برقم هاتفك للاستمتاع بتجربة تسوق محسّنة.",
+    "phone": "رقم الهاتف",
+    "invalidPhone": "أدخل رقم هاتف صحيح.",
+    "sendCode": "إرسال الرمز",
+    "codeSentTo": "أرسلنا رمزًا إلى {phone}",
+    "enterCode": "رمز التحقق",
+    "verify": "تحقق",
+    "resendCode": "إعادة إرسال الرمز",
+    "changeNumber": "استخدم رقمًا آخر",
+    "agreeToTermsContinue": "بالمتابعة، فإنك توافق على <privacyLink>سياسة الخصوصية</privacyLink> و<termsLink>شروط الاستخدام</termsLink> الخاصة بـ {storeName}."
   },
   "AccountNav": {
     "hello": "مرحبًا {firstName}",
@@ -105,6 +98,7 @@
     "stateProvince": "المحافظة / الولاية",
     "phone": "الهاتف",
     "email": "البريد الإلكتروني",
+    "emailOptional": "البريد الإلكتروني (اختياري، لتحديثات الطلب)",
     "emailValidation": "أدخل عنوان بريد إلكتروني صحيح.",
     "shippingAddress": "عنوان الشحن",
     "billingAddress": "عنوان الفوترة",
@@ -155,6 +149,8 @@
     "inYourCart": "في سلتك"
   },
   "Store": {
+    "search": "بحث",
+    "closeSearch": "إغلاق البحث",
     "searchPlaceholder": "ابحث عن المنتجات...",
     "allCategories": "الكل",
     "options": "الخيارات",
@@ -236,11 +232,6 @@
   },
   "Profile": {
     "name": "الاسم",
-    "password": "كلمة المرور",
-    "passwordNotShown": "لا يتم عرض كلمة المرور لأسباب أمنية",
-    "oldPassword": "كلمة المرور الحالية",
-    "newPassword": "كلمة المرور الجديدة",
-    "confirmPassword": "تأكيد كلمة المرور",
     "noBillingAddress": "لا يوجد عنوان فوترة"
   },
   "Overview": {
@@ -310,13 +301,6 @@
     "needHelp": "هل تحتاج إلى مساعدة؟",
     "contact": "تواصل معنا",
     "returnsExchanges": "الإرجاع والاستبدال"
-  },
-  "VerifyAccount": {
-    "title": "التحقق من البريد الإلكتروني",
-    "verifying": "جارٍ التحقق من بريدك الإلكتروني...",
-    "verified": "تم التحقق من بريدك الإلكتروني. يمكنك الآن تسجيل الدخول إلى حسابك.",
-    "invalidOrExpired": "رابط التحقق غير صالح أو منتهي الصلاحية. سجّل الدخول لتلقي رابط تحقق جديد.",
-    "goToSignIn": "الذهاب لتسجيل الدخول"
   },
   "TransferRequestForm": {
     "orderTransfers": "عمليات نقل الطلبات",

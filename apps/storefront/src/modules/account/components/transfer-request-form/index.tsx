@@ -28,7 +28,7 @@ export default function TransferRequestForm() {
     <div className="flex flex-col gap-y-4 w-full">
       <div className="grid small:grid-cols-2 items-center gap-x-8 gap-y-4 w-full">
         <div className="flex flex-col gap-y-1">
-          <Heading level="h3" className="!text-sm font-semibold text-gray-900">
+          <Heading level="h3" className="!text-base-semi text-gray-900">
             {t("orderTransfers")}
           </Heading>
           <p className="text-small-regular text-gray-500">
@@ -66,7 +66,7 @@ export default function TransferRequestForm() {
           <div className="flex gap-x-2 items-center">
             <CheckCircleMiniSolid className="w-4 h-4 text-green-700" />
             <div className="flex flex-col gap-y-1">
-              <Text className="text-medim-pl text-gray-900">
+              <Text className="text-base-semi text-gray-900">
                 {t("transferRequested", { id: state.order?.id ?? "" })}
               </Text>
               <Text className="text-base-regular text-gray-600">

@@ -45,7 +45,7 @@ const Addresses = ({
       <div className="flex flex-row items-center justify-between mb-6">
         <Heading
           level="h2"
-          className="flex flex-row items-center text-2xl font-bold text-black gap-x-2"
+          className="flex flex-row items-center text-xl-semi text-black gap-x-2"
         >
           {t("shippingAddress")}
           {!isOpen && <CheckCircleSolid className="text-accent" width={20} height={20} />}
@@ -76,7 +76,7 @@ const Addresses = ({
               <div>
                 <Heading
                   level="h2"
-                  className="text-2xl font-bold text-black gap-x-4 pb-6 pt-8"
+                  className="text-xl-semi text-black gap-x-4 pb-6 pt-8"
                 >
                   {t("billingAddress")}
                 </Heading>
@@ -99,7 +99,7 @@ const Addresses = ({
                     className="flex flex-col w-full small:w-1/3"
                     data-testid="shipping-address-summary"
                   >
-                    <Text className="text-small-regular font-semibold text-black mb-1">
+                    <Text className="text-small-semi text-black mb-1">
                       {t("shippingAddress")}
                     </Text>
                     <Text className="text-small-regular text-gray-500">
@@ -123,7 +123,7 @@ const Addresses = ({
                     className="flex flex-col w-full small:w-1/3"
                     data-testid="shipping-contact-summary"
                   >
-                    <Text className="text-small-regular font-semibold text-black mb-1">
+                    <Text className="text-small-semi text-black mb-1">
                       {t("contact")}
                     </Text>
                     <Text className="text-small-regular text-gray-500">
@@ -138,7 +138,7 @@ const Addresses = ({
                     className="flex flex-col w-full small:w-1/3"
                     data-testid="billing-address-summary"
                   >
-                    <Text className="text-small-regular font-semibold text-black mb-1">
+                    <Text className="text-small-semi text-black mb-1">
                       {t("billingAddressLabel")}
                     </Text>
 

@@ -38,7 +38,7 @@ export default async function OrderCompletedTemplate({
             </div>
             <Heading
               level="h1"
-              className="flex flex-col gap-y-1 text-ui-fg-base text-3xl mb-4"
+              className="flex flex-col gap-y-1 text-3xl-semi mb-4"
             >
               <span>{t("thankYou")}</span>
               <span>{t("placedSuccessfully")}</span>

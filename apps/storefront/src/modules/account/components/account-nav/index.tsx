@@ -148,7 +148,7 @@ const AccountNav = ({
             <div className="px-8 pt-6">
               <button
                 type="button"
-                className="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-gray-50 font-medium text-gray-900 transition-colors duration-150 hover:bg-gray-100 active:scale-[0.98]"
+                className="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-gray-50 text-base-semi text-gray-900 transition-colors duration-150 hover:bg-gray-100 active:scale-[0.98]"
                 onClick={handleLogout}
                 data-testid="logout-button"
               >

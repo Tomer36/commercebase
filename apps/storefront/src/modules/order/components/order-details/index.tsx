@@ -41,7 +41,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
         <span data-testid="order-id">{order.display_id}</span>
       </Text>
 
-      <div className="flex items-center text-compact-small gap-x-4 mt-4">
+      <div className="flex items-center text-small-regular gap-x-4 mt-4">
         {showStatus && (
           <>
             <Text>

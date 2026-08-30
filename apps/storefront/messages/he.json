@@ -62,24 +62,17 @@
     "total": "סה״כ"
   },
   "Auth": {
-    "welcomeBack": "ברוכים השבים",
-    "signInPrompt": "התחבר כדי ליהנות מחוויית קנייה משופרת.",
-    "verificationSentLogin": "שלחנו קישור אימות אל {email}. אמת את כתובת האימייל שלך, ולאחר מכן התחבר.",
-    "email": "אימייל",
-    "emailValidation": "הזן כתובת אימייל תקינה.",
-    "password": "סיסמה",
-    "signIn": "התחבר",
-    "notAMember": "עדיין לא חבר?",
-    "joinUs": "הצטרף אלינו",
-    "becomeMember": "הפוך לחבר ב-{storeName}",
-    "createProfilePrompt": "צור פרופיל חבר ב-{storeName} וקבל גישה לחוויית קנייה משופרת.",
-    "verificationSentRegister": "שלחנו קישור אימות אל {email}. בדוק את תיבת הדואר שלך כדי לאמת את כתובת האימייל, ולאחר מכן התחבר.",
-    "firstName": "שם פרטי",
-    "lastName": "שם משפחה",
-    "phone": "טלפון",
-    "agreeToTerms": "ביצירת חשבון, אתה מסכים ל<privacyLink>מדיניות הפרטיות</privacyLink> ול<termsLink>תנאי השימוש</termsLink> של {storeName}.",
-    "join": "הצטרף",
-    "alreadyMember": "כבר חבר?"
+    "welcomeBack": "ברוכים הבאים",
+    "signInPrompt": "התחבר עם מספר הטלפון שלך כדי ליהנות מחוויית קנייה משופרת.",
+    "phone": "מספר טלפון",
+    "invalidPhone": "הזן מספר טלפון תקין.",
+    "sendCode": "שלח קוד",
+    "codeSentTo": "שלחנו קוד אל {phone}",
+    "enterCode": "קוד אימות",
+    "verify": "אמת",
+    "resendCode": "שלח קוד מחדש",
+    "changeNumber": "השתמש במספר אחר",
+    "agreeToTermsContinue": "בהמשך, אתה מסכים ל<privacyLink>מדיניות הפרטיות</privacyLink> ול<termsLink>תנאי השימוש</termsLink> של {storeName}."
   },
   "AccountNav": {
     "hello": "שלום {firstName}",
@@ -105,6 +98,7 @@
     "stateProvince": "מחוז / מדינה",
     "phone": "טלפון",
     "email": "אימייל",
+    "emailOptional": "אימייל (לא חובה, לעדכוני הזמנה)",
     "emailValidation": "הזן כתובת אימייל תקינה.",
     "shippingAddress": "כתובת למשלוח",
     "billingAddress": "כתובת לחיוב",
@@ -155,6 +149,8 @@
     "inYourCart": "בעגלה שלך"
   },
   "Store": {
+    "search": "חיפוש",
+    "closeSearch": "סגור חיפוש",
     "searchPlaceholder": "חיפוש מוצרים...",
     "allCategories": "הכול",
     "options": "אפשרויות",
@@ -236,11 +232,6 @@
   },
   "Profile": {
     "name": "שם",
-    "password": "סיסמה",
-    "passwordNotShown": "הסיסמה אינה מוצגת מטעמי אבטחה",
-    "oldPassword": "סיסמה נוכחית",
-    "newPassword": "סיסמה חדשה",
-    "confirmPassword": "אימות סיסמה",
     "noBillingAddress": "אין כתובת לחיוב"
   },
   "Overview": {
@@ -310,13 +301,6 @@
     "needHelp": "צריך עזרה?",
     "contact": "צור קשר",
     "returnsExchanges": "החזרות והחלפות"
-  },
-  "VerifyAccount": {
-    "title": "אימות אימייל",
-    "verifying": "מאמת את האימייל שלך...",
-    "verified": "האימייל שלך אומת. כעת תוכל להתחבר לחשבונך.",
-    "invalidOrExpired": "קישור האימות אינו תקין או שפג תוקפו. התחבר כדי לקבל קישור אימות חדש.",
-    "goToSignIn": "לחיבור לחשבון"
   },
   "TransferRequestForm": {
     "orderTransfers": "העברות הזמנות",

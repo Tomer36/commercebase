@@ -23,14 +23,14 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-accent small:bg-white border-accent small:border-ui-border-base">
+      <header className="relative h-12 mx-auto border-b duration-200 bg-accent small:bg-white border-accent small:border-ui-border-base">
         <MobileHeader
           locales={locales}
           currentLocale={currentLocale}
           storeName={storeName}
           contactLabel={t("contactUs")}
         />
-        <nav className="hidden small:flex content-container txt-xsmall-plus text-black items-center justify-between w-full h-full text-small-regular">
+        <nav className="hidden small:flex content-container text-black items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />

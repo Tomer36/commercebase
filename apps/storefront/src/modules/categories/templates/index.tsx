@@ -60,7 +60,7 @@ export default function CategoryTemplate({
           <ProductSearch />
           <CategoryScroller />
         </div>
-        <div className="flex flex-row items-baseline mb-8 gap-4 text-2xl font-bold text-black">
+        <div className="flex flex-row items-baseline mb-8 gap-4 text-xl-semi text-black">
           {parents &&
             parents.map((parent) => (
               <span key={parent.id} className="text-gray-400">
@@ -82,7 +82,7 @@ export default function CategoryTemplate({
           </div>
         )}
         {category.category_children && (
-          <div className="mb-8 text-base-large">
+          <div className="mb-8 text-base-regular">
             <ul className="grid grid-cols-1 gap-2">
               {category.category_children?.map((c) => (
                 <li key={c.id}>
@@ -104,7 +104,7 @@ export default function CategoryTemplate({
           <PaginatedProducts
             sortBy={sort}
             page={pageNumber}
-            categoryId={category.id}
+            categoryIds={[category.id]}
             countryCode={countryCode}
             optionValueIds={optionValueIds}
             q={q}

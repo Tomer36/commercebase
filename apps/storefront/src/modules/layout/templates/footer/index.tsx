@@ -28,7 +28,7 @@ export default async function Footer() {
           <div>
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="text-xl-semi text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
               {tCommon("storeName")}
             </LocalizedClientLink>
@@ -36,7 +36,7 @@ export default async function Footer() {
           <div className="text-small-regular gap-10 medium:gap-x-16 grid grid-cols-2 small:grid-cols-3">
             {productCategories && productCategories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+                <span className="text-small-semi text-ui-fg-base">
                   {t("categories")}
                 </span>
                 <ul
@@ -57,13 +57,13 @@ export default async function Footer() {
 
                     return (
                       <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
+                        className="flex flex-col gap-2 text-ui-fg-subtle"
                         key={c.id}
                       >
                         <LocalizedClientLink
                           className={clx(
                             "hover:text-ui-fg-base",
-                            children && "txt-small-plus"
+                            children && "text-small-semi"
                           )}
                           href={`/categories/${c.handle}`}
                           data-testid="category-link"
@@ -94,12 +94,12 @@ export default async function Footer() {
             )}
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+                <span className="text-small-semi text-ui-fg-base">
                   {t("collections")}
                 </span>
                 <ul
                   className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 gap-2 text-ui-fg-subtle",
                     {
                       "grid-cols-2": (collections?.length || 0) > 3,
                     }
@@ -119,10 +119,10 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">
+              <span className="text-small-semi text-ui-fg-base">
                 {t("contact")}
               </span>
-              <ul className="grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small">
+              <ul className="grid grid-cols-1 gap-2 text-ui-fg-subtle">
                 <li>
                   <a
                     className="hover:text-ui-fg-base"
@@ -159,7 +159,7 @@ export default async function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-y-4 w-full mb-16 text-ui-fg-muted">
-          <ul className="flex gap-x-6 txt-compact-small">
+          <ul className="flex gap-x-6 text-small-regular">
             <li>
               <LocalizedClientLink
                 className="hover:text-ui-fg-base"
@@ -185,7 +185,7 @@ export default async function Footer() {
               </LocalizedClientLink>
             </li>
           </ul>
-          <Text className="txt-compact-small">
+          <Text className="text-small-regular">
             {tCommon("copyright", {
               year: new Date().getFullYear(),
               storeName: tCommon("storeName"),

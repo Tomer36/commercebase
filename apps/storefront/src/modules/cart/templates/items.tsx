@@ -16,7 +16,7 @@ const ItemsTemplate = async ({ cart }: ItemsTemplateProps) => {
   return (
     <div>
       <div className="pb-3 flex items-center">
-        <Heading className="text-2xl font-bold text-black">{t("cart")}</Heading>
+        <Heading className="text-xl-semi text-black">{t("cart")}</Heading>
       </div>
       <div>
         {items

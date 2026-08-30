@@ -62,24 +62,17 @@
     "total": "Total"
   },
   "Auth": {
-    "welcomeBack": "Welcome back",
-    "signInPrompt": "Sign in to access an enhanced shopping experience.",
-    "verificationSentLogin": "We sent a verification link to {email}. Please verify your email, then sign in.",
-    "email": "Email",
-    "emailValidation": "Enter a valid email address.",
-    "password": "Password",
-    "signIn": "Sign in",
-    "notAMember": "Not a member?",
-    "joinUs": "Join us",
-    "becomeMember": "Become a {storeName} Member",
-    "createProfilePrompt": "Create your {storeName} Member profile, and get access to an enhanced shopping experience.",
-    "verificationSentRegister": "We sent a verification link to {email}. Please check your inbox to verify your email, then sign in.",
-    "firstName": "First name",
-    "lastName": "Last name",
-    "phone": "Phone",
-    "agreeToTerms": "By creating an account, you agree to the <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Use</termsLink> of {storeName}.",
-    "join": "Join",
-    "alreadyMember": "Already a member?"
+    "welcomeBack": "Welcome",
+    "signInPrompt": "Sign in with your phone number to access an enhanced shopping experience.",
+    "phone": "Phone number",
+    "invalidPhone": "Enter a valid phone number.",
+    "sendCode": "Send code",
+    "codeSentTo": "We sent a code to {phone}",
+    "enterCode": "Verification code",
+    "verify": "Verify",
+    "resendCode": "Resend code",
+    "changeNumber": "Use a different number",
+    "agreeToTermsContinue": "By continuing, you agree to the <privacyLink>Privacy Policy</privacyLink> and <termsLink>Terms of Use</termsLink> of {storeName}."
   },
   "AccountNav": {
     "hello": "Hello {firstName}",
@@ -105,6 +98,7 @@
     "stateProvince": "State / Province",
     "phone": "Phone",
     "email": "Email",
+    "emailOptional": "Email (optional, for order updates)",
     "emailValidation": "Enter a valid email address.",
     "shippingAddress": "Shipping Address",
     "billingAddress": "Billing address",
@@ -155,6 +149,8 @@
     "inYourCart": "In your Cart"
   },
   "Store": {
+    "search": "Search",
+    "closeSearch": "Close search",
     "searchPlaceholder": "Search products...",
     "allCategories": "All",
     "options": "Options",
@@ -236,11 +232,6 @@
   },
   "Profile": {
     "name": "Name",
-    "password": "Password",
-    "passwordNotShown": "The password is not shown for security reasons",
-    "oldPassword": "Old password",
-    "newPassword": "New password",
-    "confirmPassword": "Confirm password",
     "noBillingAddress": "No billing address"
   },
   "Overview": {
@@ -310,13 +301,6 @@
     "needHelp": "Need help?",
     "contact": "Contact",
     "returnsExchanges": "Returns & Exchanges"
-  },
-  "VerifyAccount": {
-    "title": "Email verification",
-    "verifying": "Verifying your email...",
-    "verified": "Your email is verified. You can now sign in to your account.",
-    "invalidOrExpired": "This verification link is invalid or has expired. Sign in to receive a new verification email.",
-    "goToSignIn": "Go to sign in"
   },
   "TransferRequestForm": {
     "orderTransfers": "Order transfers",

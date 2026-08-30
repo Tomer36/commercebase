@@ -21,7 +21,7 @@ const FilterRadioGroup = ({
 }: FilterRadioGroupProps) => {
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-sm font-medium text-black">{title}</span>
+      <span className="text-base-semi text-black">{title}</span>
       <RadioGroup data-testid={dataTestId} className="gap-y-2">
         {items?.map((i) => {
           const active = i.value === value
@@ -50,7 +50,7 @@ const FilterRadioGroup = ({
               />
               <span
                 className={clsx(
-                  "text-sm",
+                  "text-base-regular",
                   active ? "text-black" : "text-gray-500"
                 )}
                 data-testid="radio-label"

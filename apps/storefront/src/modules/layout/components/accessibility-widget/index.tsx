@@ -63,7 +63,7 @@ const AccessibilityWidget = () => {
         aria-label={t("openWidget")}
         aria-expanded={isOpen}
         data-testid="accessibility-widget-button"
-        className="fixed end-4 bottom-24 small:bottom-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-150 ease-out hover:opacity-90 active:scale-90"
+        className="fixed end-4 bottom-20 small:bottom-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg transition-all duration-150 ease-out hover:opacity-90 active:scale-90"
       >
         {isOpen ? (
           <XMark width={20} height={20} />
@@ -86,7 +86,7 @@ const AccessibilityWidget = () => {
           role="dialog"
           aria-label={t("panelTitle")}
           data-testid="accessibility-widget-panel"
-          className="fixed end-4 bottom-[9.5rem] small:bottom-20 z-40 flex w-72 max-w-[calc(100vw-2rem)] flex-col gap-4 rounded-large border border-gray-200 bg-white p-4 shadow-xl"
+          className="fixed end-4 bottom-[8.5rem] small:bottom-20 z-40 flex w-72 max-w-[calc(100vw-2rem)] flex-col gap-4 rounded-large border border-gray-200 bg-white p-4 shadow-xl"
         >
           <h2 className="text-base-semi text-black">{t("panelTitle")}</h2>
 
@@ -105,7 +105,7 @@ const AccessibilityWidget = () => {
                 }
                 disabled={prefs.textScale === 0}
                 aria-label={t("decreaseText")}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-sm font-semibold disabled:opacity-30"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-base-semi disabled:opacity-30"
               >
                 A-
               </button>
@@ -126,7 +126,7 @@ const AccessibilityWidget = () => {
                 }
                 disabled={prefs.textScale === MAX_TEXT_SCALE}
                 aria-label={t("increaseText")}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-base font-semibold disabled:opacity-30"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-large-semi disabled:opacity-30"
               >
                 A+
               </button>

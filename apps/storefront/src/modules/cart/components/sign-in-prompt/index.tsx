@@ -9,10 +9,10 @@ const SignInPrompt = async () => {
   return (
     <div className="bg-white flex items-center justify-between">
       <div>
-        <Heading level="h2" className="txt-xlarge">
+        <Heading level="h2">
           {t("alreadyHaveAccount")}
         </Heading>
-        <Text className="txt-medium text-ui-fg-subtle mt-2">
+        <Text className="text-base-regular text-ui-fg-subtle mt-2">
           {t("betterExperience")}
         </Text>
       </div>

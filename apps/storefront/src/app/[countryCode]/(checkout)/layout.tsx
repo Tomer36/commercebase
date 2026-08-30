@@ -19,16 +19,16 @@ export default async function CheckoutLayout({
             data-testid="back-to-cart-link"
           >
             <ChevronDown className="rotate-90 rtl:-rotate-90" width={16} height={16} />
-            <span className="mt-px hidden small:block txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base ">
+            <span className="mt-px hidden small:block text-small-semi text-ui-fg-subtle hover:text-ui-fg-base ">
               {t("backToShoppingCart")}
             </span>
-            <span className="mt-px block small:hidden txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base">
+            <span className="mt-px block small:hidden text-small-semi text-ui-fg-subtle hover:text-ui-fg-base">
               {t("back")}
             </span>
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+            className="text-xl-semi text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             data-testid="store-link"
           >
             {t("storeName")}

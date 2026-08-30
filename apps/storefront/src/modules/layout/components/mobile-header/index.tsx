@@ -1,7 +1,7 @@
 "use client"
 
-import { Phone } from "@medusajs/icons"
 import useToggleState from "@lib/hooks/use-toggle-state"
+import Telephone from "@modules/common/icons/telephone"
 import { Locale } from "@lib/data/locales"
 import LanguageSelect from "@modules/layout/components/language-select"
 import CompanyOverview from "@modules/layout/components/company-overview"
@@ -45,9 +45,9 @@ const MobileHeader = ({
         aria-label={contactLabel}
         title={contactLabel}
         data-testid="nav-contact-button"
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-accent-foreground transition-all duration-150 ease-out hover:bg-white/30 active:scale-90"
+        className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-accent-foreground transition-all duration-150 ease-out hover:bg-white/30 active:scale-90"
       >
-        <Phone width={18} height={18} />
+        <Telephone size={16} />
       </button>
 
       <CompanyOverview
