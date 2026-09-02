@@ -8,6 +8,7 @@ import PaymentContainer, {
   StripeCardContainer,
 } from "@modules/checkout/components/payment-container"
 import Divider from "@modules/common/components/divider"
+import TrustBadges from "@modules/common/components/trust-badges"
 import {
   Button,
   Container,
@@ -193,6 +194,8 @@ const Payment = ({
             error={error}
             data-testid="payment-method-error-message"
           />
+
+          <TrustBadges />
 
           <Button
             size="large"

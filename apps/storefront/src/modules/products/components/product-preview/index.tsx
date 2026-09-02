@@ -1,6 +1,7 @@
 import { getProductPrice } from "@lib/util/get-product-price"
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { getTranslations } from "next-intl/server"
 import Thumbnail from "../thumbnail"
 import PreviewPrice from "./price"
 import QuickAddButton from "./quick-add-button"
@@ -14,6 +15,14 @@ export default async function ProductPreview({
   isFeatured?: boolean
   region: HttpTypes.StoreRegion
 }) {
+  const t = await getTranslations("Store")
+
+  // Merchant-controlled via a "new" product tag in the Medusa admin — not
+  // inferred from created_at, which reflects when a row was seeded/imported
+  // rather than when the merchant actually wants it flagged as new.
+  const isNew = !!product.tags?.some(
+    (tag) => tag.value.toLowerCase() === "new"
+  )
   // const pricedProduct = await listProducts({
   //   regionId: region.id,
   //   queryParams: { id: [product.id!] },
@@ -44,8 +53,13 @@ export default async function ProductPreview({
     >
       <LocalizedClientLink
         href={`/products/${product.handle}`}
-        className="block active:scale-[0.98] transition-transform duration-150"
+        className="relative block active:scale-[0.98] transition-transform duration-150"
       >
+        {isNew && (
+          <span className="absolute start-2 top-2 z-10 rounded-full bg-accent-soft px-2 py-1 text-xsmall-semi text-accent">
+            {t("newBadge")}
+          </span>
+        )}
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}

@@ -1,0 +1,372 @@
+<title>CommerceBase Tokens</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Hebrew:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --graphite-900:#16181C; --graphite-700:#2A2D33;
+    --chalk-50:#F5F6F4; --chalk-100:#EDEEEA;
+    --steel-500:#9AA0A6; --steel-700:#5B6167;
+    --teal-500:#1F6F6B; --teal-300:#3D9C97; --teal-100:#E4EFEE;
+    --amber-500:#C99A3E; --amber-300:#DCB971;
+    --brick-500:#A23E36; --brick-300:#C1584E;
+
+    --bg: var(--chalk-50);
+    --bg-raised: #ffffff;
+    --bg-sunken: var(--chalk-100);
+    --text: var(--graphite-900);
+    --text-muted: var(--steel-700);
+    --border: #DCDEDA;
+    --border-strong: var(--steel-500);
+    --accent: var(--teal-500);
+    --accent-soft: var(--teal-100);
+    --secondary: var(--amber-500);
+    --signal: var(--brick-500);
+    --shadow-elevate: 0 8px 24px -8px rgb(0 0 0 / 0.16);
+
+    --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+    --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px;
+    --radius-sm:6px; --radius-lg:16px; --radius-full:999px;
+
+    --font-display:'Unbounded', system-ui, sans-serif;
+    --font-body:'IBM Plex Sans','IBM Plex Sans Hebrew','IBM Plex Sans Arabic',-apple-system,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: var(--graphite-900);
+      --bg-raised: var(--graphite-700);
+      --bg-sunken: #0F1013;
+      --text: var(--chalk-50);
+      --text-muted: #9BA3A8;
+      --border: #34383D;
+      --border-strong: #4A4F55;
+      --accent: var(--teal-300);
+      --accent-soft: #1B3836;
+      --secondary: var(--amber-300);
+      --signal: var(--brick-300);
+      --shadow-elevate: 0 8px 28px -8px rgb(0 0 0 / 0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: var(--graphite-900);
+    --bg-raised: var(--graphite-700);
+    --bg-sunken: #0F1013;
+    --text: var(--chalk-50);
+    --text-muted: #9BA3A8;
+    --border: #34383D;
+    --border-strong: #4A4F55;
+    --accent: var(--teal-300);
+    --accent-soft: #1B3836;
+    --secondary: var(--amber-300);
+    --signal: var(--brick-300);
+    --shadow-elevate: 0 8px 28px -8px rgb(0 0 0 / 0.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:var(--font-body); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-soft); color:var(--text); }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:700; text-wrap:balance; margin:0; }
+  code, .mono{ font-family:var(--font-mono); }
+
+  .shell{ display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
+  @media (max-width:860px){ .shell{ grid-template-columns:1fr; } .index{ display:none; } }
+
+  .index{
+    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+    border-inline-end:1px solid var(--border); padding:var(--space-6) var(--space-4);
+    display:flex; flex-direction:column; gap:var(--space-6);
+  }
+  .index .brand{ font-family:var(--font-display); font-size:15px; letter-spacing:0.02em; }
+  .index .brand small{ display:block; font-family:var(--font-mono); font-size:11px; color:var(--text-muted); font-weight:400; letter-spacing:0.08em; margin-top:4px; }
+  .index nav{ display:flex; flex-direction:column; gap:2px; }
+  .index nav a{
+    text-decoration:none; color:var(--text-muted); font-size:13px; padding:8px 10px;
+    border-inline-start:2px solid transparent; border-radius:var(--radius-sm);
+  }
+  .index nav a:hover, .index nav a:focus-visible{ color:var(--text); background:var(--bg-sunken); }
+  .index nav a:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
+  .index .themebtn{
+    margin-top:auto; font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em;
+    background:var(--bg-sunken); border:1px solid var(--border); color:var(--text);
+    padding:8px 10px; border-radius:var(--radius-sm); cursor:pointer;
+  }
+  .index .themebtn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  main{ padding:var(--space-8) var(--space-6) var(--space-8); max-width:960px; }
+  section{ margin-bottom:var(--space-8); scroll-margin-top:var(--space-6); }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--text-muted); margin-bottom:var(--space-2); display:block;
+  }
+  section > h2{ font-size:28px; margin-bottom:var(--space-2); }
+  section > p.lede{ max-width:62ch; color:var(--text-muted); font-size:15px; margin:0 0 var(--space-6); }
+
+  .divider{ border:none; border-top:1px solid var(--border); margin:0 0 var(--space-8); }
+
+  /* color */
+  .swatches{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:var(--space-4); }
+  .swatch{ border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; }
+  .swatch .fill{ height:88px; }
+  .swatch .meta{ padding:var(--space-3); background:var(--bg-raised); }
+  .swatch .name{ font-size:14px; font-weight:600; }
+  .swatch .hex{ font-family:var(--font-mono); font-size:12px; color:var(--text-muted); }
+  .swatch .note{ font-family:var(--font-mono); font-size:10.5px; color:var(--text-muted); margin-top:6px; line-height:1.4; }
+
+  /* type */
+  .type-row{ display:flex; align-items:baseline; gap:var(--space-4); padding:var(--space-4) 0; border-bottom:1px solid var(--border); }
+  .type-row:last-child{ border-bottom:none; }
+  .type-row .tag{ font-family:var(--font-mono); font-size:11px; color:var(--text-muted); width:150px; flex-shrink:0; }
+  .display-sample{ font-family:var(--font-display); font-size:34px; font-weight:700; }
+  .body-sample{ font-family:var(--font-body); font-size:17px; }
+  .mono-sample{ font-family:var(--font-mono); font-size:15px; }
+  .script-grid{ display:grid; gap:var(--space-4); }
+  .script-card{ border:1px solid var(--border); border-radius:var(--radius-lg); padding:var(--space-4); background:var(--bg-raised); }
+  .script-card .lang{ font-family:var(--font-mono); font-size:11px; color:var(--text-muted); margin-bottom:8px; display:block; }
+  .script-card .sample{ font-size:19px; }
+  .script-card[dir="rtl"] .sample{ font-family:'IBM Plex Sans Hebrew','IBM Plex Sans Arabic',var(--font-body); }
+
+  /* scale */
+  .scalebar{ display:flex; align-items:flex-end; gap:var(--space-3); margin-bottom:var(--space-4); }
+  .scalebar .col{ text-align:center; }
+  .scalebar .bar{ background:var(--accent); width:28px; border-radius:2px 2px 0 0; }
+  .scalebar .lbl{ font-family:var(--font-mono); font-size:10.5px; color:var(--text-muted); margin-top:6px; }
+  .radius-row{ display:flex; gap:var(--space-4); flex-wrap:wrap; }
+  .radius-demo{ width:80px; height:80px; background:var(--accent-soft); border:1px solid var(--border-strong); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:10px; color:var(--text-muted); }
+
+  /* wireframe / rtl demo */
+  .frame{ border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; background:var(--bg-raised); box-shadow:var(--shadow-elevate); }
+  .frame .titlebar{ display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-bottom:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--text-muted); }
+  .mock{ display:flex; flex-direction:column; font-family:var(--font-body); }
+  .mock .nav{ display:flex; justify-content:space-between; align-items:center; padding:10px 16px; border-bottom:1px solid var(--border); }
+  .mock .nav .logo{ font-family:var(--font-display); font-size:13px; }
+  .mock .nav .links{ display:flex; gap:14px; font-size:11px; color:var(--text-muted); }
+  .mock .body-row{ display:flex; gap:12px; padding:14px 16px; }
+  .mock[dir="rtl"] .body-row{ flex-direction:row-reverse; }
+  .mock .sidebar{ width:90px; flex-shrink:0; display:flex; flex-direction:column; gap:6px; }
+  .mock .sidebar .item{ height:9px; background:var(--bg-sunken); border-radius:2px; width:100%; }
+  .mock .sidebar .item.short{ width:60%; }
+  .mock .grid{ flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .mock .card{ border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px; display:flex; flex-direction:column; gap:6px; }
+  .mock .card .thumb{ aspect-ratio:1; background:var(--accent-soft); border-radius:4px; }
+  .mock .card .line{ height:6px; background:var(--bg-sunken); border-radius:2px; }
+  .mock .card .line.w60{ width:60%; }
+  .mock .card .price{ font-family:var(--font-mono); font-size:10px; color:var(--accent); }
+  .toggle{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:11px;
+    background:var(--bg-sunken); border:1px solid var(--border); padding:8px 12px; border-radius:var(--radius-full);
+    cursor:pointer; margin-bottom:var(--space-4); color:var(--text);
+  }
+  .toggle:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  /* components */
+  .demo-row{ display:flex; gap:var(--space-4); align-items:center; flex-wrap:wrap; }
+  .btn{ font-family:var(--font-body); font-weight:600; font-size:14px; padding:11px 20px; border-radius:var(--radius-full); border:1px solid transparent; cursor:pointer; }
+  .btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .btn-primary{ background:var(--accent); color:var(--chalk-50); }
+  .btn-secondary{ background:var(--bg-raised); color:var(--text); border-color:var(--border-strong); }
+  .badge{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:11px; padding:4px 10px; border-radius:var(--radius-full); background:var(--accent-soft); color:var(--accent); }
+  .badge.signal{ background:color-mix(in srgb, var(--signal) 16%, var(--bg)); color:var(--signal); }
+
+  .principles{ display:grid; gap:var(--space-4); }
+  .principles .p{ border-inline-start:2px solid var(--accent); padding-inline-start:var(--space-4); }
+  .principles .p .num{ font-family:var(--font-mono); font-size:11px; color:var(--text-muted); }
+  .principles .p p{ margin:4px 0 0; max-width:60ch; font-size:14.5px; }
+
+  footer{ border-top:1px solid var(--border); padding-top:var(--space-4); font-family:var(--font-mono); font-size:11px; color:var(--text-muted); }
+
+  @media (prefers-reduced-motion: no-preference){
+    .mock, .swatch{ transition: border-color .15s ease; }
+  }
+</style>
+
+<div class="shell">
+  <aside class="index">
+    <div class="brand">CommerceBase<small>DESIGN SYSTEM — PASS 1</small></div>
+    <nav>
+      <a href="#color">Color</a>
+      <a href="#type">Type</a>
+      <a href="#scale">Spacing &amp; Radius</a>
+      <a href="#rtl">Layout &amp; RTL</a>
+      <a href="#components">Components</a>
+      <a href="#principles">Principles</a>
+    </nav>
+    <button class="themebtn" id="themeBtn" type="button">THEME: SYSTEM</button>
+  </aside>
+
+  <main>
+    <section id="intro">
+      <span class="eyebrow">Proposal — not yet approved</span>
+      <h2 style="font-size:38px;">A base every client wears differently</h2>
+      <p class="lede">Six primitive tokens, a two-script type system, one shadow. Everything below is live CSS in this page — not a mockup of it.</p>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="color">
+      <span class="eyebrow">01 — Color</span>
+      <h2>Six values, two layers</h2>
+      <p class="lede">Primitives on top; components only ever consume the semantic layer beneath them. Contrast ratios are computed, not guessed.</p>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="fill" style="background:var(--graphite-900);"></div>
+          <div class="meta"><div class="name">Graphite</div><div class="hex">#16181C</div><div class="note">TEXT / INK<br/>16.3:1 on Chalk — AAA</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--chalk-50); border-bottom:1px solid var(--border);"></div>
+          <div class="meta"><div class="name">Chalk</div><div class="hex">#F5F6F4</div><div class="note">PAGE BACKGROUND</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--steel-500);"></div>
+          <div class="meta"><div class="name">Steel</div><div class="hex">#9AA0A6</div><div class="note">BORDERS ONLY<br/>2.4:1 on Chalk — fails AA as text</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--teal-500);"></div>
+          <div class="meta"><div class="name">Teal</div><div class="hex">#1F6F6B</div><div class="note">PRIMARY · re-skin target<br/>5.4:1 on Chalk — AA</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--amber-500);"></div>
+          <div class="meta"><div class="name">Amber</div><div class="hex">#C99A3E</div><div class="note">SECONDARY · re-skin target<br/>use as fill, not text-on-Chalk</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--brick-500);"></div>
+          <div class="meta"><div class="name">Brick</div><div class="hex">#A23E36</div><div class="note">SIGNAL · sale / error only<br/>5.9:1 on Chalk — AA</div></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="type">
+      <span class="eyebrow">02 — Type</span>
+      <h2>Three roles, one family doing the real work</h2>
+      <p class="lede">Unbounded carries headlines only. IBM Plex Sans (+ its Hebrew and Arabic cuts) carries everything functional. IBM Plex Mono carries anything tabular.</p>
+      <div class="type-row"><span class="tag">display / Unbounded</span><span class="display-sample">Detail, restored.</span></div>
+      <div class="type-row"><span class="tag">body / Plex Sans</span><span class="body-sample">Ceramic coating, matte finish — engineered for daily drivers.</span></div>
+      <div class="type-row"><span class="tag">mono / Plex Mono</span><span class="mono-sample">SKU-04521 · ₪248.00 · qty 2</span></div>
+
+      <div class="script-grid" style="margin-top:var(--space-6);">
+        <div class="script-card">
+          <span class="lang">EN — Latin</span>
+          <div class="sample">Hydrating serum, 30ml — for daily use</div>
+        </div>
+        <div class="script-card" dir="rtl">
+          <span class="lang">HE — IBM Plex Sans Hebrew</span>
+          <div class="sample">סרום לחות, 30 מ״ל — לשימוש יומי</div>
+        </div>
+        <div class="script-card" dir="rtl">
+          <span class="lang">AR — IBM Plex Sans Arabic</span>
+          <div class="sample">سيروم ترطيب، 30 مل — للاستخدام اليومي</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="scale">
+      <span class="eyebrow">03 — Spacing &amp; Radius</span>
+      <h2>An 8-step scale, a 3-tier radius</h2>
+      <p class="lede">No shadow tokens here — structure comes from space and border, not elevation.</p>
+      <div class="scalebar">
+        <div class="col"><div class="bar" style="height:4px;"></div><div class="lbl">4</div></div>
+        <div class="col"><div class="bar" style="height:8px;"></div><div class="lbl">8</div></div>
+        <div class="col"><div class="bar" style="height:12px;"></div><div class="lbl">12</div></div>
+        <div class="col"><div class="bar" style="height:16px;"></div><div class="lbl">16</div></div>
+        <div class="col"><div class="bar" style="height:24px;"></div><div class="lbl">24</div></div>
+        <div class="col"><div class="bar" style="height:32px;"></div><div class="lbl">32</div></div>
+        <div class="col"><div class="bar" style="height:48px;"></div><div class="lbl">48</div></div>
+        <div class="col"><div class="bar" style="height:64px;"></div><div class="lbl">64</div></div>
+      </div>
+      <div class="radius-row">
+        <div class="radius-demo" style="border-radius:6px;">sm · 6px</div>
+        <div class="radius-demo" style="border-radius:16px;">lg · 16px</div>
+        <div class="radius-demo" style="border-radius:999px;">full</div>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="rtl">
+      <span class="eyebrow">04 — Layout &amp; RTL</span>
+      <h2>Mirrored, not flipped</h2>
+      <p class="lede">Same markup, same CSS, only <code class="mono">dir</code> changes. The sidebar moves to the opposite inline edge; card contents keep their own internal order.</p>
+      <button class="toggle" id="dirToggle" type="button">⇄ SWITCH TO RTL</button>
+      <div class="frame">
+        <div class="titlebar"><span>category.html</span><span id="dirLabel">dir="ltr"</span></div>
+        <div class="mock" id="mockRoot" dir="ltr">
+          <div class="nav">
+            <span class="logo">STORE</span>
+            <span class="links"><span>Categories</span><span>Cart (2)</span></span>
+          </div>
+          <div class="body-row">
+            <div class="sidebar">
+              <div class="item"></div><div class="item short"></div><div class="item"></div><div class="item short"></div>
+            </div>
+            <div class="grid">
+              <div class="card"><div class="thumb"></div><div class="line"></div><div class="line w60"></div><div class="price">$42</div></div>
+              <div class="card"><div class="thumb"></div><div class="line"></div><div class="line w60"></div><div class="price">$28</div></div>
+              <div class="card"><div class="thumb"></div><div class="line"></div><div class="line w60"></div><div class="price">$65</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="components">
+      <span class="eyebrow">05 — Components (token-driven, not hardcoded)</span>
+      <h2>Buttons &amp; badges</h2>
+      <div class="demo-row">
+        <button class="btn btn-primary">Add to cart</button>
+        <button class="btn btn-secondary">View details</button>
+        <span class="badge">New</span>
+        <span class="badge signal">-20%</span>
+      </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section id="principles">
+      <span class="eyebrow">06 — Principles</span>
+      <div class="principles">
+        <div class="p"><span class="num">01</span><p>Cool neutrals over warm cream — reads as a calibrated instrument, not one brand's packaging, so it doesn't fight a clinic or an auto-detailer.</p></div>
+        <div class="p"><span class="num">02</span><p>Teal and amber instead of blue and terracotta — genuinely underused, genuinely survivable once a client's own brand color replaces the accent token.</p></div>
+        <div class="p"><span class="num">03</span><p>One shadow token, reserved for real overlays. Everywhere else, borders and space do the work — the fastest way to look hand-built instead of templated.</p></div>
+      </div>
+    </section>
+
+    <footer>Pass 1 — awaiting direction before component code begins.</footer>
+  </main>
+</div>
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    var states = ['system','light','dark'];
+    var i = 0;
+    btn.addEventListener('click', function(){
+      i = (i+1) % states.length;
+      var s = states[i];
+      if(s==='system'){ root.removeAttribute('data-theme'); }
+      else { root.setAttribute('data-theme', s); }
+      btn.textContent = 'THEME: ' + s.toUpperCase();
+    });
+
+    var dirBtn = document.getElementById('dirToggle');
+    var mock = document.getElementById('mockRoot');
+    var lbl = document.getElementById('dirLabel');
+    dirBtn.addEventListener('click', function(){
+      var rtl = mock.getAttribute('dir') === 'rtl';
+      mock.setAttribute('dir', rtl ? 'ltr' : 'rtl');
+      lbl.textContent = 'dir="' + (rtl ? 'ltr' : 'rtl') + '"';
+      dirBtn.textContent = rtl ? '⇄ SWITCH TO RTL' : '⇄ SWITCH TO LTR';
+    });
+  })();
+</script>

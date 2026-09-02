@@ -1,25 +1,24 @@
 "use client"
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useCallback, useMemo } from "react"
+import { useCallback } from "react"
 
-import {
-  OPTION_VALUE_QUERY_KEY,
-  parseOptionValueIds,
-} from "@lib/util/product-option-filters"
-import OptionsPicker from "./options-picker"
+import { HttpTypes } from "@medusajs/types"
+import ProductSearch from "@modules/store/components/product-search"
+import CategoryFilter from "./category-filter"
 import SortProducts, { SortOptions } from "./sort-products"
 
 type RefinementListProps = {
   sortBy: SortOptions
   search?: boolean
-  hideOptionsPicker?: boolean
+  categories?: HttpTypes.StoreProductCategory[]
   "data-testid"?: string
 }
 
 const RefinementList = ({
   sortBy,
-  hideOptionsPicker = false,
+  search = false,
+  categories,
   "data-testid": dataTestId,
 }: RefinementListProps) => {
   const router = useRouter()
@@ -50,32 +49,15 @@ const RefinementList = ({
   const setQueryParams = (name: string, value: string) =>
     updateQueryParams((params) => params.set(name, value))
 
-  const selectedOptionValueIds = useMemo(
-    () => parseOptionValueIds(searchParams),
-    [searchParams]
-  )
-
-  const setOptionValueIds = (valueIds: string[]) =>
-    updateQueryParams((params) => {
-      params.delete(OPTION_VALUE_QUERY_KEY)
-      valueIds.forEach((valueId) =>
-        params.append(OPTION_VALUE_QUERY_KEY, valueId)
-      )
-    })
-
   return (
-    <div className="flex flex-col gap-12 py-4 mb-8 small:px-0 ps-6 small:min-w-[250px] small:ms-7">
+    <div className="flex flex-col gap-12 py-4 mb-8 small:px-0 ps-6 small:pe-8 small:min-w-[250px] small:ms-7">
+      {search && <ProductSearch />}
+      {!!categories?.length && <CategoryFilter categories={categories} />}
       <SortProducts
         sortBy={sortBy}
         setQueryParams={setQueryParams}
         data-testid={dataTestId}
       />
-      {!hideOptionsPicker && (
-        <OptionsPicker
-          selectedValueIds={selectedOptionValueIds}
-          setOptionValueIds={setOptionValueIds}
-        />
-      )}
     </div>
   )
 }

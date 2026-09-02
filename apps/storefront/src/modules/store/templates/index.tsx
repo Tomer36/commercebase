@@ -56,11 +56,11 @@ const StoreTemplate = async ({
 
   return (
     <div
-      className="flex flex-col small:flex-row small:items-start pt-0 pb-3 small:py-6 content-container"
+      className="flex flex-col small:flex-row small:divide-x small:rtl:divide-x-reverse small:divide-gray-200 pt-0 pb-3 small:py-6 content-container"
       data-testid="category-container"
     >
       <div className="hidden small:block">
-        <RefinementList sortBy={sort} />
+        <RefinementList sortBy={sort} search categories={topLevelCategories} />
       </div>
       <div className="w-full">
         <div className="small:hidden sticky top-12 z-30 -mx-6 border-b border-gray-200 bg-white px-6 py-2 shadow-md">

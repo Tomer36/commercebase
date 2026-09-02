@@ -7,6 +7,7 @@
     "store": "المتجر",
     "orders": "الطلبات",
     "menu": "القائمة",
+    "close": "إغلاق",
     "contactUs": "تواصل معنا",
     "language": "اللغة:",
     "copyright": "© {year} {storeName}. جميع الحقوق محفوظة.",
@@ -14,6 +15,7 @@
     "back": "رجوع"
   },
   "Footer": {
+    "ourStory": "قصتنا",
     "categories": "الفئات",
     "collections": "المجموعات",
     "contact": "تواصل معنا",
@@ -153,21 +155,25 @@
     "closeSearch": "إغلاق البحث",
     "searchPlaceholder": "ابحث عن المنتجات...",
     "allCategories": "الكل",
+    "categories": "الفئات",
     "options": "الخيارات",
     "optionFallback": "خيار",
     "metaTitle": "جميع المنتجات",
     "metaDescription": "تصفحوا مجموعتنا الكاملة من منتجات العناية بالبشرة والتجميل.",
     "noResultsTitle": "لم يتم العثور على منتجات",
     "noResultsBody": "حاولوا تعديل البحث أو الفلاتر.",
-    "clearSearch": "مسح البحث"
+    "clearSearch": "مسح البحث",
+    "newBadge": "جديد"
   },
   "Home": {
     "newArrivals": "وصل حديثًا",
+    "heroHeadline": "عناية بالبشرة تناسب روتينك اليومي",
     "heroTagline": "تسوقي منتجات العناية ببشرتك",
     "shopNow": "تسوق الآن",
     "welcomeBack": "مرحبًا بعودتك، {firstName}",
     "metaDescription": "تسوقوا منتجات العناية بالبشرة والتجميل، المختارة لروتينكم.",
-    "seeAll": "عرض الكل"
+    "seeAll": "عرض الكل",
+    "shopByCategory": "تسوق حسب الفئة"
   },
   "RelatedProducts": {
     "heading": "منتجات ذات صلة",
@@ -187,6 +193,36 @@
     "simpleExchangesBody": "المقاس غير مناسب؟ لا مشكلة، سنستبدل منتجك بآخر جديد.",
     "easyReturns": "إرجاع سهل",
     "easyReturnsBody": "فقط أعد منتجك وسنقوم برد أموالك. بدون أي أسئلة - سنبذل قصارى جهدنا لجعل عملية الإرجاع سهلة."
+  },
+  "TrustBadges": {
+    "securePayment": "دفع آمن",
+    "fastDelivery": "توصيل سريع",
+    "easyReturns": "إرجاع سهل"
+  },
+  "CheckoutSteps": {
+    "address": "العنوان",
+    "delivery": "التوصيل",
+    "payment": "الدفع",
+    "review": "المراجعة"
+  },
+  "Brand": {
+    "metaTitle": "قصتنا",
+    "title": "قصتنا",
+    "intro": "بُني {storeName} حول فكرة واحدة: عناية بالبشرة تناسب روتينك اليومي، دون أي تعقيد.",
+    "storyHeading": "لماذا بدأنا",
+    "storyBody": "سئمنا من منتجات العناية بالبشرة التي تعد بأكثر مما تقدم وتعقّد الأمور أكثر من اللازم. لذا أنشأنا متجرًا حول فكرة بسيطة: منتجات أقل لكن أفضل، تم اختيارها بعناية، تناسب الروتين الذي لديك وقت له فعلاً.",
+    "valuesHeading": "ما يهمنا",
+    "value1Title": "الجودة أولاً",
+    "value1Body": "نختار كل منتج بعناية، لتتمكن من الثقة بما تضعه على بشرتك.",
+    "value2Title": "روتين بسيط",
+    "value2Body": "بدون روتين من 12 خطوة - فقط ما تحتاجه، وقتما تحتاجه.",
+    "value3Title": "هنا من أجلك",
+    "value3Body": "لديك سؤال حول منتج أو طلبك؟ فريقنا جاهز دائمًا للمساعدة.",
+    "factRegions": "الشحن إلى إسرائيل والدنمارك",
+    "factLanguages": "متوفر بالعبرية والعربية والإنجليزية",
+    "featuredHeading": "اكتشف منتجاتنا",
+    "ctaText": "جاهز لإيجاد روتينك؟",
+    "shopNow": "تسوق الآن"
   },
   "CartMismatchBanner": {
     "transferFailed": "حدث خطأ ما أثناء محاولة نقل عربتك",

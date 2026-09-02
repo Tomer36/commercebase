@@ -7,8 +7,10 @@ import {
   Transition,
 } from "@headlessui/react"
 import { convertToLocale } from "@lib/util/money"
+import { ShoppingCart } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Button } from "@modules/common/components/ui"
+import CartBadge from "@modules/layout/components/cart-badge"
 import DeleteButton from "@modules/common/components/delete-button"
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
@@ -84,10 +86,16 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
           <LocalizedClientLink
-            className="hover:text-gray-500"
+            className="flex items-center gap-x-2 rounded-full px-3 py-2 text-gray-600 transition-colors duration-150 hover:bg-gray-50 hover:text-black"
             href="/cart"
             data-testid="nav-cart-link"
-          >{`${t("cart")} (${totalItems})`}</LocalizedClientLink>
+          >
+            <span className="relative flex items-center">
+              <ShoppingCart width={20} height={20} />
+              <CartBadge count={totalItems} />
+            </span>
+            {t("cart")}
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}
@@ -101,7 +109,7 @@ const CartDropdown = ({
         >
           <PopoverPanel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] end-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] end-0 bg-white border-x border-b border-gray-200 w-[420px] text-black"
             data-testid="nav-cart-dropdown"
           >
             <div className="p-4 flex items-center justify-center">
@@ -179,7 +187,7 @@ const CartDropdown = ({
                 </div>
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
-                    <span className="text-ui-fg-base font-semibold">
+                    <span className="text-black font-semibold">
                       {t("subtotal")}{" "}
                       <span className="font-normal">{t("exclTaxes")}</span>
                     </span>

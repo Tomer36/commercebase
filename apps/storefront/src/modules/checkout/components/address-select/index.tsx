@@ -5,7 +5,6 @@ import { Fragment, useMemo } from "react"
 
 import compareAddresses from "@lib/util/compare-addresses"
 import { HttpTypes } from "@medusajs/types"
-import Radio from "@modules/common/components/radio"
 import { useTranslations } from "next-intl"
 
 type AddressSelectProps = {
@@ -67,24 +66,28 @@ const AddressSelect = ({
             data-testid="shipping-address-options"
           >
             {addresses.map((address) => {
+              const isSelected = selectedAddress?.id === address.id
               return (
                 <Listbox.Option
                   key={address.id}
                   value={address.id}
-                  className="cursor-default select-none relative ps-6 pe-10 hover:bg-gray-50 py-4"
+                  className={clx(
+                    "cursor-default select-none relative ps-6 pe-10 hover:bg-gray-50 py-4",
+                    { "bg-accent-soft": isSelected }
+                  )}
                   data-testid="shipping-address-option"
                 >
                   <div className="flex gap-x-4 items-start">
-                    <Radio
-                      checked={selectedAddress?.id === address.id}
-                      data-testid="shipping-address-radio"
-                    />
                     <div className="flex flex-col">
-                      <span className="text-start text-base-semi">
+                      <span
+                        className={clx("text-start text-base-semi", {
+                          "text-accent": isSelected,
+                        })}
+                      >
                         {address.first_name} {address.last_name}
                       </span>
                       {address.company && (
-                        <span className="text-small-regular text-ui-fg-base">
+                        <span className="text-small-regular text-gray-500">
                           {address.company}
                         </span>
                       )}

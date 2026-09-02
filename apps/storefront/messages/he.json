@@ -7,6 +7,7 @@
     "store": "חנות",
     "orders": "הזמנות",
     "menu": "תפריט",
+    "close": "סגור",
     "contactUs": "צור קשר",
     "language": "שפה:",
     "copyright": "© {year} {storeName}. כל הזכויות שמורות.",
@@ -14,6 +15,7 @@
     "back": "חזרה"
   },
   "Footer": {
+    "ourStory": "הסיפור שלנו",
     "categories": "קטגוריות",
     "collections": "קולקציות",
     "contact": "יצירת קשר",
@@ -153,21 +155,25 @@
     "closeSearch": "סגור חיפוש",
     "searchPlaceholder": "חיפוש מוצרים...",
     "allCategories": "הכול",
+    "categories": "קטגוריות",
     "options": "אפשרויות",
     "optionFallback": "אפשרות",
     "metaTitle": "כל המוצרים",
     "metaDescription": "עיינו במגוון המוצרים המלא שלנו לטיפוח ולקוסמטיקה.",
     "noResultsTitle": "לא נמצאו מוצרים",
     "noResultsBody": "נסו לשנות את החיפוש או המסננים.",
-    "clearSearch": "נקה חיפוש"
+    "clearSearch": "נקה חיפוש",
+    "newBadge": "חדש"
   },
   "Home": {
     "newArrivals": "חדש במלאי",
+    "heroHeadline": "טיפוח עור שמתאים לשגרה היומיומית שלך",
     "heroTagline": "קנו את מוצרי הטיפוח שלנו",
     "shopNow": "לחנות",
     "welcomeBack": "ברוך שובך, {firstName}",
     "metaDescription": "קנו מוצרי טיפוח וקוסמטיקה איכותיים, מותאמים לשגרת הטיפוח שלכם.",
-    "seeAll": "לכל המוצרים"
+    "seeAll": "לכל המוצרים",
+    "shopByCategory": "קניה לפי קטגוריה"
   },
   "RelatedProducts": {
     "heading": "מוצרים קשורים",
@@ -187,6 +193,36 @@
     "simpleExchangesBody": "המידה לא מתאימה? אין בעיה, נחליף את המוצר שלך בחדש.",
     "easyReturns": "החזרות קלות",
     "easyReturnsBody": "פשוט החזר את המוצר שלך ואנחנו נחזיר לך את הכסף. ללא שאלות מיותרות - נעשה כמיטב יכולתנו כדי שההחזרה תהיה קלה."
+  },
+  "TrustBadges": {
+    "securePayment": "תשלום מאובטח",
+    "fastDelivery": "משלוח מהיר",
+    "easyReturns": "החזרות קלות"
+  },
+  "CheckoutSteps": {
+    "address": "כתובת",
+    "delivery": "משלוח",
+    "payment": "תשלום",
+    "review": "סיכום"
+  },
+  "Brand": {
+    "metaTitle": "הסיפור שלנו",
+    "title": "הסיפור שלנו",
+    "intro": "{storeName} נבנה סביב רעיון אחד: טיפוח עור שמתאים לשגרה היומיומית שלך, בלי בלבול מיותר.",
+    "storyHeading": "למה התחלנו",
+    "storyBody": "נמאס לנו ממוצרי טיפוח שמבטיחים יותר מדי ומסבכים יותר מדי. אז בנינו חנות סביב רעיון פשוט: פחות מוצרים, אבל טובים יותר, שנבחרו בקפידה, לשגרה שבאמת יש לכם זמן אליה.",
+    "valuesHeading": "מה חשוב לנו",
+    "value1Title": "איכות במקום הראשון",
+    "value1Body": "אנחנו בוחרים כל מוצר בקפידה, כדי שתוכלו לסמוך על מה שאתם שמים על העור שלכם.",
+    "value2Title": "שגרה פשוטה",
+    "value2Body": "בלי שגרות בנות 12 שלבים - רק מה שאתם צריכים, מתי שאתם צריכים.",
+    "value3Title": "כאן בשבילכם",
+    "value3Body": "יש שאלה לגבי מוצר או הזמנה? הצוות שלנו תמיד כאן כדי לעזור.",
+    "factRegions": "משלוחים לישראל ולדנמרק",
+    "factLanguages": "זמין בעברית, ערבית ואנגלית",
+    "featuredHeading": "גלו את המוצרים שלנו",
+    "ctaText": "מוכנים למצוא את השגרה שלכם?",
+    "shopNow": "לקנייה עכשיו"
   },
   "CartMismatchBanner": {
     "transferFailed": "משהו השתבש כשניסינו להעביר את העגלה שלך",

@@ -46,7 +46,7 @@ const PhoneLogin = () => {
 
       {step === "phone" && (
         <>
-          <p className="text-center text-base-regular text-ui-fg-base mb-8">
+          <p className="text-center text-base-regular text-black mb-8">
             {t("signInPrompt")}
           </p>
           <form className="w-full" action={sendAction}>
@@ -62,7 +62,7 @@ const PhoneLogin = () => {
               error={sendState?.state === "error" ? sendState.error : null}
               data-testid="send-otp-error-message"
             />
-            <span className="block text-center text-ui-fg-base text-small-regular mt-6">
+            <span className="block text-center text-black text-small-regular mt-6">
               {t.rich("agreeToTermsContinue", {
                 storeName: tCommon("storeName"),
                 privacyLink: (chunks) => (
@@ -92,7 +92,7 @@ const PhoneLogin = () => {
 
       {step === "code" && (
         <>
-          <p className="text-center text-base-regular text-ui-fg-base mb-8">
+          <p className="text-center text-base-regular text-black mb-8">
             {t("codeSentTo", { phone: phone ?? "" })}
           </p>
           <form className="w-full" action={verifyAction}>
@@ -121,7 +121,7 @@ const PhoneLogin = () => {
               <input type="hidden" name="phone" value={phone ?? ""} />
               <button
                 type="submit"
-                className="underline text-ui-fg-base"
+                className="underline text-black"
                 data-testid="resend-otp-button"
               >
                 {t("resendCode")}
@@ -130,7 +130,7 @@ const PhoneLogin = () => {
             <button
               type="button"
               onClick={() => setPhone(null)}
-              className="underline text-ui-fg-base"
+              className="underline text-black"
               data-testid="change-number-button"
             >
               {t("changeNumber")}

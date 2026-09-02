@@ -7,7 +7,6 @@ import { CheckCircleSolid, Loader } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import Divider from "@modules/common/components/divider"
-import MedusaRadio from "@modules/common/components/radio"
 import { Button, clx, Heading, Text } from "@modules/common/components/ui"
 import { useTranslations } from "next-intl"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
@@ -224,9 +223,6 @@ const Shipping: React.FC<ShippingProps> = ({
                       )}
                     >
                       <div className="flex items-center gap-x-4">
-                        <MedusaRadio
-                          checked={showPickupOptions === PICKUP_OPTION_ON}
-                        />
                         <span className="text-base-regular">
                           {t("pickUpOrder")}
                         </span>
@@ -268,9 +264,6 @@ const Shipping: React.FC<ShippingProps> = ({
                         )}
                       >
                         <div className="flex items-center gap-x-4">
-                          <MedusaRadio
-                            checked={option.id === shippingMethodId}
-                          />
                           <span className="text-base-regular">
                             {option.name}
                           </span>
@@ -338,9 +331,6 @@ const Shipping: React.FC<ShippingProps> = ({
                           )}
                         >
                           <div className="flex items-start gap-x-4">
-                            <MedusaRadio
-                              checked={option.id === shippingMethodId}
-                            />
                             <div className="flex flex-col">
                               <span className="text-base-regular">
                                 {option.name}

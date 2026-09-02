@@ -30,7 +30,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <Container
       className={twMerge(clsx(
-        "relative w-full overflow-hidden p-0 bg-ui-bg-subtle border border-gray-200 rounded-large transition-colors duration-150 group-hover:border-accent",
+        "relative w-full overflow-hidden p-0 bg-gray-50 border border-gray-200 rounded-large transition-colors duration-150 group-hover:border-accent",
         className,
         {
           "aspect-[11/14]": isFeatured,
@@ -43,26 +43,51 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
       ))}
       data-testid={dataTestid}
     >
-      <ImageOrPlaceholder image={initialImage} size={size} alt={alt} />
+      <ImageOrPlaceholder
+        image={initialImage}
+        hoverImage={images && images.length > 1 ? images[1]?.url : undefined}
+        size={size}
+        alt={alt}
+      />
     </Container>
   )
 }
 
 const ImageOrPlaceholder = ({
   image,
+  hoverImage,
   size,
   alt,
-}: Pick<ThumbnailProps, "size" | "alt"> & { image?: string }) => {
+}: Pick<ThumbnailProps, "size" | "alt"> & {
+  image?: string
+  hoverImage?: string
+}) => {
   return image ? (
-    <Image
-      src={image}
-      alt={alt || "Product image"}
-      className="absolute inset-0 object-cover object-center"
-      draggable={false}
-      quality={50}
-      sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-      fill
-    />
+    <>
+      <Image
+        src={image}
+        alt={alt || "Product image"}
+        className={twMerge(clsx(
+          "absolute inset-0 object-cover object-center transition-opacity duration-200",
+          { "group-hover:opacity-0": !!hoverImage }
+        ))}
+        draggable={false}
+        quality={50}
+        sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+        fill
+      />
+      {hoverImage && (
+        <Image
+          src={hoverImage}
+          alt={alt || "Product image"}
+          className="absolute inset-0 object-cover object-center opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          draggable={false}
+          quality={50}
+          sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+          fill
+        />
+      )}
+    </>
   ) : (
     <div className="w-full h-full absolute inset-0 flex items-center justify-center">
       <PlaceholderImage size={size === "small" ? 16 : 24} />

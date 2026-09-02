@@ -238,9 +238,12 @@ const AccountNavLink = ({
   return (
     <LocalizedClientLink
       href={href}
-      className={clx("text-ui-fg-subtle hover:text-ui-fg-base", {
-        "text-ui-fg-base font-semibold": active,
-      })}
+      className={clx(
+        "block rounded-large px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-black",
+        {
+          "bg-accent-soft text-accent font-semibold": active,
+        }
+      )}
       data-testid={dataTestId}
     >
       {children}

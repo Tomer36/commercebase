@@ -25,6 +25,24 @@ module.exports = {
           foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
           soft: "hsl(var(--accent-soft) / <alpha-value>)",
         },
+        // CommerceBase base neutrals — a cool blue-gray ramp instead of
+        // Tailwind's default warm-neutral gray, so every existing
+        // text-gray-*/bg-gray-*/border-gray-* usage across the app inherits
+        // the base system's palette with zero component changes. `black`
+        // is likewise a cool near-black ("Graphite"), not pure #000.
+        black: "#15171B",
+        gray: {
+          50: "#F5F6F7",
+          100: "#EBEDEF",
+          200: "#D9DCDF",
+          300: "#C0C4C9",
+          400: "#9CA1A8",
+          500: "#7D828A",
+          600: "#5E636B",
+          700: "#464A52",
+          800: "#2E3138",
+          900: "#1C1E23",
+        },
       },
       borderRadius: {
         none: "0px",
@@ -57,6 +75,15 @@ module.exports = {
           "Roboto",
           "Helvetica Neue",
           "Ubuntu",
+          "sans-serif",
+        ],
+        // Headline-only display face (Latin glyphs only). Hebrew/Arabic
+        // headings fall through per-glyph to --font-sans (Rubik), which
+        // already covers those scripts — no conditional logic needed.
+        display: [
+          "var(--font-display)",
+          "var(--font-sans)",
+          "-apple-system",
           "sans-serif",
         ],
       },

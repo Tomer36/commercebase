@@ -3,7 +3,7 @@ import { getBaseURL } from "@lib/util/env"
 import { isRtl, toUILang } from "@lib/i18n/ui-dictionary"
 import { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
-import { Rubik } from "next/font/google"
+import { Rubik, Unbounded } from "next/font/google"
 import "styles/globals.css"
 
 // Single webfont covering all three storefront locales (Latin/Hebrew/Arabic)
@@ -11,6 +11,17 @@ import "styles/globals.css"
 const rubik = Rubik({
   subsets: ["latin", "hebrew", "arabic"],
   variable: "--font-sans",
+  display: "swap",
+})
+
+// Display face for headings only (Latin glyphs — Unbounded has no Hebrew/
+// Arabic cut). Used sparingly via the shared Heading component; Hebrew/
+// Arabic headings fall through to Rubik automatically per the font-family
+// fallback chain in tailwind.config.js.
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-display",
   display: "swap",
 })
 
@@ -27,7 +38,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       lang={lang}
       dir={isRtl(lang) ? "rtl" : "ltr"}
       data-mode="light"
-      className={rubik.variable}
+      className={`${rubik.variable} ${unbounded.variable}`}
     >
       <body>
         <NextIntlClientProvider>

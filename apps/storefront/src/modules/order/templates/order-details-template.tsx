@@ -26,7 +26,7 @@ const OrderDetailsTemplate: React.FC<OrderDetailsTemplateProps> = ({
         <h1 className="text-2xl-semi">{t("title")}</h1>
         <LocalizedClientLink
           href="/account/orders"
-          className="flex gap-2 items-center text-ui-fg-subtle hover:text-ui-fg-base"
+          className="flex gap-2 items-center text-gray-500 hover:text-black"
           data-testid="back-to-overview-button"
         >
           <XMark /> {t("backToOverview")}

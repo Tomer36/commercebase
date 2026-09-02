@@ -21,7 +21,7 @@ const Overview = async ({ customer, orders }: OverviewProps) => {
           <span data-testid="welcome-message" data-value={customer?.first_name}>
             {t("hello", { firstName: customer?.first_name ?? "" })}
           </span>
-          <span className="text-small-regular text-ui-fg-base">
+          <span className="text-small-regular text-black">
             {t("signedInAs")}{" "}
             <span
               className="font-semibold"
@@ -45,7 +45,7 @@ const Overview = async ({ customer, orders }: OverviewProps) => {
                   >
                     {getProfileCompletion(customer)}%
                   </span>
-                  <span className="uppercase text-base-regular text-ui-fg-subtle">
+                  <span className="uppercase text-base-regular text-gray-500">
                     {t("completed")}
                   </span>
                 </div>
@@ -61,7 +61,7 @@ const Overview = async ({ customer, orders }: OverviewProps) => {
                   >
                     {customer?.addresses?.length || 0}
                   </span>
-                  <span className="uppercase text-base-regular text-ui-fg-subtle">
+                  <span className="uppercase text-base-regular text-gray-500">
                     {t("saved")}
                   </span>
                 </div>

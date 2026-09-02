@@ -7,6 +7,7 @@
     "store": "Store",
     "orders": "Orders",
     "menu": "Menu",
+    "close": "Close",
     "contactUs": "Contact us",
     "language": "Language:",
     "copyright": "© {year} {storeName}. All rights reserved.",
@@ -14,6 +15,7 @@
     "back": "Back"
   },
   "Footer": {
+    "ourStory": "Our Story",
     "categories": "Categories",
     "collections": "Collections",
     "contact": "Contact",
@@ -153,21 +155,25 @@
     "closeSearch": "Close search",
     "searchPlaceholder": "Search products...",
     "allCategories": "All",
+    "categories": "Categories",
     "options": "Options",
     "optionFallback": "Option",
     "metaTitle": "Shop All Products",
     "metaDescription": "Browse our full range of skincare and cosmetics products.",
     "noResultsTitle": "No products found",
     "noResultsBody": "Try adjusting your search or filters.",
-    "clearSearch": "Clear search"
+    "clearSearch": "Clear search",
+    "newBadge": "New"
   },
   "Home": {
     "newArrivals": "New Arrivals",
+    "heroHeadline": "Skincare that fits your everyday routine",
     "heroTagline": "Shop our skincare essentials",
     "shopNow": "Shop Now",
     "welcomeBack": "Welcome back, {firstName}",
     "metaDescription": "Shop skincare and cosmetics essentials, curated for your routine.",
-    "seeAll": "See all"
+    "seeAll": "See all",
+    "shopByCategory": "Shop by Category"
   },
   "RelatedProducts": {
     "heading": "Related products",
@@ -187,6 +193,36 @@
     "simpleExchangesBody": "Is the fit not quite right? No worries, we will exchange your product for a new one.",
     "easyReturns": "Easy returns",
     "easyReturnsBody": "Just return your product and we will refund your money. No questions asked, we will do our best to make sure your return is hassle-free."
+  },
+  "TrustBadges": {
+    "securePayment": "Secure payment",
+    "fastDelivery": "Fast delivery",
+    "easyReturns": "Easy returns"
+  },
+  "CheckoutSteps": {
+    "address": "Address",
+    "delivery": "Delivery",
+    "payment": "Payment",
+    "review": "Review"
+  },
+  "Brand": {
+    "metaTitle": "Our Story",
+    "title": "Our Story",
+    "intro": "{storeName} is built around one idea: skincare that fits into your everyday routine, without the guesswork.",
+    "storyHeading": "Why We Started",
+    "storyBody": "We got tired of skincare that overpromises and overcomplicates. So we built a shop around a simple idea: fewer, better products, chosen with care, for the routine you actually have time for.",
+    "valuesHeading": "What We Care About",
+    "value1Title": "Quality First",
+    "value1Body": "We choose every product with care, so you can trust what you put on your skin.",
+    "value2Title": "Simple Routines",
+    "value2Body": "No 12-step regimens — just what you need, when you need it.",
+    "value3Title": "Here For You",
+    "value3Body": "Questions about a product or your order? Our team is always ready to help.",
+    "factRegions": "Shipping to Israel & Denmark",
+    "factLanguages": "Available in Hebrew, Arabic & English",
+    "featuredHeading": "Explore Our Products",
+    "ctaText": "Ready to find your routine?",
+    "shopNow": "Shop Now"
   },
   "CartMismatchBanner": {
     "transferFailed": "Something went wrong when we tried to transfer your cart",

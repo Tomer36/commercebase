@@ -49,11 +49,7 @@ export default function CategoryTemplate({
       data-testid="category-container"
     >
       <div className="hidden small:block">
-        <RefinementList
-          sortBy={sort}
-          data-testid="sort-by-container"
-          hideOptionsPicker
-        />
+        <RefinementList sortBy={sort} data-testid="sort-by-container" />
       </div>
       <div className="w-full">
         <div className="small:hidden mb-6 flex flex-col gap-4">

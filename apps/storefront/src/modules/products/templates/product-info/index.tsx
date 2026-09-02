@@ -14,7 +14,7 @@ const ProductInfo = ({ product, hideDescription }: ProductInfoProps) => {
         {product.collection && (
           <LocalizedClientLink
             href={`/collections/${product.collection.handle}`}
-            className="text-small-regular text-ui-fg-muted hover:text-ui-fg-subtle"
+            className="text-small-regular text-gray-400 hover:text-gray-500"
           >
             {product.collection.title}
           </LocalizedClientLink>
@@ -29,7 +29,7 @@ const ProductInfo = ({ product, hideDescription }: ProductInfoProps) => {
 
         {!hideDescription && (
           <Text
-            className="text-base-regular text-ui-fg-subtle whitespace-pre-line"
+            className="text-base-regular text-gray-500 whitespace-pre-line"
             data-testid="product-description"
           >
             {product.description}

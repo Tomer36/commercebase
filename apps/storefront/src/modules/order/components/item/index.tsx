@@ -33,7 +33,7 @@ const Item = ({ item, currencyCode }: ItemProps) => {
       <Table.Cell className="!pe-0">
         <span className="!pe-0 flex flex-col items-end h-full justify-center">
           <span className="flex gap-x-1 ">
-            <Text className="text-ui-fg-muted">
+            <Text className="text-gray-400">
               <span data-testid="product-quantity">{item.quantity}</span>x{" "}
             </Text>
             <LineItemUnitPrice

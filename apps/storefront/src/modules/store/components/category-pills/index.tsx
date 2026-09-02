@@ -1,22 +1,13 @@
 "use client"
 
-import { Gift, MagnifyingGlass, Sparkles, Tools, XMark } from "@medusajs/icons"
+import { MagnifyingGlass, XMark } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { clx } from "@modules/common/components/ui"
 import ProductSearch from "@modules/store/components/product-search"
+import { CATEGORY_ICONS } from "@modules/store/utils/category-icons"
 import { useTranslations } from "next-intl"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useLayoutEffect, useRef, useState } from "react"
-
-// Top-level category icons, keyed by handle (stable across name changes/
-// translations, unlike display name). Falls back to no icon for any
-// top-level category added later that isn't mapped here.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CATEGORY_ICONS: Record<string, any> = {
-  skincare: Sparkles,
-  "gift-sets": Gift,
-  "devices-&-tools": Tools,
-}
 
 // Fades both edges of a horizontally-scrollable row instead of hard-cutting
 // whatever tab happens to sit at the boundary — direction-agnostic, so it

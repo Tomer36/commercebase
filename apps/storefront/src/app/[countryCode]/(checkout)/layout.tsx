@@ -15,20 +15,20 @@ export default async function CheckoutLayout({
         <nav className="flex h-full items-center content-container justify-between">
           <LocalizedClientLink
             href="/cart"
-            className="text-small-semi text-ui-fg-base flex items-center gap-x-2 uppercase flex-1 basis-0"
+            className="text-small-semi text-black flex items-center gap-x-2 uppercase flex-1 basis-0"
             data-testid="back-to-cart-link"
           >
             <ChevronDown className="rotate-90 rtl:-rotate-90" width={16} height={16} />
-            <span className="mt-px hidden small:block text-small-semi text-ui-fg-subtle hover:text-ui-fg-base ">
+            <span className="mt-px hidden small:block text-small-semi text-gray-500 hover:text-black ">
               {t("backToShoppingCart")}
             </span>
-            <span className="mt-px block small:hidden text-small-semi text-ui-fg-subtle hover:text-ui-fg-base">
+            <span className="mt-px block small:hidden text-small-semi text-gray-500 hover:text-black">
               {t("back")}
             </span>
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="text-xl-semi text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+            className="text-xl-semi text-gray-500 hover:text-black uppercase"
             data-testid="store-link"
           >
             {t("storeName")}

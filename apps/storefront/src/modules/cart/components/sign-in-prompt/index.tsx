@@ -12,7 +12,7 @@ const SignInPrompt = async () => {
         <Heading level="h2">
           {t("alreadyHaveAccount")}
         </Heading>
-        <Text className="text-base-regular text-ui-fg-subtle mt-2">
+        <Text className="text-base-regular text-gray-500 mt-2">
           {t("betterExperience")}
         </Text>
       </div>

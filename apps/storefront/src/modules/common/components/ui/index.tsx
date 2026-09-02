@@ -46,10 +46,13 @@ const twMerge = extendTailwindMerge({
   },
 })
 
-// Single storefront design language: flat black/white/gray with the --accent
-// brand color, no shadows, one generous radius scale (rounded-full for pills
-// and circular controls, rounded-large for cards/panels, rounded-rounded for
-// small form controls/chips) applied everywhere, not just Home/Store/PDP.
+// CommerceBase base design system: cool-neutral black/white/gray (see
+// tailwind.config.js) with the --accent brand color as the single per-client
+// re-skin surface (globals.css), no shadows, one generous radius scale
+// (rounded-full for pills/circular controls, rounded-large for cards/panels,
+// rounded-rounded for small form controls/chips), Unbounded for headings
+// (font-display, Latin-only, falls through to Rubik for Hebrew/Arabic) with
+// Rubik for everything else — applied everywhere, not just Home/Store/PDP.
 const cx = (...args: Parameters<typeof clsx>) => twMerge(clsx(...args))
 
 // Text Component
@@ -79,6 +82,7 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
       <Component
         ref={ref}
         className={cx(
+          "font-display",
           Component === "h1" && "text-3xl-semi",
           Component === "h2" && "text-xl-semi",
           Component === "h3" && "text-large-semi",

@@ -21,26 +21,21 @@ const FilterRadioGroup = ({
 }: FilterRadioGroupProps) => {
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-base-semi text-black">{title}</span>
-      <RadioGroup data-testid={dataTestId} className="gap-y-2">
+      <span className="px-3 text-base-semi text-black">{title}</span>
+      <RadioGroup data-testid={dataTestId} className="gap-y-1">
         {items?.map((i) => {
           const active = i.value === value
           return (
             <label
               key={i.value}
               htmlFor={i.value}
-              className="flex cursor-pointer items-center gap-x-2"
+              className={clsx(
+                "flex w-full cursor-pointer items-center rounded-large px-3 py-2.5 text-base-regular transition-colors duration-150",
+                active
+                  ? "bg-accent-soft text-accent font-semibold"
+                  : "text-gray-600 hover:bg-gray-50 hover:text-black"
+              )}
             >
-              <span
-                className={clsx(
-                  "flex h-4 w-4 shrink-0 items-center justify-center rounded-full border",
-                  active ? "border-accent" : "border-gray-300"
-                )}
-              >
-                {active && (
-                  <span className="h-2 w-2 rounded-full bg-accent" />
-                )}
-              </span>
               <RadioGroup.Item
                 checked={active}
                 onChange={() => handleChange(i.value)}
@@ -48,14 +43,7 @@ const FilterRadioGroup = ({
                 id={i.value}
                 value={i.value}
               />
-              <span
-                className={clsx(
-                  "text-base-regular",
-                  active ? "text-black" : "text-gray-500"
-                )}
-                data-testid="radio-label"
-                data-active={active}
-              >
+              <span data-testid="radio-label" data-active={active}>
                 {i.label}
               </span>
             </label>

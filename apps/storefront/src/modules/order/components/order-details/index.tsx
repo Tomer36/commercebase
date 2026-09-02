@@ -23,7 +23,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
       <Text>
         {t("confirmationSentTo")}{" "}
         <span
-          className="text-ui-fg-medium-plus font-semibold"
+          className="text-black font-semibold"
           data-testid="order-email"
         >
           {order.email}
@@ -36,7 +36,7 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
           {new Date(order.created_at).toDateString()}
         </span>
       </Text>
-      <Text className="mt-2 text-ui-fg-interactive">
+      <Text className="mt-2 text-accent">
         {t("orderNumber")}{" "}
         <span data-testid="order-id">{order.display_id}</span>
       </Text>
@@ -46,14 +46,14 @@ const OrderDetails = ({ order, showStatus }: OrderDetailsProps) => {
           <>
             <Text>
               {t("orderStatus")}{" "}
-              <span className="text-ui-fg-subtle " data-testid="order-status">
+              <span className="text-gray-500" data-testid="order-status">
                 {formatStatus(order.fulfillment_status)}
               </span>
             </Text>
             <Text>
               {t("paymentStatus")}{" "}
               <span
-                className="text-ui-fg-subtle "
+                className="text-gray-500"
                 sata-testid="order-payment-status"
               >
                 {formatStatus(order.payment_status)}

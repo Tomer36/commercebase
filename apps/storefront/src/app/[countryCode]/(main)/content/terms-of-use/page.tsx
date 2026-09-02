@@ -11,11 +11,13 @@ export default async function TermsOfUsePage() {
   const t = await getTranslations("LegalPages")
 
   return (
-    <div className="content-container py-12 max-w-3xl">
-      <Heading level="h1" className="text-3xl-semi text-black mb-6">
-        {t("termsOfUseTitle")}
-      </Heading>
-      <p className="text-large-regular text-gray-600">{t("comingSoon")}</p>
+    <div className="content-container py-12">
+      <div className="max-w-3xl">
+        <Heading level="h1" className="text-3xl-semi text-black mb-6">
+          {t("termsOfUseTitle")}
+        </Heading>
+        <p className="text-large-regular text-gray-600">{t("comingSoon")}</p>
+      </div>
     </div>
   )
 }

@@ -4,9 +4,10 @@ import { listCategories } from "@lib/data/categories"
 import { listProducts, listProductsWithSort } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { EXCLUDED_CATEGORY_HANDLES } from "@lib/util/excluded-categories"
+import CategoryChips from "@modules/home/components/category-chips"
 import Hero from "@modules/home/components/hero"
 import ProductRow from "@modules/home/components/product-row"
-import CategoryScroller from "@modules/store/components/category-scroller"
+import TrustBadges from "@modules/common/components/trust-badges"
 import { getTranslations } from "next-intl/server"
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,50 +41,57 @@ export default async function Home(props: {
       sortBy: "created_at",
       countryCode,
     }),
-    listCategories({ fields: "id,handle,name,*category_children" }),
+    listCategories({ fields: "id,handle,name,*category_children,*parent_category" }),
   ])
 
-  // Only categories that actually hold products directly (no children of
-  // their own) become their own curated row — the "Skincare" umbrella
-  // category is a pure parent and would otherwise duplicate its children.
-  const leafCategories = allCategories.filter(
-    (c) =>
-      !EXCLUDED_CATEGORY_HANDLES.includes(c.handle ?? "") &&
-      !c.category_children?.length
+  const visibleCategories = allCategories.filter(
+    (c) => !EXCLUDED_CATEGORY_HANDLES.includes(c.handle ?? "")
   )
 
-  const categoryRows = await Promise.all(
-    leafCategories.map(async (category) => {
+  // Top-level categories only for the homepage — these are the primary
+  // browsable entry points, matching the same convention already used by
+  // the store sidebar/mobile category pills.
+  const topLevelCategories = visibleCategories.filter((c) => !c.parent_category)
+
+  // A real product thumbnail per category (not a fabricated category-level
+  // image) — there's no category photography, so each chip previews one of
+  // its actual products. A pure umbrella category (e.g. "Skincare") holds
+  // no products directly, so its preview is searched across its children.
+  const categoryPreviews = await Promise.all(
+    topLevelCategories.map(async (category) => {
+      const searchIds = [
+        category.id,
+        ...(category.category_children?.map((child) => child.id) ?? []),
+      ]
       const { response } = await listProducts({
-        queryParams: { category_id: [category.id], limit: 6 },
+        queryParams: { category_id: searchIds, limit: 1 },
         countryCode,
       })
-      return { category, products: response.products }
+      return { category, thumbnail: response.products[0]?.thumbnail ?? null }
     })
   )
 
   return (
     <>
-      <Hero />
-      <div className="content-container py-12">
-        <div className="mb-10">
-          <CategoryScroller />
+      <Hero heroImage={newArrivals.products[0]?.thumbnail} />
+
+      <div className="content-container py-6">
+        <TrustBadges />
+      </div>
+
+      {!!categoryPreviews.length && (
+        <div className="content-container pb-12">
+          <CategoryChips items={categoryPreviews} />
         </div>
+      )}
+
+      <div className="content-container py-12">
         <ProductRow
           title={t("newArrivals")}
           seeAllHref="/store"
           products={newArrivals.products}
           region={region}
         />
-        {categoryRows.map(({ category, products }) => (
-          <ProductRow
-            key={category.id}
-            title={category.name}
-            seeAllHref={`/store?category=${category.id}`}
-            products={products}
-            region={region}
-          />
-        ))}
       </div>
     </>
   )

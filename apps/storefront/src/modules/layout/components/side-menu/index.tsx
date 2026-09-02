@@ -2,7 +2,15 @@
 
 import { Popover, PopoverPanel, Transition } from "@headlessui/react"
 import useToggleState from "@lib/hooks/use-toggle-state"
-import { ArrowRightMini, XMark } from "@medusajs/icons"
+import {
+  ArrowRightMini,
+  BarsThree,
+  House,
+  ShoppingBag,
+  ShoppingCart,
+  User,
+  XMark,
+} from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Text, clx } from "@modules/common/components/ui"
@@ -23,12 +31,15 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
   const languageToggleState = useToggleState()
   const t = useTranslations("Common")
 
-  const SideMenuItems = {
-    [t("home")]: "/",
-    [t("store")]: "/store",
-    [t("account")]: "/account",
-    [t("cart")]: "/cart",
-  }
+  // Same icon set as the mobile tab bar (House/ShoppingBag/User/ShoppingCart)
+  // so "Store" and "Cart" read as the same concept in both places rather
+  // than two different icons standing in for the same link.
+  const SideMenuItems = [
+    { name: t("home"), href: "/", Icon: House },
+    { name: t("store"), href: "/store", Icon: ShoppingBag },
+    { name: t("account"), href: "/account", Icon: User },
+    { name: t("cart"), href: "/cart", Icon: ShoppingCart },
+  ]
 
   return (
     <div className="h-full">
@@ -39,8 +50,9 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
               <div className="relative flex h-full">
                 <Popover.Button
                   data-testid="nav-menu-button"
-                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-gray-500"
+                  className="relative flex items-center gap-x-2 rounded-full px-3 py-2 text-gray-600 transition-colors duration-150 ease-out focus:outline-none hover:bg-gray-50 hover:text-black"
                 >
+                  <BarsThree width={20} height={20} />
                   {t("menu")}
                 </Popover.Button>
               </div>
@@ -57,42 +69,51 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                 show={open}
                 as={Fragment}
                 enter="transition ease-out duration-150"
-                enterFrom="opacity-0"
-                enterTo="opacity-100 backdrop-blur-2xl"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 backdrop-blur-2xl"
-                leaveTo="opacity-0"
+                enterFrom="opacity-0 -translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-1"
               >
-                <PopoverPanel className="flex flex-col absolute w-full pe-4 small:pe-0 small:w-1/3 2xlarge:w-1/4 small:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-base-regular text-ui-fg-on-color m-2 backdrop-blur-2xl">
+                <PopoverPanel
+                  static
+                  className="absolute start-0 top-[calc(100%+1px)] z-[51] w-80 rounded-large border border-gray-200 bg-white text-base-regular text-black shadow-xl"
+                >
                   <div
                     data-testid="nav-menu-popup"
-                    className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
+                    className="flex flex-col p-4"
                   >
-                    <div className="flex justify-end" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close}>
-                        <XMark />
+                    <div className="mb-2 flex justify-end">
+                      <button
+                        type="button"
+                        data-testid="close-menu-button"
+                        onClick={close}
+                        aria-label={t("close")}
+                        className="flex items-center rounded-full p-1.5 text-gray-500 transition-colors duration-150 hover:bg-gray-50 hover:text-black"
+                      >
+                        <XMark width={18} height={18} />
                       </button>
                     </div>
-                    <ul className="hidden small:flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
-                        return (
-                          <li key={name}>
-                            <LocalizedClientLink
-                              href={href}
-                              className="text-3xl-regular hover:text-ui-fg-disabled"
-                              onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
-                            >
-                              {name}
-                            </LocalizedClientLink>
-                          </li>
-                        )
-                      })}
+                    <ul className="flex flex-col gap-y-1">
+                      {SideMenuItems.map(({ name, href, Icon }) => (
+                        <li key={name}>
+                          <LocalizedClientLink
+                            href={href}
+                            className="flex items-center gap-x-2 rounded-large px-3 py-2.5 text-gray-600 transition-colors duration-150 hover:bg-gray-50 hover:text-black"
+                            onClick={close}
+                            data-testid={`${name.toLowerCase()}-link`}
+                          >
+                            <Icon width={20} height={20} />
+                            {name}
+                          </LocalizedClientLink>
+                        </li>
+                      ))}
                     </ul>
-                    <div className="flex flex-col gap-y-6">
+                    <div className="my-2 border-t border-gray-200" />
+                    <div className="flex flex-col gap-y-1 px-1">
                       {!!locales?.length && (
                         <div
-                          className="flex justify-between"
+                          className="flex items-center justify-between py-1 text-gray-600"
                           onMouseEnter={languageToggleState.open}
                           onMouseLeave={languageToggleState.close}
                         >
@@ -104,14 +125,14 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           />
                           <ArrowRightMini
                             className={clx(
-                              "transition-transform duration-150 rtl:-scale-x-100",
+                              "text-gray-400 transition-transform duration-150 rtl:-scale-x-100",
                               languageToggleState.state ? "-rotate-90" : ""
                             )}
                           />
                         </div>
                       )}
                       <div
-                        className="flex justify-between"
+                        className="flex items-center justify-between py-1 text-gray-600"
                         onMouseEnter={countryToggleState.open}
                         onMouseLeave={countryToggleState.close}
                       >
@@ -124,18 +145,19 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                         )}
                         <ArrowRightMini
                           className={clx(
-                            "transition-transform duration-150 rtl:-scale-x-100",
+                            "text-gray-400 transition-transform duration-150 rtl:-scale-x-100",
                             countryToggleState.state ? "-rotate-90" : ""
                           )}
                         />
                       </div>
-                      <Text className="flex justify-between text-small-regular">
-                        {t("copyright", {
-                          year: new Date().getFullYear(),
-                          storeName: t("storeName"),
-                        })}
-                      </Text>
                     </div>
+                    <div className="my-2 border-t border-gray-200" />
+                    <Text className="px-1 text-small-regular text-gray-400">
+                      {t("copyright", {
+                        year: new Date().getFullYear(),
+                        storeName: t("storeName"),
+                      })}
+                    </Text>
                   </div>
                 </PopoverPanel>
               </Transition>

@@ -5,12 +5,12 @@ import { Button, Container, Text } from "@modules/common/components/ui"
 
 const OnboardingCta = ({ orderId }: { orderId: string }) => {
   return (
-    <Container className="max-w-4xl h-full bg-ui-bg-subtle w-full">
+    <Container className="max-w-4xl h-full bg-gray-50 w-full">
       <div className="flex flex-col gap-y-4 center p-4 medium:items-center">
         <Text className="text-large-semi">
           Your test order was successfully created! 🎉
         </Text>
-        <Text className="text-ui-fg-subtle text-small-regular">
+        <Text className="text-gray-500 text-small-regular">
           You can now complete setting up your store in the admin.
         </Text>
         <Button

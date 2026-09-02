@@ -67,7 +67,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
         className={clx(
           "border rounded-rounded p-5 min-h-[220px] h-full w-full flex flex-col justify-between transition-colors",
           {
-            "border-gray-900": isActive,
+            "border-accent bg-accent-soft": isActive,
           }
         )}
         data-testid="address-container"
@@ -103,7 +103,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
         </div>
         <div className="flex items-center gap-x-4">
           <button
-            className="text-small-regular text-ui-fg-base flex items-center gap-x-2"
+            className="text-small-regular text-black flex items-center gap-x-2"
             onClick={open}
             data-testid="address-edit-button"
           >
@@ -111,7 +111,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
             {tAddress("edit")}
           </button>
           <button
-            className="text-small-regular text-ui-fg-base flex items-center gap-x-2"
+            className="text-small-regular text-black flex items-center gap-x-2"
             onClick={removeAddress}
             data-testid="address-delete-button"
           >

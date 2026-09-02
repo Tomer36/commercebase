@@ -49,7 +49,7 @@ const ProductTemplate = ({
         </Suspense>
         <div className="flex flex-col gap-y-4">
           {product.description && (
-            <Text className="text-medium text-ui-fg-subtle whitespace-pre-line">
+            <Text className="text-medium text-gray-500 whitespace-pre-line">
               {product.description}
             </Text>
           )}
