@@ -8,6 +8,7 @@ import AccessibilityWidget from "@modules/layout/components/accessibility-widget
 import CartBadge from "@modules/layout/components/cart-badge"
 import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
 import MobileTabBar from "@modules/layout/components/mobile-tab-bar"
+import WhatsAppButton from "@modules/layout/components/whatsapp-button"
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
 import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
@@ -50,6 +51,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
       </div>
       <MobileTabBar cartBadge={<CartBadge count={cartItemCount} />} />
       <AccessibilityWidget />
+      <WhatsAppButton />
     </>
   )
 }

@@ -35,13 +35,14 @@ export const BUSINESS_CONTACT = {
   addressLine2: "City",
 }
 
-// Social links the footer renders — left empty by default so the footer
-// shows no social icons rather than fabricated URLs. Fill in real ones as
-// they become available; the footer skips whichever fields stay empty.
+// DEMO PLACEHOLDER — set to each platform's root URL (not a fake specific
+// account) purely so the base template's "Follow Us" UI can be previewed
+// complete. Replace with the client's real profile URLs before launch, or
+// set back to "" to have the footer skip whichever platform isn't used.
 export const SOCIAL_LINKS = {
-  instagram: "",
-  facebook: "",
-  tiktok: "",
+  instagram: "https://instagram.com",
+  facebook: "https://facebook.com",
+  tiktok: "https://tiktok.com",
 }
 
 // Flip to true once a real logo file is added at public/logo.svg — the
@@ -49,3 +50,14 @@ export const SOCIAL_LINKS = {
 // then renders that image instead of the text/initial fallback. A ~5-minute
 // swap once the client supplies a logo: drop the file in, flip this flag.
 export const HAS_CUSTOM_LOGO = false
+
+// Flip to false to hide the floating WhatsApp contact button entirely (not
+// every client uses WhatsApp for support). Uses BUSINESS_CONTACT.phone —
+// while that's still the placeholder number, the button renders but isn't
+// a real, working contact channel yet.
+export const WHATSAPP_ENABLED = true
+
+// Demo testimonials (fabricated content, to preview the base template
+// complete) live in messages/*.json as Brand.testimonials, not here — they
+// need real per-locale translations like the rest of the site's copy, not
+// a single English-only JS array. See the Brand page for the DEMO comment.

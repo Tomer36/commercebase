@@ -9,6 +9,7 @@
     "menu": "Menu",
     "close": "Close",
     "contactUs": "Contact us",
+    "chatOnWhatsapp": "Chat on WhatsApp",
     "language": "Language:",
     "copyright": "© {year} {storeName}. All rights reserved.",
     "backToShoppingCart": "Back to shopping cart",
@@ -19,9 +20,15 @@
     "categories": "Categories",
     "collections": "Collections",
     "contact": "Contact",
+    "followUs": "Follow us",
     "privacyPolicy": "Privacy Policy",
     "termsOfUse": "Terms of Use",
     "accessibilityStatement": "Accessibility Statement"
+  },
+  "CookieConsent": {
+    "message": "This site uses cookies to improve and personalize your experience. Continuing to browse the site constitutes your consent to these uses in accordance with our <termsLink>Terms of Use</termsLink> and <privacyLink>Privacy Policy</privacyLink>.",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "NotFound": {
     "title": "Page not found",
@@ -64,6 +71,7 @@
     "total": "Total"
   },
   "Auth": {
+    "signIn": "Sign In",
     "welcomeBack": "Welcome",
     "signInPrompt": "Sign in with your phone number to access an enhanced shopping experience.",
     "phone": "Phone number",
@@ -212,6 +220,12 @@
     "storyHeading": "Why We Started",
     "storyBody": "We got tired of skincare that overpromises and overcomplicates. So we built a shop around a simple idea: fewer, better products, chosen with care, for the routine you actually have time for.",
     "valuesHeading": "What We Care About",
+    "testimonialsHeading": "What Customers Say",
+    "testimonials": [
+      { "quote": "The routine finally feels simple instead of overwhelming. I actually stuck with it this time.", "author": "Maya S." },
+      { "quote": "Ordered before a trip and it showed up faster than I expected. Packaging felt premium too.", "author": "Noa L." },
+      { "quote": "Reached out with a question about a product and got a real, helpful answer within the hour.", "author": "Tamar R." }
+    ],
     "value1Title": "Quality First",
     "value1Body": "We choose every product with care, so you can trust what you put on your skin.",
     "value2Title": "Simple Routines",
@@ -391,10 +405,203 @@
     "metaTitle": "Checkout",
     "metaDescription": "Complete your order securely."
   },
-  "LegalPages": {
-    "privacyPolicyTitle": "Privacy Policy",
-    "termsOfUseTitle": "Terms of Use",
-    "comingSoon": "This page will contain our full policy. Content is coming soon — please contact us if you have questions in the meantime."
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": [],
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "bullets": [
+          "Your privacy is very important to us, and {storeName} is committed to protecting it. This policy explains how we collect, use, and store your personal information.",
+          "By accepting the use of cookies during your first visit to our website, you agree that we may use cookies each time you visit."
+        ]
+      },
+      {
+        "title": "2. Collection of Personal Information",
+        "lead": "We may collect, store, and use the following types of personal information:",
+        "bullets": [
+          "Information about your device, including IP address, geographic location, browser type and version, and operating system.",
+          "Information about your visits and usage of our website, including referral source, length of visit, page views, and navigation paths.",
+          "Information such as your email address, which you provide when registering on our website.",
+          "Information you provide when creating a profile on our website, such as your name, profile pictures, gender, birthday, relationship status, interests, education details, and employment details.",
+          "Information like your name and email address that you provide to subscribe to our email notifications and/or newsletters.",
+          "Information you provide while using services on our website.",
+          "Information related to purchases, services, or transactions made through our website, including your name, address, phone number, email, and payment details.",
+          "Information you publish on our website with the intention of making it public (e.g., username, comments, uploaded content).",
+          "Information included in communications you send to us, including metadata related to the message.",
+          "Any other personal details you choose to share with us."
+        ],
+        "note": "Before sharing personal data of another person, you must obtain that person's consent to both disclose and process their data under this policy."
+      },
+      {
+        "title": "3. Use of Personal Information",
+        "lead": "Personal data provided to us through our website may be used for the following purposes:",
+        "bullets": [
+          "Operating and managing the website and our business.",
+          "Personalizing the website experience for you.",
+          "Enabling you to use services available on our website.",
+          "Delivering products purchased through our website.",
+          "Providing services purchased through our website.",
+          "Sending invoices, payment reminders, and collecting payments from you.",
+          "Sending non-marketing communications.",
+          "Sending email notifications that you have specifically requested.",
+          "Sending our newsletter via email, if you requested it (you may unsubscribe at any time).",
+          "Sending marketing communications related to our business, by email or other channels, if you have agreed to receive them.",
+          "Providing statistical data about our users (this data will not identify any individual user).",
+          "Handling inquiries, complaints, or disputes related to the website.",
+          "Keeping the website secure and preventing fraud.",
+          "Verifying compliance with our terms of use (including monitoring messages sent through our private messaging system)."
+        ],
+        "note": "If you submit content for publication on our website, we will publish and otherwise use that information in accordance with the license you grant us."
+      },
+      {
+        "title": "4. Disclosure of Personal Information",
+        "lead": "We may disclose your personal information:",
+        "bullets": [
+          "To our employees, managers, professional advisors, insurers, suppliers, or subcontractors as reasonably necessary for the purposes set out in this policy.",
+          "To any company within our corporate group as reasonably necessary for operational purposes.",
+          "Where required by law.",
+          "In connection with any ongoing or future legal proceedings.",
+          "To establish, exercise, or defend our legal rights (including providing information to others to prevent fraud or reduce credit risk).",
+          "To a buyer or prospective buyer of our business or assets.",
+          "To any person we reasonably believe may apply to a court or other authority to require disclosure of that personal information."
+        ],
+        "note": "Except as provided in this policy, we will not share your personal information with third parties for their marketing purposes."
+      },
+      {
+        "title": "5. International Data Transfers",
+        "bullets": [
+          "Information we collect may be stored, processed, and transferred between any of the countries in which we operate to enable the use of the information in accordance with this policy.",
+          "Personal data that you publish on our website may be available worldwide via the internet. We cannot prevent the use or misuse of such information by others.",
+          "By using our website, you agree to such international transfers of personal data."
+        ]
+      },
+      {
+        "title": "6. Data Retention",
+        "bullets": [
+          "We retain personal information only as long as necessary for the purposes described in this policy.",
+          "You may request deletion of your data at any time, unless we are legally obligated to retain it (e.g., for tax or legal purposes).",
+          "Data that is no longer needed will be deleted or anonymized."
+        ]
+      },
+      {
+        "title": "7. Security of Personal Information",
+        "bullets": [
+          "We take reasonable technical and organizational precautions to prevent the loss, misuse, or alteration of your personal information.",
+          "All personal data you provide will be stored on secure servers protected by passwords and firewalls.",
+          "Financial transactions made through our website are encrypted.",
+          "While we strive to protect your information, no data transmission over the internet can be guaranteed to be 100% secure.",
+          "You are responsible for keeping your login details and password confidential. We will never ask for your password (except when you log in to the website)."
+        ]
+      },
+      {
+        "title": "8. Your Rights",
+        "bullets": [
+          "You can request access to any personal information we hold about you. We may require proof of identity before providing this data.",
+          "You have the right to request corrections or deletions of your personal data.",
+          "You can request at any time to stop receiving marketing communications."
+        ]
+      },
+      {
+        "title": "9. Third-Party Websites",
+        "bullets": [
+          "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those external websites."
+        ]
+      },
+      {
+        "title": "10. Cookies",
+        "lead": "Our website uses cookies to enhance your experience. A cookie is a small text file stored in your browser that helps identify your device. We use cookies to:",
+        "bullets": [
+          "Improve website usability and navigation.",
+          "Analyze website traffic and performance.",
+          "Enable shopping cart and personalization features.",
+          "Prevent fraudulent activity and enhance security."
+        ],
+        "note": "Most browsers allow you to refuse or delete cookies through their settings. However, blocking cookies may negatively affect the functionality of our website."
+      },
+      {
+        "title": "11. Policy Updates",
+        "bullets": [
+          "We may update this privacy policy from time to time by publishing a new version on our website. You should check this page periodically to ensure you are happy with any changes."
+        ]
+      }
+    ]
+  },
+  "TermsOfUse": {
+    "title": "Terms of Use",
+    "intro": [
+      "{storeName} is an online store offering a wide range of premium-quality products (hereinafter: \"the Website\").",
+      "These Terms of Use are written in the masculine form for convenience only, but they apply equally to all genders.",
+      "By purchasing from the Website, you confirm that you have read, understood, and agreed to these terms. These Terms of Use constitute a binding agreement between you (the customer) and {storeName}."
+    ],
+    "sections": [
+      {
+        "title": "Purchasing Process",
+        "bullets": [
+          "The Website allows customers to make convenient, safe, and easy purchases online.",
+          "Products can be purchased at any time, subject to stock availability.",
+          "Payment can be made by credit card or bank transfer, and the order will be processed only after the transaction is approved by the payment provider.",
+          "Prices on the Website include VAT (where applicable).",
+          "{storeName} reserves the right to update or change the Website, including but not limited to design, content, and functionality, and may discontinue the sale of products or revoke purchase rights at its sole discretion."
+        ]
+      },
+      {
+        "title": "Website Use",
+        "lead": "By using this Website, you declare that:",
+        "bullets": [
+          "You are over 18 years old.",
+          "You are legally permitted to use the Website.",
+          "You have the legal capacity to enter into binding agreements under these Terms of Use.",
+          "Your account or access to the Website has never been suspended by the company."
+        ],
+        "note": "You further declare that all information you provide is accurate, complete, and reliable. Any use of another person's identity or providing false details is a criminal offense. Legal action may be taken against anyone providing false information, and they will be solely responsible for any damages caused to {storeName} or any third party."
+      },
+      {
+        "title": "Returns and Cancellations",
+        "bullets": [
+          "An order may be canceled by contacting us via phone or email.",
+          "A cancellation is valid only after receiving a confirmation email from {storeName}.",
+          "If the cancellation is approved, the customer must return the product at their own expense.",
+          "Returns must be made within 4 days of receipt, in the original packaging and with the original invoice.",
+          "For approved cancellations, a cancellation fee of 50 ₪ (or equivalent currency) will be deducted from the refund.",
+          "If the cancellation occurs after the product has already been shipped or received, the return shipping cost will also be borne by the customer, in addition to the cancellation fee."
+        ],
+        "note": "Please note: no returns or exchanges are accepted during Black Friday sales, and items purchased on SALE are non-refundable and cannot be exchanged."
+      },
+      {
+        "title": "Store Credit",
+        "bullets": [
+          "If a customer cancels a purchase and returns a product, a store credit valid for one month may be issued for future purchases on the Website.",
+          "Credit will be granted only for items returned in perfect condition, free of damage or stains, and in their original packaging.",
+          "To request credit, contact customer service via phone or WhatsApp.",
+          "Credit will only be issued upon written confirmation from a {storeName} representative."
+        ]
+      },
+      {
+        "title": "Product Delivery",
+        "bullets": [
+          "Product delivery is subject to stock availability.",
+          "If an item is out of stock but still displayed on the Website, {storeName} is not obligated to supply it, and the customer will not have any claim or demand regarding this.",
+          "Orders will be delivered to the address provided during checkout within 5 business days of placing the order.",
+          "{storeName} is not responsible for delivery delays or failures caused by factors beyond its control, such as technical issues, shipping company delays, postal service interruptions, or force majeure events.",
+          "Product prices do not include delivery costs, which are added during checkout."
+        ]
+      },
+      {
+        "title": "Customer Service",
+        "bullets": [
+          "For any inquiries or assistance, please contact our customer service team at: {phone}"
+        ]
+      },
+      {
+        "title": "Pricing, Promotions, and Updates",
+        "bullets": [
+          "{storeName} may update product prices and delivery fees from time to time without prior notice.",
+          "The applicable price is the one displayed at the time of completing the order (including payment details). If prices are updated before the order is finalized, the updated prices will apply.",
+          "{storeName} may offer promotions, discounts, or special deals at its discretion and may modify, replace, or cancel these offers at any time without prior notice."
+        ]
+      }
+    ]
   },
   "Contact": {
     "metaTitle": "Contact Us",

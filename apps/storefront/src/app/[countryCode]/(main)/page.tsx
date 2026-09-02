@@ -4,10 +4,11 @@ import { listCategories } from "@lib/data/categories"
 import { listProducts, listProductsWithSort } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { EXCLUDED_CATEGORY_HANDLES } from "@lib/util/excluded-categories"
-import CategoryChips from "@modules/home/components/category-chips"
+import CategoryTiles from "@modules/home/components/category-tiles"
 import Hero from "@modules/home/components/hero"
 import ProductRow from "@modules/home/components/product-row"
 import TrustBadges from "@modules/common/components/trust-badges"
+import { Heading } from "@modules/common/components/ui"
 import { getTranslations } from "next-intl/server"
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -81,7 +82,10 @@ export default async function Home(props: {
 
       {!!categoryPreviews.length && (
         <div className="content-container pb-12">
-          <CategoryChips items={categoryPreviews} />
+          <Heading level="h2" className="text-xl-semi text-black mb-6">
+            {t("shopByCategory")}
+          </Heading>
+          <CategoryTiles items={categoryPreviews} />
         </div>
       )}
 

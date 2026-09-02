@@ -22,13 +22,29 @@ export default async function BrandPage(props: {
 
   const region = await getRegion(countryCode)
 
+  const testimonials = t.raw("testimonials") as { quote: string; author: string }[]
+
   const values = [
-    { Icon: SparklesSolid, title: t("value1Title"), body: t("value1Body") },
-    { Icon: Heart, title: t("value2Title"), body: t("value2Body") },
+    {
+      Icon: SparklesSolid,
+      title: t("value1Title"),
+      body: t("value1Body"),
+      ctaHref: "/store",
+      ctaLabel: t("shopNow"),
+    },
+    {
+      Icon: Heart,
+      title: t("value2Title"),
+      body: t("value2Body"),
+      ctaHref: "/store",
+      ctaLabel: t("shopNow"),
+    },
     {
       Icon: ChatBubbleLeftRight,
       title: t("value3Title"),
       body: t("value3Body"),
+      ctaHref: "/contact",
+      ctaLabel: tCommon("contactUs"),
     },
   ]
 
@@ -52,6 +68,7 @@ export default async function BrandPage(props: {
   }
 
   const heroImage = featuredProducts[0]?.thumbnail
+  const storyImage = featuredProducts[1]?.thumbnail
 
   return (
     <div>
@@ -63,14 +80,6 @@ export default async function BrandPage(props: {
           <Text className="max-w-sm text-large-regular text-gray-600">
             {t("intro", { storeName: tCommon("storeName") })}
           </Text>
-          <div>
-            <span className="text-base-semi text-gray-500">
-              {t("storyHeading")}
-            </span>
-            <p className="mt-2 text-base-regular text-black border-s-4 border-accent ps-4 max-w-sm">
-              {t("storyBody")}
-            </p>
-          </div>
         </div>
         <div className="order-1 small:order-2 relative aspect-[4/3] small:aspect-auto bg-gray-50">
           {heroImage && (
@@ -86,18 +95,58 @@ export default async function BrandPage(props: {
         </div>
       </div>
 
+      {storyImage ? (
+        <div className="relative w-full py-20 small:py-28">
+          <Image
+            src={storyImage}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="content-container relative">
+            <div className="max-w-2xl">
+              <span className="text-base-semi text-white/70">
+                {t("storyHeading")}
+              </span>
+              <p className="mt-3 font-display text-[24px] leading-[1.3] small:text-[32px] small:leading-[1.3] text-white">
+                {t("storyBody")}
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="content-container py-16 small:py-24">
+          <div className="max-w-2xl">
+            <span className="text-base-semi text-gray-500">
+              {t("storyHeading")}
+            </span>
+            <p className="mt-3 font-display text-[24px] leading-[1.3] small:text-[32px] small:leading-[1.3] text-black border-s-4 border-accent ps-5">
+              {t("storyBody")}
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="content-container py-16 border-t border-gray-200">
         <Heading level="h2" className="text-xl-semi text-black text-center mb-10">
           {t("valuesHeading")}
         </Heading>
         <div className="grid grid-cols-1 small:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {values.map(({ Icon, title, body }) => (
+          {values.map(({ Icon, title, body, ctaHref, ctaLabel }) => (
             <div key={title} className="flex flex-col items-center text-center gap-3">
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-soft text-accent">
                 <Icon width={22} height={22} />
               </span>
               <Text className="text-base-semi text-black">{title}</Text>
               <Text className="text-small-regular text-gray-500">{body}</Text>
+              <LocalizedClientLink
+                href={ctaHref}
+                className="text-small-semi text-accent underline underline-offset-2 hover:opacity-70 transition-opacity"
+              >
+                {ctaLabel}
+              </LocalizedClientLink>
             </div>
           ))}
         </div>
@@ -124,6 +173,34 @@ export default async function BrandPage(props: {
           />
         </div>
       )}
+
+      {/*
+        DEMO PLACEHOLDER — Brand.testimonials (messages/*.json) is fabricated
+        content so this base template can be previewed complete. Replace
+        with real customer reviews, or remove this section, before launch.
+      */}
+      <div className="w-full border-t border-gray-200 bg-gray-50 py-16">
+        <div className="content-container">
+          <Heading level="h2" className="text-xl-semi text-black text-center mb-10">
+            {t("testimonialsHeading")}
+          </Heading>
+          <div className="grid grid-cols-1 small:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {testimonials.map(({ quote, author }) => (
+              <div
+                key={author}
+                className="flex flex-col gap-4 rounded-large bg-white border border-gray-200 p-6"
+              >
+                <Text className="text-base-regular text-black">
+                  &ldquo;{quote}&rdquo;
+                </Text>
+                <Text className="text-small-semi text-gray-500">
+                  {author}
+                </Text>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <div className="w-full border-t border-gray-200 bg-white py-12">
         <div className="content-container flex flex-col items-center gap-4 text-center">

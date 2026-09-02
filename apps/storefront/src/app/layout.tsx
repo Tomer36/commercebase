@@ -4,6 +4,7 @@ import { isRtl, toUILang } from "@lib/i18n/ui-dictionary"
 import { Metadata } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import { Rubik, Unbounded } from "next/font/google"
+import CookieConsent from "@modules/layout/components/cookie-consent"
 import "styles/globals.css"
 
 // Single webfont covering all three storefront locales (Latin/Hebrew/Arabic)
@@ -43,6 +44,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <NextIntlClientProvider>
           <main className="relative">{props.children}</main>
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

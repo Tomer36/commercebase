@@ -2,18 +2,22 @@ import { listCategories } from "@lib/data/categories";
 import { listCollections } from "@lib/data/collections";
 import { BUSINESS_CONTACT, SOCIAL_LINKS } from "@lib/config/business-info";
 import { EXCLUDED_CATEGORY_HANDLES } from "@lib/util/excluded-categories";
+import TrustBadges from "@modules/common/components/trust-badges";
 import { Text, clx } from "@modules/common/components/ui";
 import { getTranslations } from "next-intl/server";
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
 
 export default async function Footer() {
-  const [{ collections }, allCategories, t, tCommon] = await Promise.all([
-    listCollections({ fields: "*products" }),
-    listCategories(),
-    getTranslations("Footer"),
-    getTranslations("Common"),
-  ]);
+  const [{ collections }, allCategories, t, tCommon, tContact, tCustomerService] =
+    await Promise.all([
+      listCollections({ fields: "*products" }),
+      listCategories(),
+      getTranslations("Footer"),
+      getTranslations("Common"),
+      getTranslations("Contact"),
+      getTranslations("CustomerService"),
+    ]);
 
   const socialEntries = Object.entries(SOCIAL_LINKS).filter(([, url]) => url);
 
@@ -30,11 +34,11 @@ export default async function Footer() {
   const columnCount = 2 + (productCategories.length > 0 ? 1 : 0) + (collections.length > 0 ? 1 : 0)
 
   return (
-    <footer className="hidden small:block border-t border-gray-200 w-full">
+    <footer className="border-t border-gray-200 w-full">
       <div className="content-container flex flex-col w-full">
         <div
           className={clx(
-            "grid grid-cols-2 gap-x-10 gap-y-10 py-16",
+            "hidden small:grid grid-cols-2 gap-x-10 gap-y-10 py-16",
             columnCount >= 4 ? "small:grid-cols-4" : "small:grid-cols-3"
           )}
         >
@@ -50,6 +54,12 @@ export default async function Footer() {
               className="text-small-regular text-gray-600 hover:text-black w-fit"
             >
               {t("ourStory")}
+            </LocalizedClientLink>
+            <LocalizedClientLink
+              href="/account"
+              className="text-small-regular text-gray-600 hover:text-black w-fit"
+            >
+              {tCommon("account")}
             </LocalizedClientLink>
           </div>
           {productCategories.length > 0 && (
@@ -152,26 +162,48 @@ export default async function Footer() {
                   {BUSINESS_CONTACT.phone}
                 </a>
               </li>
-              {socialEntries.length > 0 && (
-                <li className="flex flex-col gap-2 mt-2">
-                  {socialEntries.map(([platform, url]) => (
-                    <a
-                      key={platform}
-                      className="hover:text-black capitalize"
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {platform}
-                    </a>
-                  ))}
-                </li>
-              )}
             </ul>
           </div>
         </div>
+        <div className="border-t border-gray-200 py-6 flex flex-col small:flex-row small:items-center small:justify-between gap-4">
+          <TrustBadges />
+          {socialEntries.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-small-semi text-black me-1">
+                {t("followUs")}
+              </span>
+              {socialEntries.map(([platform, url]) => (
+                <a
+                  key={platform}
+                  className="rounded-full border border-gray-200 px-3 py-1 text-small-regular text-gray-600 capitalize transition-colors hover:border-accent hover:text-black"
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {platform}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="flex flex-col gap-y-4 w-full border-t border-gray-200 py-6 text-gray-400">
-          <ul className="flex gap-x-6 text-small-regular">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-small-regular">
+            <li>
+              <LocalizedClientLink
+                className="hover:text-black"
+                href="/contact"
+              >
+                {tContact("title")}
+              </LocalizedClientLink>
+            </li>
+            <li>
+              <LocalizedClientLink
+                className="hover:text-black"
+                href="/customer-service"
+              >
+                {tCustomerService("title")}
+              </LocalizedClientLink>
+            </li>
             <li>
               <LocalizedClientLink
                 className="hover:text-black"
