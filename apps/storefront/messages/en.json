@@ -219,6 +219,12 @@
     "intro": "{storeName} is built around one idea: skincare that fits into your everyday routine, without the guesswork.",
     "storyHeading": "Why We Started",
     "storyBody": "We got tired of skincare that overpromises and overcomplicates. So we built a shop around a simple idea: fewer, better products, chosen with care, for the routine you actually have time for.",
+    "stats": [
+      { "value": "5+", "label": "Years of Experience" },
+      { "value": "10,000+", "label": "Orders Delivered" },
+      { "value": "98%", "label": "Customer Satisfaction" },
+      { "value": "50+", "label": "Products Curated" }
+    ],
     "valuesHeading": "What We Care About",
     "testimonialsHeading": "What Customers Say",
     "testimonials": [

@@ -16,7 +16,6 @@ const STORAGE_KEY = "cookie-consent"
  */
 const CookieConsent = () => {
   const t = useTranslations("CookieConsent")
-  const tFooter = useTranslations("Footer")
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {

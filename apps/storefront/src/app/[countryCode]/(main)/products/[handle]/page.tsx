@@ -4,6 +4,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
+import { getTranslations } from "next-intl/server"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -87,11 +88,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     notFound()
   }
 
+  const t = await getTranslations("Common")
+
   return {
-    title: `${product.title} | Cosmetics Store`,
+    title: `${product.title} | ${t("storeName")}`,
     description: `${product.title}`,
     openGraph: {
-      title: `${product.title} | Cosmetics Store`,
+      title: `${product.title} | ${t("storeName")}`,
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },

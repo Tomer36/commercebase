@@ -9,9 +9,12 @@ import { listRegions } from "@lib/data/regions"
 import { retrieveCustomer } from "@lib/data/customer"
 import { getTranslations } from "next-intl/server"
 
-export const metadata: Metadata = {
-  title: "Profile",
-  description: "View and edit your Cosmetics Store profile.",
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Common")
+  return {
+    title: "Profile",
+    description: `View and edit your ${t("storeName")} profile.`,
+  }
 }
 
 export default async function Profile() {

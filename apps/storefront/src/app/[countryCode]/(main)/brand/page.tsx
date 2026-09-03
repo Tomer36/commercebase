@@ -23,6 +23,7 @@ export default async function BrandPage(props: {
   const region = await getRegion(countryCode)
 
   const testimonials = t.raw("testimonials") as { quote: string; author: string }[]
+  const stats = t.raw("stats") as { value: string; label: string }[]
 
   const values = [
     {
@@ -92,6 +93,24 @@ export default async function BrandPage(props: {
               sizes="(max-width: 1023px) 100vw, 50vw"
             />
           )}
+        </div>
+      </div>
+
+      {/*
+        DEMO PLACEHOLDER — Brand.stats (messages/*.json) is fabricated
+        content so this base template can be previewed complete. Replace
+        with real numbers, or remove this section, before launch.
+      */}
+      <div className="content-container py-12 border-b border-gray-200">
+        <div className="grid grid-cols-2 small:grid-cols-4 gap-8">
+          {stats.map(({ value, label }) => (
+            <div key={label} className="flex flex-col items-center gap-1 text-center">
+              <span className="font-display text-4xl small:text-5xl font-bold text-accent">
+                {value}
+              </span>
+              <span className="text-small-regular text-gray-600">{label}</span>
+            </div>
+          ))}
         </div>
       </div>
 

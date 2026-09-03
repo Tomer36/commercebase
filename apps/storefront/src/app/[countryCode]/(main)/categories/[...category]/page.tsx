@@ -7,6 +7,7 @@ import { HttpTypes, StoreRegion } from "@medusajs/types"
 import CategoryTemplate from "@modules/categories/templates"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import { parseOptionValueIds } from "@lib/util/product-option-filters"
+import { getTranslations } from "next-intl/server"
 
 type Props = {
   params: Promise<{ category: string[]; countryCode: string }>
@@ -51,8 +52,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params
   try {
     const productCategory = await getCategoryByHandle(params.category)
+    const t = await getTranslations("Common")
 
-    const title = `${productCategory.name} | Cosmetics Store`
+    const title = `${productCategory.name} | ${t("storeName")}`
 
     const description =
       productCategory.description ?? `${productCategory.name} category.`

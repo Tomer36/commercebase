@@ -7,6 +7,7 @@ import { StoreCollection, StoreRegion } from "@medusajs/types"
 import CollectionTemplate from "@modules/collections/templates"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import { parseOptionValueIds } from "@lib/util/product-option-filters"
+import { getTranslations } from "next-intl/server"
 
 type Props = {
   params: Promise<{ handle: string; countryCode: string }>
@@ -62,8 +63,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     notFound()
   }
 
+  const t = await getTranslations("Common")
+
   const metadata = {
-    title: `${collection.title} | Cosmetics Store`,
+    title: `${collection.title} | ${t("storeName")}`,
     description: `${collection.title} collection`,
   } as Metadata
 

@@ -3,10 +3,19 @@ import { listCollections } from "@lib/data/collections";
 import { BUSINESS_CONTACT, SOCIAL_LINKS } from "@lib/config/business-info";
 import { EXCLUDED_CATEGORY_HANDLES } from "@lib/util/excluded-categories";
 import TrustBadges from "@modules/common/components/trust-badges";
+import Facebook from "@modules/common/icons/facebook";
+import Instagram from "@modules/common/icons/instagram";
+import TikTok from "@modules/common/icons/tiktok";
 import { Text, clx } from "@modules/common/components/ui";
 import { getTranslations } from "next-intl/server";
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
+
+const SOCIAL_ICONS = {
+  instagram: Instagram,
+  facebook: Facebook,
+  tiktok: TikTok,
+} as const;
 
 export default async function Footer() {
   const [{ collections }, allCategories, t, tCommon, tContact, tCustomerService] =
@@ -166,23 +175,32 @@ export default async function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-200 py-6 flex flex-col small:flex-row small:items-center small:justify-between gap-4">
-          <TrustBadges />
+          <TrustBadges bordered={false} />
           {socialEntries.length > 0 && (
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-small-semi text-black me-1">
+            <div className="flex items-center gap-3">
+              <span className="text-small-semi text-black">
                 {t("followUs")}
               </span>
-              {socialEntries.map(([platform, url]) => (
-                <a
-                  key={platform}
-                  className="rounded-full border border-gray-200 px-3 py-1 text-small-regular text-gray-600 capitalize transition-colors hover:border-accent hover:text-black"
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {platform}
-                </a>
-              ))}
+              <div className="flex items-center gap-2">
+                {socialEntries.map(([platform, url]) => {
+                  const Icon = SOCIAL_ICONS[platform as keyof typeof SOCIAL_ICONS]
+                  if (!Icon) {
+                    return null
+                  }
+                  return (
+                    <a
+                      key={platform}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-colors hover:border-black hover:bg-black hover:text-white"
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={platform}
+                    >
+                      <Icon size="16" />
+                    </a>
+                  )
+                })}
+              </div>
             </div>
           )}
         </div>
